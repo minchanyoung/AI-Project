@@ -1,0 +1,26 @@
+﻿구분,문항 번호,질문 내용,변수명
+개인,Q279-1,디지털 기술 학습 채널은?,p279learnchannel
+개인,Q279-2,선호 학습 방식은?,p279learnstyle
+개인,Q279-3,학습 빈도는?,p279learnfreq
+개인,Q279-4,학습 장애 요인은?,p279learnbarrier
+개인,Q279-5,정부 교육 지원 인식은?,p279learngov
+개인,Q280-1,디지털 일상 활용 빈도는?,p280utilfreq
+개인,Q280-2,주 사용 기기는?,p280device
+개인,Q280-3,이용 장소는?,p280location
+개인,Q280-4,이용 목적은?,p280purpose
+개인,Q280-5,활용 만족도는?,p280utilsat
+개인,Q281-1,디지털 정보 부족 체감은?,p281infoshort
+개인,Q281-2,보완 필요 정보 유형은?,p281infotype
+개인,Q281-3,정보 획득 어려움은?,p281infohard
+개인,Q281-4,정부 제공 정보 만족도는?,p281infogov
+개인,Q281-5,추가 정보 기대는?,p281infohope
+개인,Q282-1,디지털 활용 격차 인식은?,p282gapaware
+개인,Q282-2,격차 원인은?,p282gapcause
+개인,Q282-3,해소 노력 경험은?,p282gapeffort
+개인,Q282-4,정부 정책 효과 인식은?,p282gappolicy
+개인,Q282-5,지속 개선 필요성 인식은?,p282gapneed
+개인,Q283-1,디지털 관련 정책 인지도는?,p283policyaware
+개인,Q283-2,정책 접촉 경로는?,p283policychannel
+개인,Q283-3,정책 신뢰 수준은?,p283policytrust
+개인,Q283-4,정책 개선 희망은?,p283policyhope
+개인,Q283-5,정책 참여 의향은?,p283policywill

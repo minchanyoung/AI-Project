@@ -1,0 +1,26 @@
+﻿구분,문항 번호,질문 내용,변수명
+개인,Q309-1,디지털 격차 인식 수준은?,p309gapaware
+개인,Q309-2,격차 해소 노력 경험은?,p309effortexp
+개인,Q309-3,정부 정책 인식은?,p309policyaware
+개인,Q309-4,정책 체감 수준은?,p309policyfeel
+개인,Q309-5,정책 개선 기대는?,p309policyhope
+개인,Q310-1,디지털 소통 경험은?,p310comexp
+개인,Q310-2,주 소통 채널은?,p310comchannel
+개인,Q310-3,소통 만족도는?,p310comsat
+개인,Q310-4,소통의 어려움은?,p310combarrier
+개인,Q310-5,개선 필요성 인식은?,p310comneed
+개인,Q311-1,디지털 사회 참여 경험은?,p311socpartexp
+개인,Q311-2,참여 영역은?,p311socpartarea
+개인,Q311-3,참여 만족도는?,p311socpartsat
+개인,Q311-4,장애 요인은?,p311socpartbarrier
+개인,Q311-5,지속 참여 의향은?,p311socpartwill
+개인,Q312-1,디지털 안전 인식은?,p312safetyaware
+개인,Q312-2,위협 체감 경험은?,p312threatexp
+개인,Q312-3,보호 조치 실천 여부는?,p312protection
+개인,Q312-4,정부 보호 정책 인식은?,p312govpolicy
+개인,Q312-5,정책 개선 기대는?,p312govhope
+개인,Q313-1,디지털 기술 수용 여부는?,p313accept
+개인,Q313-2,수용 이유는?,p313reason
+개인,Q313-3,수용의 어려움은?,p313difficulty
+개인,Q313-4,정부 지원 체감은?,p313supportfeel
+개인,Q313-5,향후 수용 계획은?,p313plan

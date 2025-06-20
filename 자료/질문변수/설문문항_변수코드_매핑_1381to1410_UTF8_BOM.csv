@@ -1,0 +1,26 @@
+﻿구분,문항 번호,질문 내용,변수명
+개인,Q239-1,디지털 기술 학습 경험은?,p239learnexp
+개인,Q239-2,학습 목적은?,p239learnwhy
+개인,Q239-3,학습 채널은?,p239learnchannel
+개인,Q239-4,학습 만족도는?,p239learnsat
+개인,Q239-5,재학습 희망 여부는?,p239learnwill
+개인,Q240-1,디지털 커뮤니케이션 수단 선호도는?,p240commprefer
+개인,Q240-2,주 사용 수단은?,p240commmain
+개인,Q240-3,소통 만족도는?,p240commsat
+개인,Q240-4,불만족 요인은?,p240communsat
+개인,Q240-5,향후 개선 희망은?,p240commhope
+개인,Q241-1,디지털 기술 활용에 대한 태도는?,p241attitude
+개인,Q241-2,긍정적 기대는?,p241expectpos
+개인,Q241-3,부정적 우려는?,p241expectneg
+개인,Q241-4,주요 관심 영역은?,p241interest
+개인,Q241-5,정부 지원 기대는?,p241govsupport
+개인,Q242-1,디지털 교육 참여 의향은?,p242eduwill
+개인,Q242-2,참여 장애 요인은?,p242edubarrier
+개인,Q242-3,선호 교육 방식은?,p242edumethod
+개인,Q242-4,희망 교육 내용은?,p242educontent
+개인,Q242-5,교육 효과 기대는?,p242eduoutcome
+개인,Q243-1,디지털 정보 수집 경로는?,p243source
+개인,Q243-2,신뢰도 판단 기준은?,p243trustbasis
+개인,Q243-3,정보 활용 경험은?,p243useexp
+개인,Q243-4,정보 부족 체감 여부는?,p243infogap
+개인,Q243-5,정보 격차 해소 방안 인식은?,p243gapsolve

@@ -1,0 +1,26 @@
+﻿구분,문항 번호,질문 내용,변수명
+개인,Q199-1,온라인 커뮤니티 참여 여부는?,p199oncommexp
+개인,Q199-2,참여 커뮤니티 종류는?,p199oncommtype
+개인,Q199-3,참여 목적은?,p199oncommwhy
+개인,Q199-4,참여 만족도는?,p199oncommsat
+개인,Q199-5,지속 참여 의향은?,p199oncommwill
+개인,Q200-1,디지털 콘텐츠 생산 경험은?,p200contentexp
+개인,Q200-2,콘텐츠 종류는?,p200contenttype
+개인,Q200-3,생산 목적은?,p200contentwhy
+개인,Q200-4,활동 만족도는?,p200contentsat
+개인,Q200-5,향후 생산 계획은?,p200contentwill
+개인,Q201-1,디지털 환경 변화 체감은?,p201digienvfeel
+개인,Q201-2,긍정적 변화 인식은?,p201digienvpos
+개인,Q201-3,부정적 변화 인식은?,p201digienvneg
+개인,Q201-4,정부 역할 기대는?,p201digienvgov
+개인,Q201-5,향후 전망은?,p201digienvfuture
+개인,Q202-1,디지털 사회에서의 갈등 인식은?,p202conflictaware
+개인,Q202-2,경험한 갈등 사례는?,p202conflictexp
+개인,Q202-3,갈등 해소 방안은?,p202conflictsolve
+개인,Q202-4,정부 중재 필요성 인식은?,p202conflictgov
+개인,Q202-5,갈등 예방 교육 필요성은?,p202conflictedu
+개인,Q203-1,디지털 환경에서의 권리 인식은?,p203rightaware
+개인,Q203-2,권리 침해 경험 여부는?,p203rightexp
+개인,Q203-3,대응 방식은?,p203rightreact
+개인,Q203-4,권리 보호 제도 인식은?,p203rightlaw
+개인,Q203-5,보완 필요성 인식은?,p203rightneed

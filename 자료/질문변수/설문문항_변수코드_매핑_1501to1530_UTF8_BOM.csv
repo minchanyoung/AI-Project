@@ -1,0 +1,26 @@
+﻿구분,문항 번호,질문 내용,변수명
+개인,Q259-1,디지털 서비스 불신 경험은?,p259distrustexp
+개인,Q259-2,불신 원인은?,p259distrustwhy
+개인,Q259-3,불신 극복 시도는?,p259distrustsolve
+개인,Q259-4,정부 역할 기대는?,p259distrustgov
+개인,Q259-5,향후 태도 변화는?,p259distrustfuture
+개인,Q260-1,디지털 기술에 대한 정보 접근성은?,p260techaccess
+개인,Q260-2,정보 수집 경로는?,p260techsource
+개인,Q260-3,정보 신뢰도는?,p260techtrust
+개인,Q260-4,정보 활용 경험은?,p260techuse
+개인,Q260-5,정보 부족 체감 여부는?,p260techgap
+개인,Q261-1,디지털 사회에서의 권리 인식 수준은?,p261rightsense
+개인,Q261-2,권리 침해 경험은?,p261rightexp
+개인,Q261-3,권리 보호 수단 인식은?,p261rightprotect
+개인,Q261-4,정부 정책 만족도는?,p261rightgovsat
+개인,Q261-5,정책 개선 필요성 인식은?,p261rightgovneed
+개인,Q262-1,디지털 역량 향상 희망 수준은?,p262skillwish
+개인,Q262-2,희망 분야는?,p262skillfield
+개인,Q262-3,역량 향상 장애 요인은?,p262skillbarrier
+개인,Q262-4,지원 정책 인식은?,p262skillgov
+개인,Q262-5,교육 프로그램 참여 의향은?,p262skillparticipate
+개인,Q263-1,디지털 시대 변화 인식 수준은?,p263changeaware
+개인,Q263-2,변화 체감 영역은?,p263changearea
+개인,Q263-3,긍정적 영향 인식은?,p263changepos
+개인,Q263-4,부정적 영향 인식은?,p263changeneg
+개인,Q263-5,변화 대응 준비 수준은?,p263changeready

@@ -1,0 +1,26 @@
+﻿구분,문항 번호,질문 내용,변수명
+개인,Q314-1,디지털 기술 일상 적용 여부는?,p314dailyapply
+개인,Q314-2,적용 분야는?,p314applyfield
+개인,Q314-3,적용의 어려움은?,p314applybarrier
+개인,Q314-4,지원 필요성 인식은?,p314supportneed
+개인,Q314-5,향후 적용 계획은?,p314applyplan
+개인,Q315-1,디지털 리터러시 자기 평가 수준은?,p315selfeval
+개인,Q315-2,향상 필요 영역은?,p315improvearea
+개인,Q315-3,교육 참여 의향은?,p315eduwill
+개인,Q315-4,참여 희망 교육 방식은?,p315edumethod
+개인,Q315-5,정부 교육 지원 인식은?,p315edugov
+개인,Q316-1,디지털 기술 혜택 체감 수준은?,p316benefitfeel
+개인,Q316-2,혜택 주요 영역은?,p316benefitarea
+개인,Q316-3,체감하지 못한 이유는?,p316benefitmiss
+개인,Q316-4,정부 정책 만족도는?,p316govsat
+개인,Q316-5,향후 정책 기대는?,p316govhope
+개인,Q317-1,디지털 정보 활용 수준은?,p317infouse
+개인,Q317-2,활용 어려움은?,p317usebarrier
+개인,Q317-3,보완 희망 수단은?,p317fixmethod
+개인,Q317-4,정부 지원 체감은?,p317govsupport
+개인,Q317-5,지속 활용 계획은?,p317useplan
+개인,Q318-1,디지털 사회에서의 소속감은?,p318belong
+개인,Q318-2,소속감 형성 요인은?,p318belongfactor
+개인,Q318-3,소속감 결여 이유는?,p318belonglack
+개인,Q318-4,정부 역할 인식은?,p318govrole
+개인,Q318-5,향후 변화 기대는?,p318futurehope

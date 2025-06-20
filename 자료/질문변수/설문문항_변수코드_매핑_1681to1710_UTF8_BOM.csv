@@ -1,0 +1,26 @@
+﻿구분,문항 번호,질문 내용,변수명
+개인,Q289-1,디지털 소외 인식 수준은?,p289excludeaware
+개인,Q289-2,소외 체감 영역은?,p289excludearea
+개인,Q289-3,소외 해소 기대는?,p289excludehope
+개인,Q289-4,정부 정책 인식은?,p289excludepolicy
+개인,Q289-5,정책 만족도는?,p289excludesat
+개인,Q290-1,디지털 서비스 접근성 인식은?,p290accessaware
+개인,Q290-2,접근 어려움은?,p290accesshard
+개인,Q290-3,접근 지원 필요성은?,p290accessneed
+개인,Q290-4,정부 역할 기대는?,p290accessgov
+개인,Q290-5,향후 접근 계획은?,p290accessplan
+개인,Q291-1,디지털 생활 필수성 인식은?,p291necessity
+개인,Q291-2,필수 영역은?,p291essentialarea
+개인,Q291-3,부족한 영역은?,p291lackarea
+개인,Q291-4,보완 희망 사항은?,p291comphope
+개인,Q291-5,정부 책임 인식은?,p291govrole
+개인,Q292-1,디지털 공정성 인식은?,p292fairaware
+개인,Q292-2,불공정 사례 경험은?,p292unfairexp
+개인,Q292-3,해결 방법 인식은?,p292solvemethod
+개인,Q292-4,정부 정책 인식은?,p292policyaware
+개인,Q292-5,정책 개선 필요성은?,p292policyneed
+개인,Q293-1,디지털 권리 인식은?,p293rightaware
+개인,Q293-2,권리 침해 경험은?,p293rightexp
+개인,Q293-3,권리 보호 방법은?,p293protecthow
+개인,Q293-4,정부 정책 만족도는?,p293govsat
+개인,Q293-5,향후 권리 보호 기대는?,p293hope

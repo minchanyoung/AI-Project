@@ -1,0 +1,26 @@
+﻿구분,문항 번호,질문 내용,변수명
+개인,Q249-1,디지털 금융 서비스 이용 경험은?,p249finexp
+개인,Q249-2,주 이용 서비스는?,p249fintype
+개인,Q249-3,이용 만족도는?,p249finsat
+개인,Q249-4,이용 장애 요인은?,p249finbarrier
+개인,Q249-5,향후 이용 계획은?,p249finwill
+개인,Q250-1,디지털 창작 활동 경험은?,p250createexp
+개인,Q250-2,창작 유형은?,p250createtype
+개인,Q250-3,창작 동기는?,p250createwhy
+개인,Q250-4,창작 만족도는?,p250createsat
+개인,Q250-5,향후 활동 계획은?,p250createwill
+개인,Q251-1,디지털 정보 보호 역량 인식은?,p251protectaware
+개인,Q251-2,보호 실천 경험은?,p251protectexp
+개인,Q251-3,보호 실천 어려움은?,p251protectbarrier
+개인,Q251-4,정부 지원 정책 인식은?,p251protectgov
+개인,Q251-5,정책 만족도는?,p251protectsat
+개인,Q252-1,디지털 리터러시 자기 평가 수준은?,p252literacylevel
+개인,Q252-2,보완이 필요한 영역은?,p252literacyneed
+개인,Q252-3,리터러시 교육 경험은?,p252literacyedu
+개인,Q252-4,교육 만족도는?,p252literacysat
+개인,Q252-5,향후 교육 희망은?,p252literacywill
+개인,Q253-1,디지털 전환의 체감도는?,p253transformfeel
+개인,Q253-2,변화가 미친 영향은?,p253transformimpact
+개인,Q253-3,적응 어려움은?,p253transformbarrier
+개인,Q253-4,정부 대응 인식은?,p253transformgov
+개인,Q253-5,향후 적응 계획은?,p253transformplan

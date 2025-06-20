@@ -1,0 +1,26 @@
+﻿구분,문항 번호,질문 내용,변수명
+개인,Q304-1,디지털 기술 적응 노력 수준은?,p304effort
+개인,Q304-2,적응 방식은?,p304method
+개인,Q304-3,적응의 어려움은?,p304barrier
+개인,Q304-4,도움 받은 자원은?,p304resource
+개인,Q304-5,지속 적응 의향은?,p304will
+개인,Q305-1,디지털 사회 통합 인식은?,p305integration
+개인,Q305-2,통합의 장애 요인은?,p305barrier
+개인,Q305-3,통합 촉진 방안 인식은?,p305promotion
+개인,Q305-4,정부 역할 기대는?,p305govrole
+개인,Q305-5,정책 참여 의향은?,p305policyjoin
+개인,Q306-1,디지털 정보 접근성 체감은?,p306accessfeel
+개인,Q306-2,접근 방법은?,p306accessway
+개인,Q306-3,정보 활용 빈도는?,p306usefreq
+개인,Q306-4,활용의 어려움은?,p306usebarrier
+개인,Q306-5,지속 활용 계획은?,p306useplan
+개인,Q307-1,디지털 시민의식 인식은?,p307citizenaware
+개인,Q307-2,필요한 시민역량은?,p307citizenskill
+개인,Q307-3,시민교육 참여 경험은?,p307citizeneduexp
+개인,Q307-4,교육 만족도는?,p307citizenedusat
+개인,Q307-5,추가 교육 참여 의향은?,p307citizenwill
+개인,Q308-1,디지털 기술 학습 희망 여부는?,p308learnwish
+개인,Q308-2,학습 희망 분야는?,p308learnfield
+개인,Q308-3,학습 장애 요인은?,p308learnbarrier
+개인,Q308-4,정부 지원 기대는?,p308govsupport
+개인,Q308-5,학습 목표는?,p308learngoal

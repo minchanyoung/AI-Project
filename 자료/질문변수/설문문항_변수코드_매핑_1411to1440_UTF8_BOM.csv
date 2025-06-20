@@ -1,0 +1,26 @@
+﻿구분,문항 번호,질문 내용,변수명
+개인,Q244-1,디지털 기술 수용 태도는?,p244techattitude
+개인,Q244-2,수용 촉진 요인은?,p244techboost
+개인,Q244-3,수용 저해 요인은?,p244techbarrier
+개인,Q244-4,정부 역할 인식은?,p244techgov
+개인,Q244-5,향후 태도 변화 가능성은?,p244techfuture
+개인,Q245-1,디지털 정보 활용 능력 인식은?,p245infoability
+개인,Q245-2,활용 경험은?,p245infoexp
+개인,Q245-3,활용 어려움은?,p245infobarrier
+개인,Q245-4,지원 필요성 인식은?,p245infosupport
+개인,Q245-5,향후 활용 계획은?,p245infoplan
+개인,Q246-1,디지털 플랫폼 신뢰 수준은?,p246platformtrust
+개인,Q246-2,신뢰 기반은?,p246trustbasis
+개인,Q246-3,불신 이유는?,p246distrustwhy
+개인,Q246-4,정부 규제 인식은?,p246govreg
+개인,Q246-5,플랫폼 개선 희망은?,p246improvehope
+개인,Q247-1,디지털 커뮤니티 활동 경험은?,p247commexp
+개인,Q247-2,참여 목적은?,p247commwhy
+개인,Q247-3,활동 만족도는?,p247commsat
+개인,Q247-4,커뮤니티 유형은?,p247commtype
+개인,Q247-5,향후 참여 계획은?,p247commplan
+개인,Q248-1,디지털 생태계 참여 인식은?,p248ecoaware
+개인,Q248-2,참여 경험은?,p248ecoexp
+개인,Q248-3,참여 만족도는?,p248ecosat
+개인,Q248-4,장애 요인은?,p248ecobarrier
+개인,Q248-5,지속 참여 의향은?,p248ecowill

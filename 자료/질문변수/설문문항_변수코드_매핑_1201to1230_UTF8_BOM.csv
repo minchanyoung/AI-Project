@@ -1,0 +1,26 @@
+﻿구분,문항 번호,질문 내용,변수명
+개인,Q209-1,디지털 시민 권리 인식은?,p209citizenrightaware
+개인,Q209-2,권리 침해 경험은?,p209citizenrightexp
+개인,Q209-3,대응 방식은?,p209citizenrightreact
+개인,Q209-4,보호 장치 인식은?,p209citizenrightlaw
+개인,Q209-5,정부 역할 기대는?,p209citizenrightgov
+개인,Q210-1,디지털 플랫폼 이용 경험은?,p210platformexp
+개인,Q210-2,주 사용 플랫폼은?,p210platformtype
+개인,Q210-3,플랫폼 만족도는?,p210platformsat
+개인,Q210-4,개선 희망 사항은?,p210platformneed
+개인,Q210-5,정부 규제 필요성 인식은?,p210platformgov
+개인,Q211-1,디지털 서비스 접근성은?,p211serviceaccess
+개인,Q211-2,이용 시 어려움은?,p211servicebarrier
+개인,Q211-3,개선 방안은?,p211serviceimprove
+개인,Q211-4,정부 지원 인식은?,p211servicegov
+개인,Q211-5,향후 이용 계획은?,p211servicewill
+개인,Q212-1,디지털 소비 경험은?,p212consumexp
+개인,Q212-2,주 소비 항목은?,p212consumtype
+개인,Q212-3,소비 만족도는?,p212consumsat
+개인,Q212-4,소비 개선 희망은?,p212consumimprove
+개인,Q212-5,정부 정책 기대는?,p212consumgov
+개인,Q213-1,디지털 참여 인식은?,p213partaware
+개인,Q213-2,참여 경험은?,p213partexp
+개인,Q213-3,참여 형태는?,p213parttype
+개인,Q213-4,참여 만족도는?,p213partsat
+개인,Q213-5,참여 확대 희망은?,p213partwill

@@ -1,0 +1,26 @@
+﻿구분,문항 번호,질문 내용,변수명
+개인,Q319-1,디지털 소외 경험 여부는?,p319exclusionexp
+개인,Q319-2,소외 주요 원인은?,p319exclusionreason
+개인,Q319-3,소외 해소 노력은?,p319reliefeffort
+개인,Q319-4,도움 받은 자원은?,p319supportresource
+개인,Q319-5,정부 지원 체감은?,p319govsupportfeel
+개인,Q320-1,디지털 권리 인식 수준은?,p320rightaware
+개인,Q320-2,권리 침해 경험 여부는?,p320rightviolate
+개인,Q320-3,침해 대응 경험은?,p320responsedone
+개인,Q320-4,지원 기관 인식 여부는?,p320supportaware
+개인,Q320-5,정책 개선 기대는?,p320govhope
+개인,Q321-1,디지털 시민 참여 경험은?,p321citpart
+개인,Q321-2,참여 방식은?,p321partmethod
+개인,Q321-3,참여의 어려움은?,p321partbarrier
+개인,Q321-4,정부 참여 유도 정책 인식은?,p321govpolicy
+개인,Q321-5,향후 참여 의향은?,p321futurewill
+개인,Q322-1,디지털 시대 생활 만족도는?,p322lifesat
+개인,Q322-2,불만족 요인은?,p322lifedissatisfy
+개인,Q322-3,생활 개선 경험은?,p322lifeimprove
+개인,Q322-4,개선 노력은?,p322effort
+개인,Q322-5,정부 정책 영향 인식은?,p322govimpact
+개인,Q323-1,디지털 격차 인식 변화는?,p323gapchange
+개인,Q323-2,변화 요인은?,p323changefactor
+개인,Q323-3,정책 기여도 인식은?,p323policycontrib
+개인,Q323-4,향후 정책 방향 제안은?,p323policydirection
+개인,Q323-5,정책 참여 희망 여부는?,p323policywill

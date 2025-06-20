@@ -1,0 +1,26 @@
+﻿구분,문항 번호,질문 내용,변수명
+개인,Q184-1,디지털 소외계층 인식은?,p184digiexclaware
+개인,Q184-2,소외계층 지원 필요성 인식은?,p184digiexclneed
+개인,Q184-3,지원 경험 여부는?,p184digiexclexp
+개인,Q184-4,향후 지원 의향은?,p184digiexclwill
+개인,Q184-5,정부 정책 인식은?,p184digiexclgov
+개인,Q185-1,디지털 사회 전환 체감도는?,p185digisocchange
+개인,Q185-2,변화에 대한 준비 정도는?,p185digisocready
+개인,Q185-3,필요 역량 인식은?,p185digisocskill
+개인,Q185-4,기술 수용 태도는?,p185digisocaccept
+개인,Q185-5,정부 지원 정책 만족도는?,p185digisocsat
+개인,Q186-1,플랫폼 노동 경험은?,p186platformexp
+개인,Q186-2,노동 형태는?,p186platformtype
+개인,Q186-3,근로조건 만족도는?,p186platformsat
+개인,Q186-4,사회보장 수혜 여부는?,p186platformbenefit
+개인,Q186-5,향후 지속 의향은?,p186platformwill
+개인,Q187-1,디지털 헬스케어 인식은?,p187healthaware
+개인,Q187-2,이용 경험은?,p187healthexp
+개인,Q187-3,이용 만족도는?,p187healthsat
+개인,Q187-4,정보 보호 우려는?,p187healthworry
+개인,Q187-5,향후 이용 의향은?,p187healthwill
+개인,Q188-1,디지털금융 서비스 이용 여부는?,p188finuse
+개인,Q188-2,이용 만족도는?,p188finsat
+개인,Q188-3,보안 우려 정도는?,p188finworry
+개인,Q188-4,피해 경험은?,p188finexp
+개인,Q188-5,향후 이용 계획은?,p188finwill
