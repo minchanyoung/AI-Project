@@ -1,0 +1,26 @@
+﻿구분,문항 번호,질문 내용,변수명
+개인,Q109-1,디지털 서비스 이용 경험은?,p109digiexp
+개인,Q109-2,이용한 서비스 종류는?,p109digitype
+개인,Q109-3,이용 시 불편 사항은?,p109digidiff
+개인,Q109-4,개선 요구 사항은?,p109digiimprove
+개인,Q109-5,향후 이용 의향은?,p109digiwill
+개인,Q110-1,인터넷 정보 신뢰 수준은?,p110nettrust
+개인,Q110-2,주 정보 획득 채널은?,p110netchannel
+개인,Q110-3,정보 검증 경험은?,p110netcheck
+개인,Q110-4,허위 정보 경험은?,p110netfake
+개인,Q110-5,검증 필요성 인식은?,p110netverify
+개인,Q111-1,최근 1년간 법률 상담 경험은?,p111legalexp
+개인,Q111-2,상담 경로는?,p111legalpath
+개인,Q111-3,상담 만족도는?,p111legalsat
+개인,Q111-4,상담 시 애로사항은?,p111legaldiff
+개인,Q111-5,향후 상담 의향은?,p111legalwill
+개인,Q112-1,개인정보 보호 인식은?,p112privacyaware
+개인,Q112-2,개인정보 유출 경험은?,p112privacyexp
+개인,Q112-3,유출 후 대처 방법은?,p112privacyreact
+개인,Q112-4,보호를 위한 노력은?,p112privacytry
+개인,Q112-5,정부 정책 신뢰도는?,p112privacygov
+개인,Q113-1,최근 1년간 여행 경험은?,p113travelexp
+개인,Q113-2,여행 빈도는?,p113travelfreq
+개인,Q113-3,주 여행 목적은?,p113travelwhy
+개인,Q113-4,여행 만족도는?,p113travelsat
+개인,Q113-5,향후 여행 계획은?,p113travelplan

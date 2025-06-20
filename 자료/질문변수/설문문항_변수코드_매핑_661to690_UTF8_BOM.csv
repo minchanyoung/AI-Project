@@ -1,0 +1,26 @@
+﻿구분,문항 번호,질문 내용,변수명
+개인,Q119-1,공공 데이터 활용 경험은?,p119opendatause
+개인,Q119-2,활용 목적은?,p119opendatawhy
+개인,Q119-3,활용 만족도는?,p119opendatasat
+개인,Q119-4,개선이 필요한 부분은?,p119opendataimprove
+개인,Q119-5,향후 활용 의향은?,p119opendataplan
+개인,Q120-1,빅데이터 인식 수준은?,p120bigaware
+개인,Q120-2,빅데이터 활용 경험은?,p120biguse
+개인,Q120-3,활용 분야는?,p120bigfield
+개인,Q120-4,활용 시 문제점은?,p120bigproblem
+개인,Q120-5,향후 활용 계획은?,p120bigplan
+개인,Q121-1,블록체인 기술 인식은?,p121blockaware
+개인,Q121-2,블록체인 관련 경험은?,p121blockexp
+개인,Q121-3,기술 활용도는?,p121blockuse
+개인,Q121-4,기술 신뢰도는?,p121blocktrust
+개인,Q121-5,정부 정책 만족도는?,p121blockgov
+개인,Q122-1,로봇 기술 인식 수준은?,p122robotaware
+개인,Q122-2,로봇 사용 경험은?,p122robotexp
+개인,Q122-3,로봇 활용 분야는?,p122robotuse
+개인,Q122-4,기술 만족도는?,p122robotsat
+개인,Q122-5,향후 활용 의향은?,p122robotplan
+개인,Q123-1,지속가능발전 인식은?,p123sustainaware
+개인,Q123-2,관련 활동 참여 경험은?,p123sustainexp
+개인,Q123-3,참여 동기는?,p123sustainwhy
+개인,Q123-4,활동 만족도는?,p123sustainsat
+개인,Q123-5,향후 참여 의향은?,p123sustainplan

@@ -1,0 +1,31 @@
+﻿구분,문항 번호,질문 내용,변수명
+개인,Q46-1,디지털 서비스 불편 경험이 있습니까?,p46digitalexp
+개인,Q46-2,불편을 느낀 서비스는?,p46digitaltype
+개인,Q46-3,불편 사유는 무엇입니까?,p46digitalwhy
+개인,Q46-4,개선이 필요한 점은?,p46digitalimprove
+개인,Q46-5,디지털 소외감 수준은?,p46digitalgap
+개인,Q47-1,최근 1년간 사회참여 경험은?,p47socialexp
+개인,Q47-2,참여한 활동 종류는?,p47socialtype
+개인,Q47-3,활동 참여 동기는?,p47socialwhy
+개인,Q47-4,참여 시 느낀 점은?,p47socialfeel
+개인,Q47-5,향후 사회참여 계획은?,p47socialplan
+개인,Q48-1,재난 대비 인식 수준은?,p48disasteraware
+개인,Q48-2,재난 시 행동 요령 숙지 여부는?,p48disasterknow
+개인,Q48-3,재난 경험이 있으십니까?,p48disasterexp
+개인,Q48-4,재난정보 획득 경로는?,p48disasterinfo
+개인,Q48-5,재난대응 정책 만족도는?,p48disastersat
+개인,Q49-1,환경오염 체감 수준은?,p49pollutionfeel
+개인,Q49-2,환경문제 우려 정도는?,p49pollutionworry
+개인,Q49-3,환경보호 실천 여부는?,p49protection
+개인,Q49-4,환경정책 인지도는?,p49policyaware
+개인,Q49-5,정책 만족도는?,p49policysat
+개인,Q50-1,1년 내 학업 계획이 있으십니까?,p50studyplan
+개인,Q50-2,학업 계획 이유는?,p50studywhy
+개인,Q50-3,계획 중인 학업 내용은?,p50studywhat
+개인,Q50-4,학업 장소는 어디입니까?,p50studywhere
+개인,Q50-5,학업 관련 지원 필요사항은?,p50studyhelp
+개인,Q51-1,사회적 고립감을 느낀 적 있습니까?,p51isolationfeel
+개인,Q51-2,고립감 주요 원인은?,p51isolationwhy
+개인,Q51-3,고립감 극복 방법은?,p51isolationhow
+개인,Q51-4,고립감 해소 필요 지원은?,p51isolationneed
+개인,Q51-5,향후 고립감 해소 계획은?,p51isolationplan

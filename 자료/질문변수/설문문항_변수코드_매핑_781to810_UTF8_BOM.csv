@@ -1,0 +1,26 @@
+﻿구분,문항 번호,질문 내용,변수명
+개인,Q139-1,에너지 절약 실천 여부는?,p139energysave
+개인,Q139-2,주 실천 방식은?,p139energyhow
+개인,Q139-3,실천 계기는?,p139energywhy
+개인,Q139-4,실천의 어려움은?,p139energydiff
+개인,Q139-5,향후 지속 의향은?,p139energywill
+개인,Q140-1,재활용 참여 경험은?,p140recycleexp
+개인,Q140-2,참여 빈도는?,p140recyclefreq
+개인,Q140-3,분리배출 실천 수준은?,p140recyclelevel
+개인,Q140-4,정보 인식 경로는?,p140recycleinfo
+개인,Q140-5,제도 만족도는?,p140recyclesat
+개인,Q141-1,친환경 제품 사용 경험은?,p141greenuse
+개인,Q141-2,사용 제품 종류는?,p141greentype
+개인,Q141-3,사용 이유는?,p141greenwhy
+개인,Q141-4,구입 경로는?,p141greenbuy
+개인,Q141-5,향후 사용 의향은?,p141greenwill
+개인,Q142-1,환경교육 수강 경험은?,p142envclass
+개인,Q142-2,수강 내용은?,p142envcontent
+개인,Q142-3,교육 만족도는?,p142envsat
+개인,Q142-4,교육 후 행동 변화는?,p142envchange
+개인,Q142-5,재수강 의향은?,p142envreclass
+개인,Q143-1,환경정책 인식 수준은?,p143envpolicyaware
+개인,Q143-2,관심 있는 정책 분야는?,p143envinterest
+개인,Q143-3,정책 만족도는?,p143envpolicysat
+개인,Q143-4,정책 참여 경험은?,p143envpolicyexp
+개인,Q143-5,향후 참여 의향은?,p143envpolicywill

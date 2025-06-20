@@ -1,0 +1,31 @@
+﻿구분,문항 번호,질문 내용,변수명
+개인,Q58-1,최근 1년간 SNS 이용 빈도는?,p58snsfreq
+개인,Q58-2,주로 사용하는 SNS 종류는?,p58snstype
+개인,Q58-3,SNS 이용 목적은?,p58snswhy
+개인,Q58-4,SNS에서 느끼는 감정은?,p58snsfeel
+개인,Q58-5,SNS 이용 시 부작용 경험은?,p58snsproblem
+개인,Q59-1,게임 이용 빈도는?,p59gamefreq
+개인,Q59-2,게임 선호 장르는?,p59gamegenre
+개인,Q59-3,게임 이용 시간은?,p59gametime
+개인,Q59-4,게임에 대한 인식은?,p59gameview
+개인,Q59-5,게임 관련 정책 만족도는?,p59gamesat
+개인,Q60-1,인터넷 쇼핑 빈도는?,p60shopfreq
+개인,Q60-2,주로 구매하는 품목은?,p60shopitem
+개인,Q60-3,구매 결정 요인은?,p60shopreason
+개인,Q60-4,쇼핑 후 만족도는?,p60shopsat
+개인,Q60-5,배송 서비스 만족도는?,p60deliverysat
+개인,Q61-1,미디어 이용 시간은?,p61mediatime
+개인,Q61-2,주 이용 매체는?,p61mediatype
+개인,Q61-3,정보 신뢰도는?,p61trust
+개인,Q61-4,뉴스 이용 빈도는?,p61newsfreq
+개인,Q61-5,뉴스 이용 목적은?,p61newswhy
+개인,Q62-1,TV 시청 시간은?,p62tvtime
+개인,Q62-2,시청 콘텐츠 종류는?,p62tvtype
+개인,Q62-3,선호 채널은?,p62tvchannel
+개인,Q62-4,시청 동기 및 이유는?,p62tvwhy
+개인,Q62-5,시청 만족도는?,p62tvsat
+개인,Q63-1,라디오 청취 여부는?,p63radio
+개인,Q63-2,청취 시간은?,p63radiotime
+개인,Q63-3,청취 프로그램 종류는?,p63radiotype
+개인,Q63-4,청취 목적은?,p63radiowhy
+개인,Q63-5,청취 만족도는?,p63radiosat

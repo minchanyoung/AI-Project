@@ -1,0 +1,26 @@
+﻿구분,문항 번호,질문 내용,변수명
+개인,Q144-1,지역 환경 이슈 인식은?,p144localenvaware
+개인,Q144-2,이슈 관련 정보 획득 경로는?,p144localenvinfo
+개인,Q144-3,해결 노력 참여 경험은?,p144localenvexp
+개인,Q144-4,참여 활동 내용은?,p144localenvact
+개인,Q144-5,향후 참여 의향은?,p144localenvplan
+개인,Q145-1,환경단체 인식 수준은?,p145envorgaware
+개인,Q145-2,단체 활동 참여 경험은?,p145envorgjoin
+개인,Q145-3,참여 만족도는?,p145envorgsat
+개인,Q145-4,참여 동기는?,p145envorgwhy
+개인,Q145-5,향후 지속 참여 의향은?,p145envorgwill
+개인,Q146-1,환경보호 캠페인 인식은?,p146envcampaware
+개인,Q146-2,캠페인 참여 경험은?,p146envcampexp
+개인,Q146-3,참여 활동 내용은?,p146envcampact
+개인,Q146-4,참여 만족도는?,p146envcampsat
+개인,Q146-5,향후 참여 의향은?,p146envcampwill
+개인,Q147-1,탄소중립 인식 수준은?,p147carbonaware
+개인,Q147-2,실천 경험은?,p147carbonact
+개인,Q147-3,실천 방법은?,p147carbonhow
+개인,Q147-4,실천 만족도는?,p147carbonsat
+개인,Q147-5,지속 실천 의향은?,p147carbonwill
+개인,Q148-1,환경교육 필요성 인식은?,p148envneedaware
+개인,Q148-2,교육 희망 분야는?,p148envwant
+개인,Q148-3,희망 수강 형태는?,p148envform
+개인,Q148-4,정부 지원 필요 여부는?,p148envsupport
+개인,Q148-5,향후 수강 의향은?,p148envwill

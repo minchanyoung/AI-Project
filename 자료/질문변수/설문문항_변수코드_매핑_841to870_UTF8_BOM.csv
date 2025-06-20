@@ -1,0 +1,26 @@
+﻿구분,문항 번호,질문 내용,변수명
+개인,Q149-1,환경문제 우선순위 인식은?,p149envpriority
+개인,Q149-2,가장 시급한 문제는?,p149envurgent
+개인,Q149-3,문제 해결 책임 주체 인식은?,p149envresponsible
+개인,Q149-4,개인의 역할 인식은?,p149envrole
+개인,Q149-5,정부 정책 신뢰도는?,p149envtrust
+개인,Q150-1,기후변화 체감 정도는?,p150climatefeel
+개인,Q150-2,기후변화 원인 인식은?,p150climatecause
+개인,Q150-3,정보 습득 경로는?,p150climateinfo
+개인,Q150-4,정책 만족도는?,p150climatesat
+개인,Q150-5,참여 경험은?,p150climatejoin
+개인,Q151-1,기후 행동 실천 경험은?,p151climateact
+개인,Q151-2,실천 방법은?,p151climatehow
+개인,Q151-3,실천 장애 요인은?,p151climatebarrier
+개인,Q151-4,지원 정책 인식은?,p151climatepolicy
+개인,Q151-5,지속 실천 의향은?,p151climatewill
+개인,Q152-1,환경 이슈에 대한 관심도는?,p152envinterest
+개인,Q152-2,정보 탐색 빈도는?,p152envsearch
+개인,Q152-3,참여 활동 경험은?,p152envjoin
+개인,Q152-4,활동 만족도는?,p152envsat
+개인,Q152-5,향후 참여 의향은?,p152envwill
+개인,Q153-1,에너지 소비 절감 노력은?,p153energysave
+개인,Q153-2,절감 방법은?,p153energyhow
+개인,Q153-3,장애 요인은?,p153energybarrier
+개인,Q153-4,지원 정책 인식은?,p153energypolicy
+개인,Q153-5,지속 실천 의향은?,p153energywill

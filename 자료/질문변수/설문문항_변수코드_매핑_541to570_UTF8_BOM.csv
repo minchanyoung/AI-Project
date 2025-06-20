@@ -1,0 +1,26 @@
+﻿구분,문항 번호,질문 내용,변수명
+개인,Q99-1,스마트기기 사용 경험은?,p99smartuse
+개인,Q99-2,주 사용 스마트기기는?,p99smarttype
+개인,Q99-3,사용 시 불편 사항은?,p99smartdiff
+개인,Q99-4,사용 목적은?,p99smartwhy
+개인,Q99-5,기기 개선 희망 사항은?,p99smartimprove
+개인,Q100-1,가상현실(VR) 체험 여부는?,p100vrexp
+개인,Q100-2,체험한 콘텐츠 종류는?,p100vrtype
+개인,Q100-3,체험 빈도는?,p100vrfreq
+개인,Q100-4,체험 만족도는?,p100vrsat
+개인,Q100-5,향후 체험 의향은?,p100vrwill
+개인,Q101-1,인공지능(AI) 기술 인식은?,p101aiaware
+개인,Q101-2,AI 기술 접촉 경험은?,p101aiexp
+개인,Q101-3,AI 기술 활용도는?,p101aiuse
+개인,Q101-4,AI 기술 신뢰도는?,p101aitrust
+개인,Q101-5,AI 정책에 대한 의견은?,p101aipolicy
+개인,Q102-1,디지털 리터러시 수준은?,p102digilit
+개인,Q102-2,디지털 교육 수강 여부는?,p102digiedu
+개인,Q102-3,수강 경로는?,p102digiwhere
+개인,Q102-4,수강 만족도는?,p102digisat
+개인,Q102-5,향후 교육 수강 의향은?,p102digiwill
+개인,Q103-1,스마트시티 개념 인식은?,p103smartcityaware
+개인,Q103-2,스마트시티 거주 경험은?,p103smartcityexp
+개인,Q103-3,스마트시티 장점은?,p103smartcitygood
+개인,Q103-4,스마트시티 단점은?,p103smartcitybad
+개인,Q103-5,향후 거주 의향은?,p103smartcitywill

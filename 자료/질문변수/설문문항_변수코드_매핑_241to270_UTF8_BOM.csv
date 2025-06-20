@@ -1,0 +1,31 @@
+﻿구분,문항 번호,질문 내용,변수명
+개인,Q40-1,기초생활수급자 여부는?,p40basic
+개인,Q40-2,기초생활보장 수급 경로는?,p40basicpath
+개인,Q40-3,수급 만족도는?,p40basicsat
+개인,Q40-4,기초생활보장 제도 개선 희망사항은?,p40basicimprove
+개인,Q40-5,수급 제도에 대한 전반적 인식은?,p40basicaware
+개인,Q41-1,고용지원정책 인지도는?,p41jobaware
+개인,Q41-2,고용지원정책 이용 경험은?,p41jobuse
+개인,Q41-3,정책 이용 경로는?,p41jobpath
+개인,Q41-4,정책 만족도는?,p41jobsat
+개인,Q41-5,정책 개선 필요사항은?,p41jobimprove
+개인,Q42-1,복지서비스 이용 경험은?,p42welfareuse
+개인,Q42-2,이용한 서비스 종류는?,p42welfareservice
+개인,Q42-3,이용 만족도는?,p42welfaresat
+개인,Q42-4,접근성에 대한 인식은?,p42welfareaccess
+개인,Q42-5,복지정책 전반에 대한 의견은?,p42welfareopinion
+개인,Q43-1,현재 주택 보유 형태는?,p43houseown
+개인,Q43-2,주택 구입 시 애로사항은?,p43houseobst
+개인,Q43-3,정부 주택정책 인지도는?,p43housepolaware
+개인,Q43-4,정책 이용 경험은?,p43houseuse
+개인,Q43-5,정책 만족도는?,p43housesat
+개인,Q44-1,최근 1년간 문화시설 이용 경험은?,p44cultureexp
+개인,Q44-2,이용한 문화시설 종류는?,p44culturetype
+개인,Q44-3,이용 횟수는?,p44culturefreq
+개인,Q44-4,이용 만족도는?,p44culturesat
+개인,Q44-5,문화 접근성에 대한 의견은?,p44cultureaccess
+개인,Q45-1,스마트워크 경험이 있습니까?,p45smartwork
+개인,Q45-2,스마트워크 유형은?,p45smarttype
+개인,Q45-3,스마트워크 만족도는?,p45smartsat
+개인,Q45-4,스마트워크 장점은?,p45smartadv
+개인,Q45-5,스마트워크 단점은?,p45smartdis

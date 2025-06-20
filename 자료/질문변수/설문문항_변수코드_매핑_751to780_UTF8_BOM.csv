@@ -1,0 +1,26 @@
+﻿구분,문항 번호,질문 내용,변수명
+개인,Q134-1,지역사회 참여 경험은?,p134localjoin
+개인,Q134-2,참여 활동 내용은?,p134localact
+개인,Q134-3,참여 만족도는?,p134localsat
+개인,Q134-4,참여 시 불편 사항은?,p134localdiff
+개인,Q134-5,향후 참여 의향은?,p134localwill
+개인,Q135-1,공공갈등 인식 수준은?,p135pubconflictaware
+개인,Q135-2,경험한 갈등 사례는?,p135pubconflictexp
+개인,Q135-3,갈등 해결 경험은?,p135pubconflictsolve
+개인,Q135-4,정부 중재 역할 인식은?,p135govmediate
+개인,Q135-5,정책 만족도는?,p135pubconfsat
+개인,Q136-1,사회 신뢰 수준은?,p136trustsociety
+개인,Q136-2,정부 신뢰 수준은?,p136trustgov
+개인,Q136-3,이웃 신뢰 수준은?,p136trustneighbor
+개인,Q136-4,기업 신뢰 수준은?,p136trustcompany
+개인,Q136-5,미디어 신뢰 수준은?,p136trustmedia
+개인,Q137-1,지역 안전 체감도는?,p137safetyfeel
+개인,Q137-2,위험 요소 인식은?,p137safetyissue
+개인,Q137-3,개선 필요 분야는?,p137safetyneed
+개인,Q137-4,정부 대응 신뢰도는?,p137safetygov
+개인,Q137-5,향후 정책 참여 의향은?,p137safetywill
+개인,Q138-1,기후위기 체감 정도는?,p138climatefeel
+개인,Q138-2,관련 정보 인식 경로는?,p138climateinfo
+개인,Q138-3,개인 대응 실천 여부는?,p138climateaction
+개인,Q138-4,정책 실효성에 대한 의견은?,p138climatepolicy
+개인,Q138-5,향후 참여 계획은?,p138climateplan

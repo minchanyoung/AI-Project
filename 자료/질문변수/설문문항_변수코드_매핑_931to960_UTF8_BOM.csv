@@ -1,0 +1,26 @@
+﻿구분,문항 번호,질문 내용,변수명
+개인,Q164-1,스마트홈 인식 수준은?,p164smarthomeaware
+개인,Q164-2,기기 사용 경험은?,p164smarthomeuse
+개인,Q164-3,주 사용 기기는?,p164smarthometype
+개인,Q164-4,사용 만족도는?,p164smarthomesat
+개인,Q164-5,향후 사용 의향은?,p164smarthomewill
+개인,Q165-1,디지털 기기 의존도는?,p165digidepend
+개인,Q165-2,하루 평균 사용 시간은?,p165digitime
+개인,Q165-3,주 사용 기기는?,p165digitype
+개인,Q165-4,디지털 피로도는?,p165digifatigue
+개인,Q165-5,사용 제한 필요 인식은?,p165digilimit
+개인,Q166-1,디지털 역량 자가 평가?,p166digiskillself
+개인,Q166-2,기술 습득 경로는?,p166digilearn
+개인,Q166-3,역량 강화 필요성 인식?,p166digineed
+개인,Q166-4,참여 희망 교육 형태는?,p166digiform
+개인,Q166-5,정부 지원 필요성 인식은?,p166digisupport
+개인,Q167-1,개인정보 보호 인식은?,p167privacyaware
+개인,Q167-2,보호 실천 여부는?,p167privacyact
+개인,Q167-3,주 보호 수단은?,p167privacymethod
+개인,Q167-4,정보 유출 경험은?,p167privacybreach
+개인,Q167-5,향후 실천 계획은?,p167privacyplan
+개인,Q168-1,사이버 범죄 인식 수준은?,p168cybercrimeaware
+개인,Q168-2,피해 경험은?,p168cybercrimeexp
+개인,Q168-3,대처 방법은?,p168cybermethod
+개인,Q168-4,정부 대응 만족도는?,p168cybersat
+개인,Q168-5,대응 정책 강화 요구는?,p168cyberimprove

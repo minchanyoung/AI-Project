@@ -1,0 +1,31 @@
+﻿구분,문항 번호,질문 내용,변수명
+개인,Q34-1,자기계발을 위해 사용하는 시간은?,p34selfdevtime
+개인,Q34-2,자기계발 방법은 무엇입니까?,p34selfdevway
+개인,Q34-3,자기계발 목적은 무엇입니까?,p34selfdevgoal
+개인,Q34-4,자기계발 만족도는?,p34selfdevsat
+개인,Q34-5,자기계발 시 어려움은?,p34selfdevdiff
+개인,Q35-1,사회문제 중 가장 관심 있는 분야는?,p35socialfocus
+개인,Q35-2,사회문제 해결 참여 여부는?,p35socialact
+개인,Q35-3,참여 방법은 무엇입니까?,p35socialhow
+개인,Q35-4,참여 시 애로사항은?,p35socialdiff
+개인,Q35-5,사회문제에 대한 해결 의지는?,p35socialwill
+개인,Q36-1,자원봉사 경험이 있으십니까?,p36volunteer
+개인,Q36-2,봉사 활동 분야는?,p36voltype
+개인,Q36-3,활동 기간은 얼마입니까?,p36voldur
+개인,Q36-4,봉사 참여 동기는?,p36volmot
+개인,Q36-5,향후 자원봉사 계획은?,p36volplan
+개인,Q37-1,정보보호에 대한 인식은?,p37infosecaware
+개인,Q37-2,개인정보 유출 경험은?,p37infosecexp
+개인,Q37-3,정보보호 실천 여부는?,p37infosecpractice
+개인,Q37-4,정보보호 교육 경험은?,p37infosecedu
+개인,Q37-5,정보보호 관련 정책 만족도는?,p37infosecsat
+개인,Q38-1,1인 가구 여부는?,p38single
+개인,Q38-2,1인 가구의 장점은?,p38singleadv
+개인,Q38-3,1인 가구의 단점은?,p38singledis
+개인,Q38-4,1인 가구 지원 정책 인지도는?,p38singlepolaware
+개인,Q38-5,1인 가구 정책 만족도는?,p38singlepolsat
+개인,Q39-1,청년 정책에 대한 인식은?,p39youthaware
+개인,Q39-2,정책 이용 경험은?,p39youthuse
+개인,Q39-3,정책 정보 획득 경로는?,p39youthinfo
+개인,Q39-4,정책 개선 필요 사항은?,p39youthimprove
+개인,Q39-5,정책 만족도는?,p39youthsat
