@@ -30,5 +30,3 @@ def streaming():
 
     for chunk in stream:
         print(chunk["response"], end="", flush=True)
-
-streaming()
