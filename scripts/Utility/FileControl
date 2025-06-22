@@ -2,18 +2,18 @@ import os
 import pandas as pd
 
 
-def file_rename(srcDir:str):
+def file_rename(srcDir:str, startNum=1):
     fileList = os.listdir(srcDir)
-    qCount = 0
+    qCount = startNum
     print(f"file count: {fileList.count}")
     for f in fileList:
         df = pd.read_csv(f"{srcDir}/{f}")
         curQuestion = df.last_valid_index()
         
-        os.rename(f"{srcDir}/{f}", f"{srcDir}/문항_코드_{qCount}_{qCount+curQuestion}.csv")
-        print(f"{srcDir}/{f}", f"{srcDir}/문항_코드_{qCount}_{qCount+curQuestion}.csv")
-        qCount += curQuestion
-
+        os.rename(f"{srcDir}/{f}", f"{srcDir}/문항_코드_{qCount:4d}_{qCount+curQuestion:4d}.csv")
+        #print(f"{srcDir}/{f}", f"{srcDir}/문항_코드_{qCount}_{qCount+curQuestion}.csv")
+        qCount += (curQuestion + 1)
+    print(qCount)
         # for d in df.index:
         #     print(df.index[d])
     pass
@@ -33,7 +33,9 @@ def find_word(srcDir:str, word:str):
     pass
 
 #wordList = ["성별은 무엇입니까?", "생년은 어떻게 되십니까?"]
-file_rename("D:\AI-Project\자료\질문변수")
+file_rename(r"D:\AI-Project\자료\질문변수\1", 1)
+
+
 # 구분               개인
 # 문항 번호          Q1-1
 # 질문 내용    성별은 무엇입니까?
