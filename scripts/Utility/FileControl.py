@@ -22,7 +22,7 @@ def file_rename(srcDir:str, startNum=1):
     pass
 
 # 폴더 내의 csv들을 확인하고 그 중 지정한 단어를 포함한 대상을 찾아냄
-def find_word(srcDir:str, category:str, word:str):
+def find_dir_word(srcDir:str, category:str, word:str):
     fileList = os.listdir(srcDir)
 
     for f in fileList:
@@ -33,6 +33,15 @@ def find_word(srcDir:str, category:str, word:str):
                 print(f)
                 print(df.loc[i])
                 os.system("pause")
+# csv를 확인하고 그 중 지정한 단어를 포함한 대상을 찾아냄        
+def find_dir_word(srcDir:str, category:str, word:str):
+    df = pd.read_csv(f"{srcDir}")
+    for i in df.index:
+        v =  str.find(df[category][i], word)
+        if v >= 0:
+            print(srcDir)
+            print(df.loc[i])
+            os.system("pause")
 
 # 지정한 폴더 내의 모든 csv를 하나의 csv로 합쳐서 다시 저장함
 def merge_CSV(srcDir:str, dstPath:str):
@@ -71,25 +80,59 @@ def get_word_list(path:str, category:str, words:list):
 
     return targetList
 
+# 새 컬룸넣기(gpt가 매핑이 이상해서 추가함)
+def insertColumn(path:str, columnName:str, index:list, insertPos:int=4):
+    df = None
+    try:
+        df = pd.read_csv(path, encoding=encoding)
+    except:
+        df = pd.DataFrame()
+
+    df.insert(insertPos, columnName,index)
+    df.to_csv(path, index=False, encoding=encoding)
+
+
 # 문항 찾으려고 진행한 부분  
-# find_word(r"D:\AI-Project\자료\질문변수", categoryList[2], "정부")
+# find_dir_word("./자료/total_문항보정_거주지역추가.csv", categoryList[2], "구성원")
 
 # merge_CSV(r"D:\AI-Project\자료\질문변수", r"D:\AI-Project\자료\total.csv")
 
 # 찾아낸 문항정보를 기반으로 모아서 새로 저장함
 # personal = ["Q1-1", "Q1-2", "Q1-3", "Q1-4", "Q7-1"]
-# merge_DF(r"D:\AI-Project\자료\total.csv", r"D:\AI-Project\자료\inputCSV\personal.csv", categoryList[1], personal)
+# merge_DF("./자료/total.csv", "./자료/inputCSV/personal.csv", categoryList[1], personal)
 
-# economic = ["Q1-6", "Q1-9", "QH2-1", "QH2-2"]
-# work = ["Q2-1", "Q1-10", "Q2-2", "Q43-2"]
-# household = ["QH2-3", "Q1-5"] # p**0150:구성원 수
-# trust = ["Q105-4"] 명확하지 않음
-# merge_DF(r"D:\AI-Project\자료\total_문항보정_거주지역추가.csv", r"D:\AI-Project\자료\inputCSV\household.csv", categoryList[1], household)
+# economic = ["Q1-8", "Q1-11", "QH2-1", "QH2-2"]
+# work = ["Q43-5", "Q1-10", "Q43-7", "Q43-2"]
+# household = ["QH1-50", "QH14-6", "Q1-21"] # p**0150:구성원 수
+# trust = ["Q105-4"] # 명확하지 않음
+# target = ["Q65-8", "Q81-40"]
+# merge_DF("./자료/total_문항보정_거주지역추가.csv", "./자료/inputCSV/work.csv", categoryList[1], work)
 
-index = ["p010101","p010102","p010106","p010108","p010302"]
-df = pd.read_csv(r"D:\AI-Project\자료\inputCSV\personal.csv", encoding=encoding)
-df.insert(4, "물리코드",index)
-df.to_csv(r"D:\AI-Project\자료\inputCSV\personal.csv", encoding=encoding)
+#          성별     생년        혼인        학력        건강상태(6차부터 존재함)
+# index = ["p010101","p010104","p015501","p010110","p066101"]
+
+#          직업종류   개인소득   가구소득   월 평균 생활비(*12하면 될듯)
+# index = ["p010350","p011612","h012102","h012301"]
+
+#      근로시간(임금)  직무만족도  고용형태  직장 안정감
+# index = ["p011004","p014311","pa115102","p014312"]
+
+
+# index = ["개인","개인"]
+# insertColumn("./자료/inputCSV/target.csv", "구분", index, 0)
+# insertColumn("./자료/inputCSV/target.csv", "문항 번호", target, 1)
+# index = ["생활 만족도","삶의 만족도 현재 상태"]
+# insertColumn("./자료/inputCSV/target.csv", "질문 내용", index, 2)
+# index = ["p016508","pa208140"]
+# insertColumn("./자료/inputCSV/target.csv", "변수명", index, 3)
+
+#      가구원수     입주형태     지역코드
+# index = ["h010150","h011406", "p010121"]
+# insertColumn("./자료/inputCSV/household.csv", "물리코드", index)
+
+#      생활 만족도    삶의 만족도 현재 상태   
+# index = ["p016508","pa208140"]
+# insertColumn("./자료/inputCSV/target.csv", "물리코드", index)
 
 # 문항_코드_   1_  30.csv
 # 구분               개인

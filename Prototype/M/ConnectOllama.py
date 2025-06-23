@@ -8,17 +8,19 @@ def baseuse():
     )
     print(response["response"])
 
-def chatAPI():
-    response = ollama.chat(
-        model="llama3",
-        messages=[
+def chatAPI(prompt:str):
+    messages=[
             {
                 "role" : "user",
-                "content" : "I connected to you again using Python. What do you think is different from before?"
+                "content" : f"{prompt}"
             }
         ]
+    
+    response = ollama.chat(
+        model="llama3",
+        messages=messages
     )
-    print(response["message"]["content"])
+    return response["message"]["content"]
 
 #한 단어씩 끊어서 출력해줌
 def streaming():
