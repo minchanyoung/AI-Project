@@ -3,11 +3,58 @@
 	<head>
 		<meta charset="UTF-8">
 		<title>로그인 챙</title>
+		<b2>여기는 HTML이여</b2>
+		<script src="https://cdn.jsdelivr.net/npm/chart.js"  type="text/javascript">
+			function fn_validate(){
+				var frmLogin = document.frmLogin;
+				var user_id = frmLogin.user_id.value;
+				var user_pw = frmLogin.user_pw.value;
+			
+				if((user_id.length == 0 || user_id == "") || (user_pw.length == 0 || user_pw == ""))
+					alert("아이디와 비밀번호를 입력하시오");
+				else{
+					sendBuffer.method="post";
+					sendBuffer.action="login5";
+					sendBuffer.submit();
+				}
+			}
+		</script>
 	</head>
 	<body>
-		<form name="frmLogin" method="post" action="form" encType="utf-8">
+		<form name="sendBuffer" method="post" action="login" encType="utf-8">
 			텍스트: <input type="text" name="prompt"><br>
-			<input type="submit" value="전송"> <input type="reset" value="다시입력">
+			<input type="submit" onClick="fn_validate()" value="전송">
+			<input type="reset" value="다시입력">
 		</form>
+		<div>
+			<canvas id="myChart" width="400" height="400"></canvas>
+		</div>>
+		
+		<script>
+			const ctx = document.getElementById("myChart").getContext('2d');
+			
+			let datasets = [
+				{
+					label: "Dataset 1",
+					data: [10, 20, 30, 40, 50],
+				},
+				{
+					label: "Dataset 2",
+					data: [40, 30, 20, 10, 0],
+				},
+				{
+					label: "Dataset 3",
+					data: [50, 10, 40, 20, 30],
+				},
+			]
+			
+			let myChart = new Chart(ctx, {
+				type: "line",
+				data:{
+					labels: ["Red", "Blue", "Yellow", "Green", "Purple"],
+					datasets
+				}
+			});
+		</script>
 	</body>
 </html>

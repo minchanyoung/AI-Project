@@ -1,7 +1,7 @@
 import socket
 from ConnectOllama import chatAPI
 
-hostIP = "192.168.51.23"
+hostIP = "127.0.0.1"# "192.168.51.23"
 port = 8989
 
 client_socket = socket.socket(socket.AF_INET, socket.SOCK_STREAM)

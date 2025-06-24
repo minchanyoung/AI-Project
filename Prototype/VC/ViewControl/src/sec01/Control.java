@@ -11,7 +11,7 @@ import javax.servlet.http.HttpServletResponse;
 /**
  * Servlet implementation class Control
  */
-@WebServlet("/form")
+@WebServlet("/JSPTest/Chat")
 public class Control extends HttpServlet {
 	private static final long serialVersionUID = 1L;
 	private ServerClass server;
@@ -22,6 +22,9 @@ public class Control extends HttpServlet {
 	public void init() throws ServletException {
 		// TODO Auto-generated method stub
 		System.out.println("init 메서드 호출");
+		connectToPython();
+	}
+	private void connectToPython() {
 		server = new ServerClass();
 		recv = new AutoRecv();
 		recv.setSocket(server.getSocket());
@@ -45,7 +48,7 @@ public class Control extends HttpServlet {
 	}
 	
 	private void doHandle(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
-
+		//request.getRequestDispatcher("/JSPTest/ChatWithLLM.jsp").forward(request, response);
 		request.setCharacterEncoding("utf-8");
 		
 		String prompt = request.getParameter("prompt");
