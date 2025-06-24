@@ -8,3 +8,4 @@ dashboard.py 파일은 연령대 별로 해당 집단의 성별과 학력별 평
 ![연령대](https://github.com/user-attachments/assets/c8b3e900-dedd-4ae1-a3ae-5f15a0c9e726)
 ![학력](https://github.com/user-attachments/assets/15f8157e-3ef0-406c-b0e5-49b6fd488837)
 ![marriage](https://github.com/user-attachments/assets/8a6c548f-10db-45c1-9e7f-892987846e10)
+![히트맵](https://github.com/user-attachments/assets/8e0bfd06-cc91-4f4a-9d4c-d83c1937a4e4)
