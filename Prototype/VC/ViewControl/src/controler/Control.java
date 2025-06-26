@@ -1,4 +1,4 @@
-package sec01;
+package controler;
 
 import java.io.IOException;
 import javax.servlet.ServletConfig;
@@ -24,6 +24,7 @@ public class Control extends HttpServlet {
 		System.out.println("init 메서드 호출");
 		connectToPython();
 	}
+	// 파이썬 클라이언트와 연결할 서버와 오토 리시버 생성 (안쓰면 init 메소드에서 주석처리할것)
 	private void connectToPython() {
 		server = new ServerClass();
 		recv = new AutoRecv();
@@ -36,7 +37,6 @@ public class Control extends HttpServlet {
 	 */
 	protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
 
-		request.setCharacterEncoding("utf-8");
 		System.out.println("doGet 메서드 호출");
 		doHandle(request, response);
 	}

@@ -1,4 +1,4 @@
-package sec01;
+package controler;
 
 import java.io.PrintWriter;
 
