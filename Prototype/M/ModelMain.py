@@ -1,16 +1,10 @@
-import socket
-from ConnectOllama import chatAPI
+from Network import ClientConnection
+
 
 hostIP = "127.0.0.1"# "192.168.51.23"
 port = 8989
 
-client_socket = socket.socket(socket.AF_INET, socket.SOCK_STREAM)
-client_socket.connect((hostIP, port))
+clientConnection = ClientConnection(hostIP, port)
 
 while(True):
-    response = client_socket.recv(1024).decode("utf-8")
-    print("전송")
-    LLManswer = chatAPI(response)
-    print(LLManswer)
-
-    client_socket.send((LLManswer + "\n").encode("utf-8"))
+    clientConnection.process()
