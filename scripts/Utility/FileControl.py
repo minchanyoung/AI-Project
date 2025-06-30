@@ -81,7 +81,7 @@ def get_word_list(path:str, category:str, words:list):
     return targetList
 
 # 새 컬룸넣기(gpt가 매핑이 이상해서 추가함)
-def insertColumn(path:str, columnName:str, index:list, insertPos:int):
+def insert_Column(path:str, columnName:str, index:list, insertPos:int):
     df = None
     try:
         df = pd.read_csv(path, encoding=encoding)
@@ -91,8 +91,8 @@ def insertColumn(path:str, columnName:str, index:list, insertPos:int):
     df.insert(insertPos, columnName,index)
     df.to_csv(path, index=False, encoding=encoding)
 
-
-def ExportPartData(directory:str, dstDir:str, codekind, codeList:list):
+# directory내의 모든 파일을 보고 각 파일마다 codeList에 있는 코드만 뽑아서 새 csv로 만듬
+def export_Part_Data(directory:str, dstDir:str, fileName, codekind, codeList:list):
     fileList = os.listdir(directory)
 
     for fileIndex in range(len(fileList)):
@@ -100,28 +100,72 @@ def ExportPartData(directory:str, dstDir:str, codekind, codeList:list):
         path = f"{directory}/{fileList[fileIndex]}"
         df = pd.read_excel(path)
 
-        dest = f"{dstDir}/refine{numString}p.csv"
+        dest = f"{dstDir}/{fileName}{numString}{codekind}.csv"
         
         
-        dstDF = None
-        try:
-            dstDF = pd.read_csv(dest, encoding=encoding)
-        except:
-            dstDF = pd.DataFrame()
-
+        dstDF = pd.DataFrame()
         for columnCount in range(len(codeList)):
+            print(f"index: {codeList[columnCount]}")
             column = f"p{numString}{codeList[columnCount]}"
+            if((column in df.columns) == False):
+                continue
             dfPart = df[column]
-            dstDF.insert(columnCount, column, dfPart)
+            dstDF.insert(0, column, dfPart)
         dstDF.to_csv(dest, index=False, encoding=encoding)
     pass
 
+# csv만 있는 폴더에서 빈값이 있는 행을 제거하고 dst에 다시 저장함
+def export_csv_Part_Data(directory:str, dstDir:str, fileName, codekind, codeList:list):
+    fileList = os.listdir(directory)
+
+    for fileIndex in range(len(fileList)):
+        numString = f"{fileIndex + 1}".zfill(2)
+        path = f"{directory}/{fileList[fileIndex]}"
+        df = pd.read_csv(path)
+
+        dest = f"{dstDir}/{fileName}{numString}{codekind}.csv"
+        
+        
+        dstDF = pd.DataFrame()
+        for columnCount in range(len(codeList)):
+            # print(f"index: {codeList[columnCount]}")
+            column = f"p{numString}{codeList[columnCount]}"
+            if((column in df.columns) == False):
+                continue
+            dfPart = df[column]
+            dstDF.insert(0, column, dfPart)
+        
+        dstDF = dstDF.dropna()
+        dstDF.to_csv(dest, index=False, encoding=encoding)
+    pass
+
+# csv만 있는 디렉토리의 모든 csv를 읽고 sortCodeInfo 콜룸 기준으로 정렬
+def data_sort(directory, sortCodeList:list):
+    fileList = os.listdir(directory)
+    
+    for fileIndex in range(len(fileList)):
+        numString = f"{fileIndex + 1}".zfill(2)
+        path = f"{directory}/{fileList[fileIndex]}"
+        df = pd.read_csv(path, encoding=encoding)
+
+        for info in sortCodeList:
+            column = f"p{numString}{info}"
+            df = df.sort_values(by=column, axis=0)
+        
+        df.to_csv(path, index=False, encoding=encoding)
+    pass
 #            성별    만나이   학력    직군     근로유무   액수(만)
 codeList = ["0101", "0107", "0110", "0350", "1641", "1642"]
 targetList = ["8140"]#, "임금변동"] # 임금변동은 이전 월급과 비교하여 변화 퍼센테이지 표시
+# compareCodeList = ["0101", "0107", "0110", "0350", "4811", "1641", "1642"]
+# compareCodeList.reverse()
 
 # ExportPartData("D:/26", "D:/project/AI-Project/자료/inputCSV", "p", codeList)
-# ExportPartData("D:/26", "D:/project/AI-Project/자료/inputCSV", "pa", targetList)
+# export_Part_Data("D:/26", "D:/project/AI-Project/resources", "Compare", "p", compareCodeList)
+
+
+#df = pd.read_csv("D:/project/AI-Project/resources/dev01/input/refine01p.csv")
+
 
 
 
