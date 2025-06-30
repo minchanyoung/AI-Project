@@ -81,7 +81,7 @@ def get_word_list(path:str, category:str, words:list):
     return targetList
 
 # 새 컬룸넣기(gpt가 매핑이 이상해서 추가함)
-def insertColumn(path:str, columnName:str, index:list, insertPos:int=4):
+def insertColumn(path:str, columnName:str, index:list, insertPos:int):
     df = None
     try:
         df = pd.read_csv(path, encoding=encoding)
@@ -90,6 +90,39 @@ def insertColumn(path:str, columnName:str, index:list, insertPos:int=4):
 
     df.insert(insertPos, columnName,index)
     df.to_csv(path, index=False, encoding=encoding)
+
+
+def ExportPartData(directory:str, dstDir:str, codekind, codeList:list):
+    fileList = os.listdir(directory)
+
+    for fileIndex in range(len(fileList)):
+        numString = f"{fileIndex + 1}".zfill(2)
+        path = f"{directory}/{fileList[fileIndex]}"
+        df = pd.read_excel(path)
+
+        dest = f"{dstDir}/refine{numString}p.csv"
+        
+        
+        dstDF = None
+        try:
+            dstDF = pd.read_csv(dest, encoding=encoding)
+        except:
+            dstDF = pd.DataFrame()
+
+        for columnCount in range(len(codeList)):
+            column = f"p{numString}{codeList[columnCount]}"
+            dfPart = df[column]
+            dstDF.insert(columnCount, column, dfPart)
+        dstDF.to_csv(dest, index=False, encoding=encoding)
+    pass
+
+#            성별    만나이   학력    직군     근로유무   액수(만)
+codeList = ["0101", "0107", "0110", "0350", "1641", "1642"]
+targetList = ["8140"]#, "임금변동"] # 임금변동은 이전 월급과 비교하여 변화 퍼센테이지 표시
+
+# ExportPartData("D:/26", "D:/project/AI-Project/자료/inputCSV", "p", codeList)
+# ExportPartData("D:/26", "D:/project/AI-Project/자료/inputCSV", "pa", targetList)
+
 
 
 # 문항 찾으려고 진행한 부분  
