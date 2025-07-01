@@ -316,10 +316,62 @@ def rate_of_change(path):
     outDF.to_csv("./resources/Preprocess/rateOfChange.csv", index=False, encoding=encoding)
     pass
 
-# export_csv_Part_Data("D:/project/AI-Project/resources/compareData", "D:/project/AI-Project/resources", "haveJob", "p", compareCodeList)
+def dev01Dataset():
+    # export_csv_Part_Data("D:/project/AI-Project/resources/compareData", "D:/project/AI-Project/resources", "haveJob", "p", compareCodeList)
 
-# trace_target_data(r"D:\project\AI-Project\resources\Preprocess\haveJob", compareCodeList, collectCodeList)
-# reclassificate_trace_data("D:/project/AI-Project/resources/Preprocess/Datas.json")
-# trace_change("./resources/Preprocess/jobAndCareer.json")
+    # trace_target_data(r"D:\project\AI-Project\resources\Preprocess\haveJob", compareCodeList, collectCodeList)
+    # reclassificate_trace_data("D:/project/AI-Project/resources/Preprocess/Datas.json")
+    # trace_change("./resources/Preprocess/jobAndCareer.json")
 
-# rate_of_change("./resources/Preprocess/TraceTarget.csv")
+    # rate_of_change("./resources/Preprocess/TraceTarget.csv")
+    pass
+
+
+def dev02Dataset(directory, dstDir, codeList):
+    fileNames = os.listdir(directory)
+
+    dictionary = dict()
+
+    for fileName in fileNames:
+        countDictionary = dict()
+        print(fileName)
+        path = f"{directory}/{fileName}"
+        numString = f"p{fileName[6:8]}"
+        df = pd.read_csv(path)
+        for i in range(df.last_valid_index()):
+            code = numString + "0350"
+            dfIndex = df.iloc[i]
+            try:
+                n = int(dfIndex[code])
+            except:
+                continue
+
+
+
+            # 종사자, 남자수, 청년층
+            newList = [1,0,0]
+            for codetail in codeList:
+                code = numString + codetail
+                info = dfIndex[code]
+                if codetail == "0101" and info == 1:
+                    newList[1] = 1
+                    
+                elif codetail == "0107" and info < 40:
+                    newList[2] = 1
+            
+            code = numString + "0350"
+            key = str(int(dfIndex[code]))
+            if(key in countDictionary.keys()):
+                for di in range(len(newList)):
+                    countDictionary[key][di] += newList[di]
+            else:
+                countDictionary[key] = newList
+        dictionary[numString] = countDictionary
+    
+    with open(f"{dstDir}/asd.json", "w") as f:
+        json.dump(dictionary, f, indent=2)
+                
+
+            
+codeList = ["0101","0107"]
+dev02Dataset("./resources/dev01/input", "./resources/Preprocess", codeList)
