@@ -109,7 +109,10 @@ def export_Part_Data(directory:str, dstDir:str, fileName, codekind, codeList:lis
             column = f"p{numString}{codeList[columnCount]}"
             if((column in df.columns) == False):
                 continue
+            
             dfPart = df[column]
+            if(column == "p010350" and 616.0 in dfPart):
+                pass
             dstDF.insert(0, column, dfPart)
         dstDF.to_csv(dest, index=False, encoding=encoding)
     pass
@@ -132,6 +135,10 @@ def export_csv_Part_Data(directory:str, dstDir:str, fileName, codekind, codeList
             column = f"p{numString}{codeList[columnCount]}"
             if((column in df.columns) == False):
                 continue
+
+            
+            # if(dfPart == 616.0):
+            #     pass
             dfPart = df[column]
             dstDF.insert(0, column, dfPart)
         
@@ -161,7 +168,7 @@ targetList = ["8140"]#, "임금변동"] # 임금변동은 이전 월급과 비�
 # compareCodeList.reverse()
 
 # ExportPartData("D:/26", "D:/project/AI-Project/자료/inputCSV", "p", codeList)
-# export_Part_Data("D:/26", "D:/project/AI-Project/resources", "Compare", "p", compareCodeList)
+# export_Part_Data("D:/26", "D:/project/AI-Project/resources", "Compare", "p", codeList)
 
 
 #df = pd.read_csv("D:/project/AI-Project/resources/dev01/input/refine01p.csv")

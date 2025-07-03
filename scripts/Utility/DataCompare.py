@@ -1,3 +1,4 @@
+import copy
 import os
 import pandas as pd
 import json
@@ -67,8 +68,6 @@ def trace_target_data(directory, compareCodeList, collectCodeList):
     with open("./resources/Preprocess/Datas.json","w", encoding="utf-8") as f:
         json.dump(dictionary, f, indent=2)
 
-compareCodeList = ["0101", "0107", "0110", "0350"]
-collectCodeList = ["0107", "1642"]
 
 #성별,나이,학력,직군 순으로 합쳐진 str 분리
 def keyListup(keyValue):
@@ -366,12 +365,201 @@ def dev02Dataset(directory, dstDir, codeList):
                     countDictionary[key][di] += newList[di]
             else:
                 countDictionary[key] = newList
+        countDictionary["keys"] = [*countDictionary.keys()]
+        countDictionary["count"] = len(countDictionary["keys"])
         dictionary[numString] = countDictionary
-    
-    with open(f"{dstDir}/asd.json", "w") as f:
-        json.dump(dictionary, f, indent=2)
-                
 
+    dictionary["keys"] = [*dictionary.keys()]
+    dictionary["count"] = len(dictionary["keys"])
+    with open(f"{dstDir}/Data.json", "w") as f:
+        json.dump(dictionary, f, indent=2)
+
+def data_agumentation(directory, dstDir, columnList):
+    with open(f"{directory}/Data.json", "r") as f:
+        loaded = json.load(f)
+
+    outkeys = loaded["keys"] # 회차
+    # count = loaded[outkeys]["count"]
+
+    for outkeyIndex in range(len(outkeys)):
+        df = pd.DataFrame(columns=columnList)
+        inkeys = loaded[outkeys[outkeyIndex]]["keys"] # 직종
+
+        preVersionDF = None
+        if(outkeyIndex <= 0):
+            preVersionDF = copy.deepcopy(loaded[outkeys[outkeyIndex]])
+        else:
+            preVersionDF = copy.deepcopy(loaded[outkeys[outkeyIndex-1]])
+        curVersionDF = copy.deepcopy(loaded[outkeys[outkeyIndex]])
+
+        # 먼저 [직종(키), 직종별 총 종사자, 남자, 40세 미만]을 뽑아서 정리함
+        curData = []
+        preData = []
+        for inkeyIndex in range(len(inkeys)):
+
+            cJobTypeList = curVersionDF[inkeys[inkeyIndex]]
             
-codeList = ["0101","0107"]
-dev02Dataset("./resources/dev01/input", "./resources/Preprocess", codeList)
+            if(inkeys[inkeyIndex] in preVersionDF.keys()):
+                pJobTypeList = []
+                pJobTypeList = preVersionDF[inkeys[inkeyIndex]]
+            else:
+                pJobTypeList = []
+                pJobTypeList = copy.deepcopy(cJobTypeList)
+
+            cJobTypeList.insert(0, inkeys[inkeyIndex])
+
+            if(cJobTypeList == pJobTypeList):
+                pJobTypeList = copy.deepcopy(cJobTypeList)
+            else:
+                pJobTypeList.insert(0, inkeys[inkeyIndex])
+
+            # 이후 여자, 40세 이상을 뽑아서 추가함
+            cJobTypeList.insert(3, int(cJobTypeList[1]) - int(cJobTypeList[2]))
+            pJobTypeList.insert(3, int(pJobTypeList[1]) - int(pJobTypeList[2]))
+            cJobTypeList.append(int(cJobTypeList[1]) - int(cJobTypeList[4]))
+            pJobTypeList.append(int(pJobTypeList[1]) - int(pJobTypeList[4]))
+
+            curData.append(cJobTypeList)
+            preData.append(pJobTypeList)
+
+        for j in range(len(preData)):
+            # 직종, 종사자 수, (작년 종사자 수), 남, (작년 남),  여, (작년 여), 40세 미만, (작년 40미만), 40세 이상, (작년 40 이상)
+            for count in range(5, 0, -1): # 직종은 넣었으니 패스
+                c = curData[j][count]
+                p = preData[j][count]
+
+                if(count >= 5):
+                    curData[j].append(int(c) - int(p))
+                else:
+                    curData[j].insert(count+1 ,int(c) - int(p))
+
+            info = curData[j]
+            df.loc[j] = info
+        numString = str(outkeyIndex+1).zfill(2)
+        df.to_csv(f"{dstDir}/AgumentationData{numString}p.csv", index=False, encoding=encoding)
+
+def add_salary_min_max(srcDir, srcFileTemplate, dstDir, dstFileTemplate):
+    
+    for i in range(1,27):
+        numString = str(i).zfill(2)
+        srcPath = f"{srcDir}/{srcFileTemplate}{numString}p.csv"
+        srcDf = pd.read_csv(srcPath)
+        
+        dstPath = f"{dstDir}/{dstFileTemplate}{numString}p.csv"
+        dstDf = pd.read_csv(dstPath)
+
+        minSalarys = []
+        maxSalarys = []
+        meanSalarys = []
+        jobTypes = dstDf["jobType"]
+        for t in jobTypes:
+            tag = f"p{numString}0350"
+            salarys = srcDf[srcDf[tag] == t]
+            
+            sTag = f"p{numString}1642"
+            jobSalarys = salarys[salarys[sTag] > 0]
+            filtJobSalarys = jobSalarys[sTag]
+            minV = 0
+            maxV = 0
+            mean = 0
+            if(len(jobSalarys) > 1):
+                minV = min(filtJobSalarys)
+                maxV = max(filtJobSalarys)
+                mean = filtJobSalarys.mean()
+
+            minSalarys.append(int(minV))
+            maxSalarys.append(int(maxV))
+            meanSalarys.append(f"{mean:.1f}")
+        
+        dstDf["minSalary"] = minSalarys
+        dstDf["maxSalary"] = maxSalarys
+        dstDf["meanSalary"] = meanSalarys
+        dstDf.to_csv(dstPath, index=False, encoding=encoding)
+
+
+    pass
+
+def workerPercentage(dstDir):
+    fileNames = os.listdir(dstDir)
+
+    for i in range(0,len(fileNames)):
+        path = f"{dstDir}/{fileNames[i]}"
+        df = pd.read_csv(path)
+
+        WorkerKind = dict()
+
+        jobTypes = df["jobType"]
+
+        workerCount = df["workerCount"]
+        allWorker = 0
+
+        male = df["maleCount"]
+        maleWorkersCount = 0
+
+        female = df["femaleCount"]
+        femaleWorkersCount = 0
+
+        for j in range(len(jobTypes)):
+            jt = str(jobTypes[j])
+            c = jt[0]
+            if(c == "1"):
+                if(len(jt) < 3 or jt[2] != "0"):
+                    c = "2"
+            if(c == "1"):
+                print(f"{jt} - {jobDecoder(jt)}")
+
+            if (c in WorkerKind.keys()):
+                WorkerKind[c][0] += int(workerCount[j])
+                WorkerKind[c][1] += int(male[j])
+                WorkerKind[c][2] += int(female[j])
+            else:
+                WorkerKind[c] = [int(workerCount[j]), int(male[j]), int(female[j])]
+            allWorker += int(workerCount[j])
+            maleWorkersCount += int(male[j])
+            femaleWorkersCount += int(female[j])
+            
+
+        WorkerKind["all"] = allWorker
+        for j in WorkerKind.keys():
+            if(j == "all"):
+                break
+            # print(j)
+            fw = WorkerKind[j][2]
+            fper = fw / femaleWorkersCount
+            WorkerKind[j].append(fper)
+
+            mw = WorkerKind[j][1]
+            mper = mw / maleWorkersCount
+            WorkerKind[j].insert(2, mper)
+
+            workers = WorkerKind[j][0]
+            per = workers / allWorker
+            WorkerKind[j].insert(1, per)
+
+
+        numString = f"{i+1}".zfill(2)
+        keyList = sorted(WorkerKind.keys())
+        otherDict = dict()
+        for j in keyList:
+            otherDict[j] = WorkerKind[j]
+        
+        print(*otherDict.keys())
+        with open(f"./resources/Preprocess/dev02P/workerPercentage/workerPercentage{numString}.json","w", encoding="utf-8") as f:
+            json.dump(otherDict, f, indent=2)
+        print(f"{numString} 파일 저장")
+
+
+        
+
+        
+
+# compareCodeList = ["0101", "0107", "0110", "0350"]
+# collectCodeList = ["0107", "1642"]
+            
+# codeList = ["0101","0107"]
+# dev02Dataset("./resources/dev01/input", "./resources/Preprocess", codeList)
+
+# columnList = ["jobType", "workerCount", "prevWorkerCount", "maleCount", "prevMaleCount", "femaleCount", "prevFemaleCount", "ageLt40Count", "prevAgeLt40Count", "ageGte40Count", "prevAgeGte40Count"]
+# data_agumentation("./resources/Preprocess/dev02P", "./resources/Preprocess/dev02P/AgumentationData", columnList)
+# add_salary_min_max("./resources/Preprocess/dev01P/haveJob", "haveJob", "./resources/Preprocess/dev02P/AgumentationData", "AgumentationData")
+workerPercentage("./resources/dev02")
