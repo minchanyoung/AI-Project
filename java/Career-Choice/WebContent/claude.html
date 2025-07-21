@@ -1,0 +1,441 @@
+<%@ page contentType="text/html; charset=UTF-8" language="java"%>
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+<meta charset="UTF-8">
+<title>산업분석 | CAREER.AI</title>
+<link rel="stylesheet" href="css/main.css">
+<script src="https://cdnjs.cloudflare.com/ajax/libs/Chart.js/3.9.1/chart.min.js"></script>
+<style>
+    .analysis-container {
+        max-width: 1200px;
+        margin: 0 auto;
+        padding: 40px 20px;
+        width: 100%;
+        box-sizing: border-box;
+    }
+
+    .page-title {
+        text-align: center;
+        font-size: 2.5rem;
+        font-weight: 700;
+        color: #2c3e50;
+        margin-bottom: 50px;
+        position: relative;
+    }
+
+    .page-title::after {
+        content: '';
+        position: absolute;
+        bottom: -10px;
+        left: 50%;
+        transform: translateX(-50%);
+        width: 80px;
+        height: 4px;
+        background: linear-gradient(90deg, #3498db, #2980b9);
+        border-radius: 2px;
+    }
+
+    .chart-section {
+        background: #fff;
+        border-radius: 15px;
+        padding: 30px;
+        margin-bottom: 40px;
+        box-shadow: 0 10px 30px rgba(0,0,0,0.1);
+        border: 1px solid #e3f2fd;
+    }
+
+    .chart-title {
+        font-size: 1.5rem;
+        font-weight: 600;
+        color: #34495e;
+        margin-bottom: 25px;
+        text-align: center;
+    }
+
+    .chart-container {
+        position: relative;
+        height: 400px;
+        width: 100%;
+    }
+
+    .factors-container {
+        display: grid;
+        grid-template-columns: 1fr 1fr;
+        gap: 30px;
+        margin-top: 40px;
+        width: 100%;
+    }
+
+    .factor-box {
+        background: #fff;
+        border-radius: 15px;
+        padding: 30px;
+        box-shadow: 0 8px 25px rgba(0,0,0,0.1);
+        position: relative;
+        overflow: hidden;
+        transition: transform 0.3s ease, box-shadow 0.3s ease;
+        width: 100%;
+        box-sizing: border-box;
+    }
+
+    .factor-box:hover {
+        transform: translateY(-5px);
+        box-shadow: 0 15px 40px rgba(0,0,0,0.15);
+    }
+
+    .positive-box {
+        border-left: 5px solid #27ae60;
+    }
+
+    .positive-box::before {
+        content: '';
+        position: absolute;
+        top: 0;
+        right: 0;
+        width: 100px;
+        height: 100px;
+        background: linear-gradient(135deg, #27ae60, #2ecc71);
+        opacity: 0.1;
+        border-radius: 50%;
+        transform: translate(30px, -30px);
+    }
+
+    .negative-box {
+        border-left: 5px solid #e74c3c;
+    }
+
+    .negative-box::before {
+        content: '';
+        position: absolute;
+        top: 0;
+        right: 0;
+        width: 100px;
+        height: 100px;
+        background: linear-gradient(135deg, #e74c3c, #c0392b);
+        opacity: 0.1;
+        border-radius: 50%;
+        transform: translate(30px, -30px);
+    }
+
+    .factor-title {
+        font-size: 1.4rem;
+        font-weight: 600;
+        margin-bottom: 20px;
+        display: flex;
+        align-items: center;
+    }
+
+    .positive-title {
+        color: #27ae60;
+    }
+
+    .negative-title {
+        color: #e74c3c;
+    }
+
+    .factor-icon {
+        width: 24px;
+        height: 24px;
+        margin-right: 10px;
+        flex-shrink: 0;
+    }
+
+    .factor-list {
+        list-style: none;
+        padding: 0;
+        margin: 0;
+    }
+
+    .factor-list li {
+        padding: 12px 0;
+        border-bottom: 1px solid #ecf0f1;
+        font-size: 0.95rem;
+        line-height: 1.5;
+        color: #555;
+        position: relative;
+        padding-left: 25px;
+    }
+
+    .factor-list li:last-child {
+        border-bottom: none;
+    }
+
+    .positive-box .factor-list li::before {
+        content: '✓';
+        position: absolute;
+        left: 0;
+        color: #27ae60;
+        font-weight: bold;
+    }
+
+    .negative-box .factor-list li::before {
+        content: '⚠';
+        position: absolute;
+        left: 0;
+        color: #e74c3c;
+        font-weight: bold;
+    }
+
+    .chart-info {
+        text-align: center;
+        color: #7f8c8d;
+        font-size: 0.9rem;
+        margin-top: 15px;
+        font-style: italic;
+    }
+
+    @media (max-width: 768px) {
+        .analysis-container {
+            padding: 20px 15px;
+        }
+        
+        .factors-container {
+            grid-template-columns: 1fr;
+            gap: 20px;
+        }
+        
+        .page-title {
+            font-size: 1.8rem;
+            margin-bottom: 30px;
+        }
+        
+        .chart-section {
+            padding: 20px 15px;
+            margin-bottom: 30px;
+        }
+        
+        .chart-title {
+            font-size: 1.2rem;
+            margin-bottom: 20px;
+        }
+        
+        .chart-container {
+            height: 250px;
+        }
+        
+        .factor-box {
+            padding: 20px 15px;
+        }
+        
+        .factor-title {
+            font-size: 1.2rem;
+            margin-bottom: 15px;
+        }
+        
+        .factor-list li {
+            font-size: 0.9rem;
+            padding: 10px 0;
+            padding-left: 20px;
+        }
+        
+        .chart-info {
+            font-size: 0.8rem;
+            margin-top: 10px;
+        }
+    }
+    
+    @media (max-width: 480px) {
+        .analysis-container {
+            padding: 15px 10px;
+        }
+        
+        .page-title {
+            font-size: 1.6rem;
+            margin-bottom: 25px;
+        }
+        
+        .chart-section {
+            padding: 15px 10px;
+        }
+        
+        .chart-title {
+            font-size: 1.1rem;
+        }
+        
+        .chart-container {
+            height: 220px;
+        }
+        
+        .factor-box {
+            padding: 15px 10px;
+        }
+        
+        .factor-title {
+            font-size: 1.1rem;
+        }
+        
+        .factor-icon {
+            width: 20px;
+            height: 20px;
+        }
+        
+        .factor-list li {
+            font-size: 0.85rem;
+            line-height: 1.4;
+        }
+    }
+</style>
+</head>
+<body>
+    <%@ include file="common/header.jsp"%>
+    
+    <div class="analysis-container">
+        <h1 class="page-title">산업분석</h1>
+        
+        <!-- 차트 섹션 -->
+        <div class="chart-section">
+            <h2 class="chart-title">전체 산업 사업체 증가율 전망 (2025-2029)</h2>
+            <div class="chart-container">
+                <canvas id="industryChart"></canvas>
+            </div>
+            <p class="chart-info">* 통계청 및 산업연구원 데이터를 기반으로 한 예측 자료</p>
+        </div>
+        
+        <!-- 긍정/부정 요소 박스 -->
+        <div class="factors-container">
+            <!-- 긍정 요소 -->
+            <div class="factor-box positive-box">
+                <h3 class="factor-title positive-title">
+                    <svg class="factor-icon" viewBox="0 0 24 24" fill="currentColor">
+                        <path d="M12 2C6.48 2 2 6.48 2 12s4.48 10 10 10 10-4.48 10-10S17.52 2 12 2zm-2 15l-5-5 1.41-1.41L10 14.17l7.59-7.59L19 8l-9 9z"/>
+                    </svg>
+                    성장 동력
+                </h3>
+                <ul class="factor-list">
+                    <li>디지털 전환 가속화로 인한 IT/소프트웨어 산업 급성장</li>
+                    <li>친환경 정책 확산으로 그린테크 및 신재생에너지 분야 확대</li>
+                    <li>인구 고령화에 따른 헬스케어 및 바이오 산업 성장</li>
+                    <li>K-콘텐츠 글로벌 확산으로 문화콘텐츠 산업 호조</li>
+                    <li>정부의 신산업 육성 정책 및 R&D 투자 증가</li>
+                    <li>스타트업 생태계 활성화 및 벤처투자 확대</li>
+                </ul>
+            </div>
+            
+            <!-- 부정 요소 -->
+            <div class="factor-box negative-box">
+                <h3 class="factor-title negative-title">
+                    <svg class="factor-icon" viewBox="0 0 24 24" fill="currentColor">
+                        <path d="M1 21h22L12 2 1 21zm12-3h-2v-2h2v2zm0-4h-2v-4h2v4z"/>
+                    </svg>
+                    리스크 요인
+                </h3>
+                <ul class="factor-list">
+                    <li>글로벌 경제 불확실성 및 인플레이션 지속</li>
+                    <li>저출산·고령화로 인한 내수시장 위축</li>
+                    <li>전통 제조업 경쟁력 약화 및 해외 이전</li>
+                    <li>원자재 가격 상승 및 공급망 불안정</li>
+                    <li>중소기업 인력난 심화 및 임금 상승 압박</li>
+                    <li>환경 규제 강화로 인한 기존 산업 부담 증가</li>
+                </ul>
+            </div>
+        </div>
+    </div>
+    
+    <script>
+        // Chart.js 설정
+        const ctx = document.getElementById('industryChart').getContext('2d');
+        
+        const industryChart = new Chart(ctx, {
+            type: 'line',
+            data: {
+                labels: ['2025', '2026', '2027', '2028', '2029'],
+                datasets: [{
+                    label: '사업체 증가율 (%)',
+                    data: [2.8, 3.2, 3.5, 3.1, 2.9],
+                    borderColor: '#3498db',
+                    backgroundColor: 'rgba(52, 152, 219, 0.1)',
+                    borderWidth: 3,
+                    fill: true,
+                    tension: 0.4,
+                    pointBackgroundColor: '#3498db',
+                    pointBorderColor: '#fff',
+                    pointBorderWidth: 2,
+                    pointRadius: 6,
+                    pointHoverRadius: 8
+                }]
+            },
+            options: {
+                responsive: true,
+                maintainAspectRatio: false,
+                plugins: {
+                    legend: {
+                        display: true,
+                        position: 'top',
+                        labels: {
+                            font: {
+                                size: 14,
+                                weight: 'bold'
+                            },
+                            color: '#34495e'
+                        }
+                    },
+                    tooltip: {
+                        backgroundColor: 'rgba(44, 62, 80, 0.9)',
+                        titleColor: '#fff',
+                        bodyColor: '#fff',
+                        borderColor: '#3498db',
+                        borderWidth: 1,
+                        cornerRadius: 10,
+                        displayColors: false,
+                        callbacks: {
+                            label: function(context) {
+                                return `증가율: ${context.parsed.y}%`;
+                            }
+                        }
+                    }
+                },
+                scales: {
+                    y: {
+                        beginAtZero: false,
+                        min: 2,
+                        max: 4,
+                        grid: {
+                            color: 'rgba(0,0,0,0.1)',
+                            drawBorder: false
+                        },
+                        ticks: {
+                            font: {
+                                size: 12
+                            },
+                            color: '#7f8c8d',
+                            callback: function(value) {
+                                return value + '%';
+                            }
+                        }
+                    },
+                    x: {
+                        grid: {
+                            display: false
+                        },
+                        ticks: {
+                            font: {
+                                size: 12,
+                                weight: 'bold'
+                            },
+                            color: '#7f8c8d'
+                        }
+                    }
+                },
+                interaction: {
+                    intersect: false,
+                    mode: 'index'
+                },
+                elements: {
+                    point: {
+                        hoverBackgroundColor: '#2980b9'
+                    }
+                }
+            }
+        });
+        
+        // 차트 애니메이션 효과
+        industryChart.options.animation = {
+            duration: 2000,
+            easing: 'easeInOutQuart'
+        };
+    </script>
+    
+    <%@ include file="common/footer.jsp"%>
+</body>
+</html>
