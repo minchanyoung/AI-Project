@@ -37,8 +37,8 @@ public class SetIndustryDataServlet extends HttpServlet {
 		response.setContentType("text/html;charset=utf-8");
 		PrintWriter out = response.getWriter();
 		
-		CommonDAO dao = new CommonDAO();
-		ArrayList<BaseVO<Integer>> dataList = dao.getCountData();
+		GeneralDAO dao = new GeneralDAO();
+		ArrayList<BaseVO<Integer>> dataList = dao.getIntData();
 		
 
 		out.print("<html><body>");
@@ -47,26 +47,24 @@ public class SetIndustryDataServlet extends HttpServlet {
 		for(int i=0;i<dataList.size();++i) {
 			BaseVO<Integer> vo = dataList.get(i);
 			int id = vo.getId();
-			out.print("<tr>");
+			out.print("<br>");
 			out.print("<td> " + id + " </td>");
 			int year = vo.getYear();
-			out.print("<tr>");
+			out.print("<br>");
 			out.print("<td> " + year + " </td>");
 			String type = vo.getIndustryType();
-			out.print("<tr>");
+			out.print("<br>");
 			out.print("<td> " + type + " </td>");
 			
 			
 			ArrayList<Integer> data = vo.getData();
-			int dataLen = data.size();
 			for(int j=0;j<data.size();++j) {
-				out.print("<tr>");
+				out.print("<br>");
 				out.print("<tr><td>"+ data.get(j) + "</td>");
 				
 			}
 		}
-			out.print("<tr>");	
-		out.print("</table>");
+		out.print("<br>");
 		out.print("<body><html>");
 	}
 }
