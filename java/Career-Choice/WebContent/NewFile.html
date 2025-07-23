@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html>
+<meta charset="UTF-8">
+
+<head>
+	<title>title</title>
+</head>
+
+<body><canvas id="industryChart"></canvas>
+<canvas id="industryChart"></canvas>
+
+<script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+<script>
+const ctx = document.getElementById('industryChart');
+
+new Chart(ctx, {
+  type: 'bar',
+  data: {
+    labels: ['월급', '근무일 평균', '근속 평균'],
+    datasets: [
+      {
+        label: '산업 A',
+        data: [3, 4, 3.5],
+        backgroundColor: 'rgba(255, 99, 132, 0.7)', // 빨간색 계열
+        borderColor: 'rgba(255, 99, 132, 1)',
+        borderWidth: 1
+      },
+      {
+        label: '산업 B',
+        data: [5, 4, 6],
+        backgroundColor: 'rgba(255, 206, 86, 0.7)', // 노란색 계열
+        borderColor: 'rgba(255, 206, 86, 1)',
+        borderWidth: 1
+      },
+      {
+        label: '산업 C',
+        data: [3, 3.5, 7],
+        backgroundColor: 'rgba(255, 159, 64, 0.7)', // 주황색 계열
+        borderColor: 'rgba(255, 159, 64, 1)',
+        borderWidth: 1
+      }
+    ]
+  },
+  options: {
+    scales: {
+      y: {
+        beginAtZero: true
+      }
+    },
+    plugins: {
+      legend: {
+        position: 'top'
+      }
+    }
+  }
+});
+</script>
+
+
+</body>
+
+</html>

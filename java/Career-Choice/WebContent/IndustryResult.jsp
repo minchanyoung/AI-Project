@@ -34,7 +34,37 @@
 	</div>
 	
 	<script src="https://cdnjs.cloudflare.com/ajax/libs/Chart.js/3.9.1/chart.min.js"></script>
+	<%@ page import="java.util.ArrayList" %>
+	<%@ page import="com.db.BaseVO" %>
+	<%
+    ArrayList<BaseVO<Integer>> dataList = (ArrayList<BaseVO<Integer>>) application.getAttribute("contextData");
+	for (int i = 0; i < dataList.size(); i++){
+		for (int j = 0; j < dataList.get(i).size(); j++){
+			System.out.println(dataList.get(i).getData().get(j));
+		}
+	}
+	%>
+		<script id="contextData" type="application/json">
+[
+		<% for (int i = 0; i < dataList.size(); i++) {
+		    BaseVO<Integer> vo = dataList.get(i);
+		    int year = vo.getYear();
+		    String type = vo.getIndustryType();
+		    ArrayList<Integer> data = vo.getData();
+		%>
+    {
+        "year": <%= year %>,
+        "industryType": "<%= type %>",
+        "data": [<% for(int j = 0; j < data.size(); j++) { %><%= data.get(j) %><%= (j < data.size() - 1) ? "," : "" %><% } %>]
+    }<%= (i < dataList.size() - 1) ? "," : "" %>
+<% } %>
+]
+</script>
+	
 	<script src="js/IndustryResult.js"></script>
+	<script>
+	
+	</script>
 	<%@ include file="common/footer.jsp"%>
 </body>
 </html>

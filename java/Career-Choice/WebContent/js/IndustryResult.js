@@ -1,9 +1,35 @@
+document.addEventListener("DOMContentLoaded", () => {
+    const scriptTag = document.getElementById("contextData"); // 먼저 DOM에서 해당 태그 찾기
+    if (scriptTag) {
+        const jsonData = JSON.parse(scriptTag.textContent);  // JSON 파싱
+        console.log("✅ contextData:", jsonData);
+
+        // 예: 첫 번째 요소 확인
+        if (jsonData.length > 0) {
+            console.log("year:", jsonData[0].year);
+            console.log("industryType:", jsonData[0].industryType);
+            console.log("data:", jsonData[0].data);
+        }
+
+        var industryData = new Map();
+        for(let i=0; i<jsonData.length;++i){
+            var data = new Map();
+            for(let i=0; i<jsonData.length;++i){
+                data.set();
+            }
+            industryData.set();
+        }
+    } else {
+        console.error("❌ contextData 스크립트 태그를 찾을 수 없음");
+    }
+});
+
 const ctx = document.getElementById('industryChart').getContext('2d');
-	const industryData = {
-	    total: { name: '전체상업', data: [2.8,3.2,3.5,3.1,2.9], color: '#3498db' },
-	    agriculture: { name: '농에업', data: [1.2,1.4,1.5,1.3,1.1], color: '#2ecc71' },
+	let industryData = {
+	    total: { name: '전체', data: [2.8,3.2,3.5,3.1,2.9], color: '#3498db' },
+	    agriculture: { name: '농업임업및어업', data: [1.2,1.4,1.5,1.3,1.1], color: '#2ecc71' },
 	    manufacturing: { name: '제조업', data: [3.0,3.3,3.6,3.2,3.1], color: '#e74c3c' },
-	    it: { name: '정보화', data: [4.1,4.5,4.9,4.6,4.3], color: '#9b59b6' }
+	    it: { name: '정보통신', data: [4.1,4.5,4.9,4.6,4.3], color: '#9b59b6' }
 	};
 	
 	let selectedIndustries = ['total'];

@@ -6,6 +6,7 @@ public class BaseVO<E> implements InterfaceVO<E>{
 	private int id;
 	private int year;
 	private String industryType;
+	
 	private ArrayList<E> dataList;
 
 	public BaseVO() {
@@ -46,6 +47,9 @@ public class BaseVO<E> implements InterfaceVO<E>{
 	@Override
 	public void setData(ArrayList<E> dataList){
 		this.dataList = dataList;
+	}
+	public int size() {
+		return dataList.size();
 	}
 	
 }
