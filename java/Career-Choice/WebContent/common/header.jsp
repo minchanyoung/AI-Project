@@ -2,9 +2,6 @@
 <%
   String user = (String) session.getAttribute("user");
 %>
-<link rel="stylesheet" href="css/main.css">
-<link rel="stylesheet" href="css/simulate.css">
-
 <header>
   <div class="logo">
     <a href="main.jsp" class="logo">CAREER<span>.AI</span></a>
@@ -14,8 +11,8 @@
 
   <nav>
     <ul class="nav-menu" id="navMenu">
+      <li><a href="trend.jsp">Trend</a></li>
       <li><a href="simulate.jsp">Simulate</a></li>
-      <li><a href="IndustryForm.jsp">indurstryAnalize</a></li>
       <li><a href="advice.jsp">AI Advice</a></li>
       <li><a href="about.jsp">About</a></li>
       <li><a href="faq.jsp">FAQ</a></li>

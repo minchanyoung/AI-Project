@@ -1,61 +1,64 @@
 package servlet;
 
 import java.io.IOException;
-import java.sql.*;
-import javax.servlet.*;
+import java.sql.Connection;
+import java.sql.PreparedStatement;
+import java.sql.ResultSet;
+import java.sql.SQLException;
+import java.util.logging.Level;
+import java.util.logging.Logger;
+
+import javax.servlet.ServletConfig;
+import javax.servlet.ServletException;
 import javax.servlet.annotation.WebServlet;
-import javax.servlet.http.*;
+import javax.servlet.http.HttpServlet;
+import javax.servlet.http.HttpServletRequest;
+import javax.servlet.http.HttpServletResponse;
+import javax.servlet.http.HttpSession;
+
+import servlet.util.DatabaseUtil;
 
 @WebServlet("/login")
 public class LoginServlet extends HttpServlet {
+    private static final Logger LOGGER = Logger.getLogger(LoginServlet.class.getName());
 
-  private static final String DB_URL = "jdbc:oracle:thin:@localhost:1521:xe";
-  private static final String DB_USER = "MIN";
-  private static final String DB_PASSWORD = "min";
-
-  @Override
-  protected void doPost(HttpServletRequest request, HttpServletResponse response)
-      throws ServletException, IOException {
-
-    request.setCharacterEncoding("UTF-8");
-
-    String username = request.getParameter("username");
-    String password = request.getParameter("password");
-
-    boolean loginSuccess = false;
-
-    try (
-      Connection conn = DriverManager.getConnection(DB_URL, DB_USER, DB_PASSWORD);
-      PreparedStatement pstmt = conn.prepareStatement("SELECT * FROM members WHERE username = ? AND password = ?")
-    ) {
-      Class.forName("oracle.jdbc.driver.OracleDriver");
-
-      pstmt.setString(1, username);
-      pstmt.setString(2, password);
-
-      ResultSet rs = pstmt.executeQuery();
-
-      if (rs.next()) {
-        loginSuccess = true;
-        // 세션에 사용자 정보 저장
-        HttpSession session = request.getSession();
-        session.setAttribute("user", username);
-      }
-
-    } catch (Exception e) {
-      e.printStackTrace();
+    @Override
+    public void init(ServletConfig config) throws ServletException {
+        super.init(config);
+        DatabaseUtil.init(config.getServletContext());
     }
 
-    System.out.println("[▶] 로그인 시도: " + username);
+    @Override
+    protected void doPost(HttpServletRequest request, HttpServletResponse response)
+            throws ServletException, IOException {
+        request.setCharacterEncoding("UTF-8");
+        String username = request.getParameter("username");
+        String password = request.getParameter("password");
 
-    if (loginSuccess) {
-      System.out.println("[✔] 로그인 성공 → main.jsp 리디렉션");
-      response.sendRedirect("main.jsp");
-    } else {
-      System.out.println("[✘] 로그인 실패");
-      request.setAttribute("error", "아이디 또는 비밀번호가 올바르지 않습니다.");
-      RequestDispatcher rd = request.getRequestDispatcher("login.jsp");
-      rd.forward(request, response);
+        String sql = "SELECT * FROM members WHERE username = ? AND password = ?";
+
+        try (Connection conn = DatabaseUtil.getConnection();
+             PreparedStatement pstmt = conn.prepareStatement(sql)) {
+            
+            pstmt.setString(1, username);
+            pstmt.setString(2, password);
+
+            try (ResultSet rs = pstmt.executeQuery()) {
+                if (rs.next()) {
+                    LOGGER.log(Level.INFO, "Login successful for user: {0}", username);
+                    HttpSession session = request.getSession();
+                    session.setAttribute("user", username);
+                    response.sendRedirect("main.jsp");
+                } else {
+                    LOGGER.log(Level.WARNING, "Login failed for user: {0}", username);
+                    request.setAttribute("error", "아이디 또는 비밀번호가 올바르지 않습니다.");
+                    request.getRequestDispatcher("login.jsp").forward(request, response);
+                }
+            }
+        } catch (SQLException e) {
+            LOGGER.log(Level.SEVERE, "Database error during login", e);
+            request.setAttribute("error", "데이터베이스 오류가 발생했습니다. 다시 시도해주세요.");
+            request.getRequestDispatcher("login.jsp").forward(request, response);
+        }
     }
-  }
 }

@@ -3,140 +3,172 @@ from sklearn.metrics import mean_squared_error, mean_absolute_error, r2_score
 from sklearn.model_selection import TimeSeriesSplit, GridSearchCV
 from xgboost import XGBRegressor
 from catboost import CatBoostRegressor
+import matplotlib.pyplot as plt
+import seaborn as sns
+import joblib
+import os
 
-# 1. 데이터 불러오기
-df = pd.read_csv("klips_data_21.csv")
+# ==============================================================================
+# 1. 데이터 및 피처 준비 (Data & Feature Preparation)
+# ==============================================================================
+def load_data(file_path="klips_data_23.csv"):
+    """CSV 파일에서 데이터를 로드합니다."""
+    return pd.read_csv(file_path)
 
-# 2. Feature / Target 설정
-features = [
-    "age", "gender", "education", "monthly_income", "job_category",
-    "satis_wage", "satis_stability", "satis_task_content", "satis_work_env",
-    "satis_work_time", "satis_growth", "satis_communication",
-    "satis_fair_eval", "satis_welfare", "job_satisfaction", "prev_job_satisfaction", 
-    "prev_monthly_income", "job_category_income_avg",
-    "income_relative_to_job", "job_category_education_avg", "education_relative_to_job",
-    "job_category_satisfaction_avg",
-    "age_x_job_category", "monthly_income_x_job_category",
-    "education_x_job_category", "income_relative_to_job_x_job_category"
-]
+def prepare_features_and_target(df):
+    """데이터프레임에서 피처와 타겟 변수를 분리합니다."""
+    features = [
+        "age", "gender", "education", "monthly_income", "job_category",
+        "satis_wage", "satis_stability", "satis_task_content", "satis_work_env",
+        "satis_work_time", "satis_growth", "satis_communication",
+        "satis_fair_eval", "satis_welfare", "job_satisfaction", "prev_job_satisfaction", 
+        "prev_monthly_income", "job_category_income_avg",
+        "income_relative_to_job", "job_category_education_avg", "education_relative_to_job",
+        "job_category_satisfaction_avg", "age_x_job_category", "monthly_income_x_job_category",
+        "education_x_job_category", "income_relative_to_job_x_job_category", "income_diff"
+    ]
+    X = df[features]
+    y = df["income_change_rate"]
+    return X, y
 
-X = df[features]
-y = df["income_change_rate"]
+def split_data_by_year(df, X, y):
+    """최신 연도를 테스트 데이터로 사용하여 시계열 분할을 수행합니다."""
+    latest_year = df["year"].max()
+    X_train = X[df["year"] < latest_year]
+    y_train = y[df["year"] < latest_year]
+    X_test = X[df["year"] == latest_year]
+    y_test = y[df["year"] == latest_year]
+    return X_train, y_train, X_test, y_test
 
-# 3. 훈련/테스트 분리
-latest_year = df["year"].max()
-X_train = X[df["year"] < latest_year]
-y_train = y[df["year"] < latest_year]
-X_test = X[df["year"] == latest_year]
-y_test = y[df["year"] == latest_year]
+# ==============================================================================
+# 2. 모델 튜닝 및 학습 (Model Tuning & Training)
+# ==============================================================================
+def tune_xgboost(X_train, y_train):
+    """GridSearchCV를 사용하여 XGBoost 모델의 하이퍼파라미터를 튜닝합니다."""
+    tscv = TimeSeriesSplit(n_splits=5)
+    xgb_grid = {
+        'n_estimators': [100, 200],
+        'max_depth': [3, 5],
+        'learning_rate': [0.05, 0.1],
+        'subsample': [0.8, 1.0]
+    }
+    xgb_search = GridSearchCV(
+        estimator=XGBRegressor(random_state=42),
+        param_grid=xgb_grid,
+        cv=tscv,
+        scoring='neg_root_mean_squared_error',
+        n_jobs=-1,
+        verbose=1
+    )
+    xgb_search.fit(X_train, y_train)
+    return xgb_search.best_estimator_
 
-# 4. XGBoost 하이퍼파라미터 튜닝
-tscv = TimeSeriesSplit(n_splits=5)
-xgb_grid = {
-    'n_estimators': [50, 100, 200],
-    'max_depth': [3, 4, 5],
-    'learning_rate': [0.05, 0.1, 0.2],
-    'subsample': [0.8, 1.0]
-}
-xgb_search = GridSearchCV(
-    estimator=XGBRegressor(random_state=42),
-    param_grid=xgb_grid,
-    cv=tscv,
-    scoring='neg_root_mean_squared_error',
-    n_jobs=-1,
-    verbose=1
-)
-xgb_search.fit(X_train, y_train)
-xgb_best = xgb_search.best_estimator_
-y_pred_xgb = xgb_best.predict(X_test)
+def tune_catboost(X_train, y_train):
+    """GridSearchCV를 사용하여 CatBoost 모델의 하이퍼파라미터를 튜닝합니다."""
+    tscv = TimeSeriesSplit(n_splits=5)
+    cat_grid = {
+        'iterations': [100, 150],
+        'depth': [3, 5],
+        'learning_rate': [0.05, 0.1]
+    }
+    cat_search = GridSearchCV(
+        estimator=CatBoostRegressor(verbose=0, random_state=42),
+        param_grid=cat_grid,
+        cv=tscv,
+        scoring='neg_root_mean_squared_error',
+        n_jobs=-1,
+        verbose=1
+    )
+    cat_search.fit(X_train, y_train, cat_features=["gender", "education", "job_category"])
+    return cat_search.best_estimator_
 
-# 5. CatBoost 하이퍼파라미터 튜닝
-cat_grid = {
-    'iterations': [50, 100, 150],
-    'depth': [3, 4, 5],
-    'learning_rate': [0.05, 0.1, 0.2]
-}
-cat_search = GridSearchCV(
-    estimator=CatBoostRegressor(verbose=0, random_state=42),
-    param_grid=cat_grid,
-    cv=tscv,
-    scoring='neg_root_mean_squared_error',
-    n_jobs=-1,
-    verbose=1
-)
-cat_search.fit(X_train, y_train, cat_features=["gender", "education", "job_category"])
-cat_best = cat_search.best_estimator_
-y_pred_cat = cat_best.predict(X_test)
-
-# 6. Soft-Blending
-alpha = 0.3
-y_pred_blend = alpha * y_pred_xgb + (1 - alpha) * y_pred_cat
-
-# 7. 평가 함수
+# ==============================================================================
+# 3. 평가 및 시각화 (Evaluation & Visualization)
+# ==============================================================================
 def evaluate(name, y_true, y_pred):
+    """모델 성능을 평가하고 결과를 출력합니다."""
     rmse = mean_squared_error(y_true, y_pred, squared=False)
     mae = mean_absolute_error(y_true, y_pred)
     r2 = r2_score(y_true, y_pred)
     print(f"\n-------- {name} --------")
-    print("📉 RMSE:", round(rmse, 4))
-    print("📉 MAE :", round(mae, 4))
-    print("📈 R²  :", round(r2, 4))
+    print(f"📉 RMSE: {rmse:.4f}")
+    print(f"📉 MAE : {mae:.4f}")
+    print(f"📈 R²  : {r2:.4f}")
 
-# 8. 결과 출력
-evaluate("XGBoost (Tuned)", y_test, y_pred_xgb)
-evaluate("CatBoost (Tuned)", y_test, y_pred_cat)
-evaluate("Soft-Blended Ensemble", y_test, y_pred_blend)
+def plot_feature_importance(model, feature_names, model_name, top_n=15):
+    """모델의 피처 중요도를 시각화합니다."""
+    if isinstance(model, XGBRegressor):
+        importances = model.feature_importances_
+        palette = 'Greens_d'
+    elif isinstance(model, CatBoostRegressor):
+        importances = model.get_feature_importance()
+        palette = 'Blues_d'
+    else:
+        return
 
-import matplotlib.pyplot as plt
-import seaborn as sns
-
-# XGBoost Feature Importance
-def plot_xgb_importance(model, feature_names, top_n=15):
-    importances = model.feature_importances_
     fi = pd.DataFrame({
         'Feature': feature_names,
         'Importance': importances
     }).sort_values(by='Importance', ascending=False).head(top_n)
     
     plt.figure(figsize=(10, 6))
-    sns.barplot(x='Importance', y='Feature', data=fi, palette='Greens_d')
-    plt.title('XGBoost Feature Importance (Top {})'.format(top_n))
+    sns.barplot(x='Importance', y='Feature', data=fi, palette=palette)
+    plt.title(f'{model_name} Feature Importance (Top {top_n})')
     plt.tight_layout()
     plt.show()
 
-# CatBoost Feature Importance
-def plot_cat_importance(model, feature_names, top_n=15):
-    importances = model.get_feature_importance()
-    fi = pd.DataFrame({
-        'Feature': feature_names,
-        'Importance': importances
-    }).sort_values(by='Importance', ascending=False).head(top_n)
+# ==============================================================================
+# 4. 모델 저장 (Model Saving)
+# ==============================================================================
+def save_models(xgb_model, cat_model):
+    """학습된 모델을 파일로 저장합니다."""
+    output_dir = "saved_models"
+    os.makedirs(output_dir, exist_ok=True)
+
+    xgb_path = os.path.join(output_dir, "xgb_income_change_model.pkl")
+    joblib.dump(xgb_model, xgb_path)
+    print(f"[저장 완료] XGBoost 모델 → {xgb_path}")
+
+    cat_path = os.path.join(output_dir, "cat_income_change_model.cbm")
+    cat_model.save_model(cat_path)
+    print(f"[저장 완료] CatBoost 모델 → {cat_path}")
+
+# ==============================================================================
+# 5. 메인 실행 로직 (Main Execution)
+# ==============================================================================
+def main():
+    """전체 모델 학습 및 평가 파이프라인을 실행합니다."""
+    # 데이터 로드 및 준비
+    df = load_data()
+    X, y = prepare_features_and_target(df)
+    X_train, y_train, X_test, y_test = split_data_by_year(df, X, y)
+
+    # 모델 튜닝 및 학습
+    print("--- XGBoost 모델 튜닝 시작 ---")
+    xgb_best = tune_xgboost(X_train, y_train)
     
-    plt.figure(figsize=(10, 6))
-    sns.barplot(x='Importance', y='Feature', data=fi, palette='Blues_d')
-    plt.title('CatBoost Feature Importance (Top {})'.format(top_n))
-    plt.tight_layout()
-    plt.show()
+    print("\n--- CatBoost 모델 튜닝 시작 ---")
+    cat_best = tune_catboost(X_train, y_train)
 
-# 호출 예시 (이미 학습된 모델과 feature list 사용)
-plot_xgb_importance(xgb_best, X.columns)
-plot_cat_importance(cat_best, X.columns)
+    # 예측
+    y_pred_xgb = xgb_best.predict(X_test)
+    y_pred_cat = cat_best.predict(X_test)
+    
+    # Soft-Blending
+    alpha = 0.3
+    y_pred_blend = alpha * y_pred_xgb + (1 - alpha) * y_pred_cat
 
-import joblib
-import os
+    # 평가
+    evaluate("XGBoost (Tuned)", y_test, y_pred_xgb)
+    evaluate("CatBoost (Tuned)", y_test, y_pred_cat)
+    evaluate("Soft-Blended Ensemble", y_test, y_pred_blend)
 
-# 저장 디렉토리 생성 (필요 시)
-os.makedirs("saved_models", exist_ok=True)
+    # 시각화
+    plot_feature_importance(xgb_best, X.columns, "XGBoost")
+    plot_feature_importance(cat_best, X.columns, "CatBoost")
 
-# 1. XGBoost 모델 저장 (.json, .pkl)
-xgb_path = "saved_models/xgb_income_change_model.pkl"
-joblib.dump(xgb_best, xgb_path)
-print(f"[저장 완료] XGBoost 모델 → {xgb_path}")
+    # 모델 저장
+    save_models(xgb_best, cat_best)
 
-# 2. CatBoost 모델 저장 (.cbm)
-cat_path = "saved_models/cat_income_change_model.cbm"
-cat_best.save_model(cat_path)
-print(f"[저장 완료] CatBoost 모델 → {cat_path}")
-
-# 3. Soft-Blending 모델은 따로 저장하지 않음
-# -> 자바에서 XGBoost/CatBoost 두 모델을 불러와 예측값 blending 처리
+if __name__ == "__main__":
+    main()
