@@ -1,61 +1,64 @@
 package servlet;
 
 import java.io.IOException;
-import java.sql.*;
+import java.sql.Connection;
+import java.sql.PreparedStatement;
+import java.sql.SQLException;
+import java.sql.SQLIntegrityConstraintViolationException;
+import java.util.logging.Level;
+import java.util.logging.Logger;
 
-import javax.servlet.*;
+import javax.servlet.ServletConfig;
+import javax.servlet.ServletException;
 import javax.servlet.annotation.WebServlet;
-import javax.servlet.http.*;
+import javax.servlet.http.HttpServlet;
+import javax.servlet.http.HttpServletRequest;
+import javax.servlet.http.HttpServletResponse;
+
+import servlet.util.DatabaseUtil;
 
 @WebServlet("/signup")
 public class SignupServlet extends HttpServlet {
+    private static final Logger LOGGER = Logger.getLogger(SignupServlet.class.getName());
 
-	  private static final String DB_URL = "jdbc:oracle:thin:@localhost:1521:xe"; // 본인 환경에 맞게
-	  private static final String DB_USER = "MIN";  // Oracle 계정명
-	  private static final String DB_PASSWORD = "min"; // Oracle 비밀번호
-
-  protected void doPost(HttpServletRequest request, HttpServletResponse response)
-      throws ServletException, IOException {
-
-    request.setCharacterEncoding("UTF-8");
-
-    String username = request.getParameter("username");
-    String password = request.getParameter("password");
-    String email = request.getParameter("email");
-
-    boolean success = false;
-    String errorMessage = null;
-
-    try (
-      Connection conn = DriverManager.getConnection(DB_URL, DB_USER, DB_PASSWORD);
-      PreparedStatement pstmt = conn.prepareStatement("INSERT INTO members (username, password, email) VALUES (?, ?, ?)")
-    ) {
-      Class.forName("oracle.jdbc.driver.OracleDriver");
-
-      pstmt.setString(1, username);
-      pstmt.setString(2, password);
-      pstmt.setString(3, email);
-
-      int result = pstmt.executeUpdate();
-      success = (result > 0);
-
-    } catch (SQLIntegrityConstraintViolationException e) {
-      errorMessage = "이미 사용 중인 아이디 또는 이메일입니다.";
-    } catch (Exception e) {
-      e.printStackTrace();
-      errorMessage = "서버 오류가 발생했습니다.";
+    @Override
+    public void init(ServletConfig config) throws ServletException {
+        super.init(config);
+        DatabaseUtil.init(config.getServletContext());
     }
 
-    // 🔽 이 위치 중요!
-    if (success) {
-    	  System.out.println("[✔] 회원가입 성공 → 로그인 페이지로 이동");
-    	  response.sendRedirect("login.jsp");
-    	} else {
-    	  System.out.println("[✘] 회원가입 실패 → 다시 signup.jsp로 이동");
-    	  request.setAttribute("error", errorMessage);
-    	  RequestDispatcher rd = request.getRequestDispatcher("signup.jsp");
-    	  rd.forward(request, response);
-    	}
+    protected void doPost(HttpServletRequest request, HttpServletResponse response)
+            throws ServletException, IOException {
+        request.setCharacterEncoding("UTF-8");
+        String username = request.getParameter("username");
+        String password = request.getParameter("password");
+        String email = request.getParameter("email");
 
-  }
+        String sql = "INSERT INTO members (username, password, email) VALUES (?, ?, ?)";
+
+        try (Connection conn = DatabaseUtil.getConnection();
+             PreparedStatement pstmt = conn.prepareStatement(sql)) {
+            
+            pstmt.setString(1, username);
+            pstmt.setString(2, password);
+            pstmt.setString(3, email);
+
+            int result = pstmt.executeUpdate();
+            if (result > 0) {
+                LOGGER.log(Level.INFO, "New user signed up: {0}", username);
+                response.sendRedirect("login.jsp");
+            } else {
+                // This case should ideally not happen if DB is working correctly
+                throw new SQLException("Insert failed, no rows affected.");
+            }
+        } catch (SQLIntegrityConstraintViolationException e) {
+            LOGGER.log(Level.WARNING, "Signup failed due to constraint violation for user: {0}", username);
+            request.setAttribute("error", "이미 사용 중인 아이디 또는 이메일입니다.");
+            request.getRequestDispatcher("signup.jsp").forward(request, response);
+        } catch (SQLException e) {
+            LOGGER.log(Level.SEVERE, "Database error during signup", e);
+            request.setAttribute("error", "데이터베이스 처리 중 오류가 발생했습니다.");
+            request.getRequestDispatcher("signup.jsp").forward(request, response);
+        }
+    }
 }

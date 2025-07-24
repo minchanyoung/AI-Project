@@ -1,6 +1,21 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <web-app xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns="http://xmlns.jcp.org/xml/ns/javaee" xsi:schemaLocation="http://xmlns.jcp.org/xml/ns/javaee http://xmlns.jcp.org/xml/ns/javaee/web-app_4_0.xsd" id="WebApp_ID" version="4.0">
   <display-name>Career-Choice</display-name>
+  
+  <!-- Database Connection Info -->
+  <context-param>
+    <param-name>DB_URL</param-name>
+    <param-value>jdbc:oracle:thin:@localhost:1521:xe</param-value>
+  </context-param>
+  <context-param>
+    <param-name>DB_USER</param-name>
+    <param-value>MIN</param-value>
+  </context-param>
+  <context-param>
+    <param-name>DB_PASSWORD</param-name>
+    <param-value>min</param-value>
+  </context-param>
+  
   <welcome-file-list>
     <welcome-file>main.jsp</welcome-file>
     <welcome-file>index.html</welcome-file>

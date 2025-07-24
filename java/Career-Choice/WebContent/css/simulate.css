@@ -1,70 +1,32 @@
 /* simulate.css */
 @charset "UTF-8";
 
-body {
-    margin: 0;
-    font-family: 'Noto Sans KR', sans-serif;
-    background: #ffffff;
-    color: #333;
-}
-
+/* simulate.jsp 고유의 form-wrapper 스타일 확장 */
 .simulate-wrapper {
-    max-width: 600px;
-    margin: 60px auto;
-    padding: 32px;
-    background-color: #f8f8f8; 
-    border: 1px solid #ddd; 
-    border-radius: 16px;
-    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+    width: 70%; /* 너비를 70%로 설정 */
+    max-width: 1000px; /* 최대 너비를 1000px로 유지 */
+    padding: 40px; /* 내부 여백 증가 */
 }
 
 .simulate-wrapper h2 {
-    text-align: center;
-    margin-bottom: 32px;
-    font-size: 1.8rem;
-    color: #00b894;
+    font-size: 2rem; /* 제목 폰트 크기 증가 */
+    text-align: center; /* 제목 중앙 정렬 */
 }
 
-.simulate-form .form-group {
-    margin-bottom: 24px;
+.simulate-wrapper .form-group {
+    margin-bottom: 28px; /* 그룹 간 간격 증가 */
 }
 
-.simulate-form label {
-    display: block;
-    margin-bottom: 10px;
-    color: #555;
-    font-weight: 500;
+.simulate-wrapper label {
+    font-size: 1.1rem; /* 레이블 폰트 크기 증가 */
+    margin-bottom: 12px;
 }
 
-.simulate-form input[type="text"],
-.simulate-form input[type="number"],
-.simulate-form select {
-    width: 100%;
-    padding: 10px 12px;
-    border-radius: 6px;
-    background: #ffffff; 
-    color: #333; 
-    border: 1px solid #ccc; 
-    font-size: 0.95rem;
-    box-sizing: border-box;
-}
-
-.simulate-form input[type="text"]:focus,
-.simulate-form input[type="number"]:focus,
-.simulate-form select:focus {
-    outline: none;
-    border-color: #00b894;
-    box-shadow: 0 0 0 2px rgba(0, 184, 148, 0.3);
-}
-
-.section-title {
-    font-size: 1.3rem;
-    color: #00b894;
-    text-align: center;
-    margin-bottom: 25px;
-    padding-bottom: 10px;
-    border-bottom: 1px solid #ddd;
-    font-weight: bold;
+.simulate-wrapper input,
+.simulate-wrapper select,
+.gender-btn {
+    padding: 14px; /* 입력 필드 높이 증가 */
+    font-size: 1rem; /* 입력 필드 폰트 크기 증가 */
 }
 
 .gender-buttons {
@@ -76,10 +38,10 @@ body {
 .gender-btn {
     flex: 1;
     padding: 10px 15px;
-    border-radius: 8px;
-    border: 1px solid #ccc;
-    background-color: #ffffff; 
-    color: #555; 
+    border-radius: var(--border-radius-sm);
+    border: 1px solid var(--border-color);
+    background-color: var(--bg-color); 
+    color: var(--text-color-light); 
     font-size: 0.95rem;
     cursor: pointer;
     transition: background-color 0.3s ease, border-color 0.3s ease;
@@ -87,14 +49,14 @@ body {
 
 .gender-btn:hover {
     background-color: #f0f0f0;
-    border-color: #00b894;
+    border-color: var(--primary-color);
 }
 
 .gender-btn.selected {
-    background-color: #00b894;
+    background-color: var(--primary-color);
     color: white;
     font-weight: bold;
-    border-color: #00b894;
+    border-color: var(--primary-color);
 }
 
 input[type=number]::-webkit-inner-spin-button,
@@ -114,28 +76,10 @@ input[type=number] {
 }
 
 .radio-group label {
-    color: #555; 
+    color: var(--text-color-light); 
 }
 
-.submit-btn {
-    width: 100%;
-    padding: 14px;
-    background-color: #00b894;
-    color: white;
-    font-size: 1.1rem;
-    font-weight: bold;
-    border: none;
-    border-radius: 10px;
-    cursor: pointer;
-    transition: background-color 0.3s ease;
-    margin-top: 20px;
-}
-
-.submit-btn:hover {
-    background-color: #00a17a;
-}
-
-/* 로딩 오버레이 스피너 중앙 정렬 */
+/* 로딩 오버레이 */
 #loadingOverlay {
   position: fixed;
   top: 0;
@@ -143,42 +87,60 @@ input[type=number] {
   width: 100%;
   height: 100%;
   background-color: rgba(255, 255, 255, 0.7);
-  display: flex; /* Flexbox 활성화 */
-  justify-content: center; /* 가로 중앙 정렬 */
-  align-items: center; /* 세로 중앙 정렬 */
-  flex-direction: column; /* 내용 세로로 쌓기 (스피너와 텍스트) */
-  z-index: 9999; /* 다른 요소 위에 표시되도록 높은 z-index 설정 */
-  color: #00b894; /* 스피너 텍스트 색상 */
-  font-size: 1.2rem; /* 스피너 텍스트 크기 */
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+  z-index: 9999;
+  color: var(--primary-color);
+  font-size: 1.2rem;
   font-weight: bold;
 }
 
-/* 스피너 아이콘 (CSS 애니메이션으로 원형 스피너 구현 예시) */
 #loadingOverlay .spinner {
-    border: 4px solid rgba(0, 184, 148, 0.3); /* 연한 테두리 */
-    border-top: 4px solid #00b894; /* 움직일 색상 */
+    border: 4px solid rgba(0, 184, 148, 0.3);
+    border-top: 4px solid var(--primary-color);
     border-radius: 50%;
     width: 40px;
     height: 40px;
-    animation: spin 1s linear infinite; /* 1초 동안 회전 애니메이션 */
-    margin-bottom: 15px; /* 텍스트와의 간격 */
+    animation: spin 1s linear infinite;
+    margin-bottom: 15px;
 }
 
-/* 스피너 회전 애니메이션 */
 @keyframes spin {
     0% { transform: rotate(0deg); }
     100% { transform: rotate(360deg); }
 }
 
 #loadingOverlay p {
-    margin: 0; /* 기본 마진 제거 */
+    margin: 0;
+    color: var(--primary-color);
 }
 
 /* 반응형 디자인 */
 @media (max-width: 768px) {
     .simulate-wrapper {
-        margin: 30px 5%;
+        width: 90%;
+        margin: 100px auto 30px;
         padding: 20px;
     }
 }
 
+/* 데스크톱 화면을 위한 2단 그리드 레이아웃 */
+@media (min-width: 769px) {
+    .simulate-form .form-grid {
+        display: grid;
+        grid-template-columns: repeat(2, 1fr);
+        gap: 20px 30px; /* row-gap, column-gap */
+        align-items: start;
+    }
+
+    .simulate-form .form-group {
+        margin-bottom: 0; /* 그리드 갭으로 간격 제어 */
+    }
+
+    .simulate-form .btn-primary {
+        width: 100%;
+        margin-top: 40px;
+    }
+}

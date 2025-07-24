@@ -1,16 +1,18 @@
 <%@ page contentType="text/html; charset=UTF-8" pageEncoding="UTF-8"%>
 <%@ page language="java"%>
-<%@ include file="common/header.jsp"%>
 <!DOCTYPE html>
 <html>
 <head>
 <title>FAQ | CAREER.AI</title>
-<link rel="stylesheet" href="css/main.css">
+<link rel="stylesheet" href="css/base.css">
+<link rel="stylesheet" href="css/header.css">
+<link rel="stylesheet" href="css/footer.css">
 <link rel="stylesheet" href="css/faq.css">
 <script src="js/main.js" defer></script>
 </head>
 <body>
-	<div class="faq-wrapper">
+<%@ include file="common/header.jsp"%>
+	<div class="wrapper">
 		<h1>자주 묻는 질문 (FAQ)</h1>
 		<div class="accordion">
 			<div class="accordion-item">

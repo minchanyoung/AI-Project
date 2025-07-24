@@ -1,28 +1,18 @@
 /* faq.css */
 @charset "UTF-8";
 
-.faq-wrapper {
-  max-width: 800px;
-  margin: 80px auto;
-  padding: 0 20px;
-  font-family: 'Noto Sans KR', sans-serif;
-  color: #333; 
-}
-
-.faq-wrapper h1 {
-  color: #00b894;
-  margin-bottom: 40px;
+.wrapper h1 {
   text-align: center;
 }
 
 .accordion-item {
-  border-bottom: 1px solid #ccc;
+  border-bottom: 1px solid var(--border-color);
   padding: 12px 0;
 }
 
 .accordion-header {
   background: none;
-  color: #333;
+  color: var(--text-color);
   font-size: 1.05rem;
   border: none;
   width: 100%;
@@ -33,14 +23,14 @@
 }
 
 .accordion-header.active {
-  color: #00b894;
+  color: var(--primary-color);
 }
 
 .accordion-body {
   display: none;
   padding: 10px 0 10px 10px;
   font-size: 0.95rem;
-  color: #555; 
+  color: var(--text-color-light); 
   line-height: 1.6;
 }
 
@@ -51,22 +41,21 @@
 
 .email-section p {
   font-size: 1rem;
-  color: #555; 
   margin-bottom: 12px;
 }
 
 .email-btn {
   display: inline-block;
   padding: 12px 24px;
-  background-color: #00b894;
+  background-color: var(--primary-color);
   color: white;
-  border-radius: 8px;
+  border-radius: var(--border-radius-sm);
   font-size: 1rem;
   font-weight: bold;
   text-decoration: none;
-  transition: background 0.3s ease;
+  transition: background-color 0.3s ease;
 }
 
 .email-btn:hover {
-  background-color: #009f77;
+  background-color: var(--primary-color-dark);
 }

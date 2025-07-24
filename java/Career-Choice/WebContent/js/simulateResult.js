@@ -3,6 +3,7 @@ const ResultPageManager = {
         this.cacheDOMElements();
         this.setupInitialData();
         this.createCharts();
+        this.createDistributionCharts();
         this.updateRecommendation();
         this.bindEventListeners();
     },
@@ -15,6 +16,9 @@ const ResultPageManager = {
             recommendationReason: document.getElementById("recommendationReason"),
             incomeChartCanvas: document.getElementById('incomeChart'),
             satisfactionChartCanvas: document.getElementById('satisfactionChart'),
+            incomeDistributionChartCanvas: document.getElementById('incomeDistributionChart'),
+            satisfactionDistributionChartCanvas: document.getElementById('satisfactionDistributionChart'),
+            distributionChartTitle: document.getElementById('distributionChartTitle'),
             adviceForm: document.querySelector('form[action="advice.jsp"]')
         };
     },
@@ -22,22 +26,28 @@ const ResultPageManager = {
     setupInitialData: function () {
         this.scenarios = [
             {
+                id: "current",
                 name: "현직 유지",
                 income: predictionResultsRaw[0].income_change_rate,
                 satisfaction: predictionResultsRaw[0].satisfaction_change_score,
+                distribution: predictionResultsRaw[0].distribution
             },
             {
+                id: "jobA",
                 name: jobCategoryMapJs[selectedJobACategory] || "직업 A",
                 income: predictionResultsRaw[1].income_change_rate,
                 satisfaction: predictionResultsRaw[1].satisfaction_change_score,
+                distribution: predictionResultsRaw[1].distribution
             }
         ];
 
         if (predictionResultsRaw.length > 2 && predictionResultsRaw[2]) {
             this.scenarios.push({
+                id: "jobB",
                 name: jobCategoryMapJs[selectedJobBCategory] || "직업 B",
                 income: predictionResultsRaw[2].income_change_rate,
                 satisfaction: predictionResultsRaw[2].satisfaction_change_score,
+                distribution: predictionResultsRaw[2].distribution
             });
         }
 
@@ -94,17 +104,35 @@ const ResultPageManager = {
         });
 
         this.elements.recommendedJobName.textContent = bestScenario.name;
-        this.updateRecommendationReason(incomeWeight);
+        this.updateRecommendationReason(bestScenario, incomeWeight);
+
+        // 모든 카드에서 recommended 클래스 제거
+        document.querySelectorAll('.result-card').forEach(card => {
+            card.classList.remove('recommended');
+        });
+
+        // 추천된 시나리오에 해당하는 카드에 recommended 클래스 추가
+        const recommendedCard = document.querySelector(`.result-card[data-scenario-id="${bestScenario.id}"]`);
+        if (recommendedCard) {
+            recommendedCard.classList.add('recommended');
+        }
+
+        this.updateDistributionCharts(bestScenario);
     },
 
-    updateRecommendationReason: function (incomeWeight) {
-        let reason = "소득과 만족도의 균형을 고려했을 때 가장 안정적인 선택입니다.";
+    updateRecommendationReason: function (bestScenario, incomeWeight) {
+        const incomeText = `<strong>${(bestScenario.income * 100).toFixed(2)}%</strong>`;
+        const satisText = `<strong>${bestScenario.satisfaction.toFixed(2)}점</strong>`;
+        let reason = "";
+
         if (incomeWeight > 0.7) {
-            reason = "소득 상승을 가장 중요하게 고려했을 때 가장 유리한 선택입니다.";
+            reason = `소득 상승(${incomeText})을 가장 중요하게 고려했을 때 가장 유리한 선택입니다. 이때 예상되는 만족도 변화는 ${satisText}입니다.`;
         } else if (incomeWeight < 0.3) {
-            reason = "직무 만족도 향상을 가장 중요하게 고려했을 때 가장 적합한 선택입니다.";
+            reason = `직무 만족도 향상(${satisText})을 가장 중요하게 고려했을 때 가장 적합한 선택입니다. 이때 예상되는 소득 변화율은 ${incomeText}입니다.`;
+        } else {
+            reason = `소득과 만족도의 균형을 고려했을 때, 소득(${incomeText}), 만족도(${satisText}) 양쪽에서 가장 안정적인 결과를 보여줍니다.`;
         }
-        this.elements.recommendationReason.textContent = reason;
+        this.elements.recommendationReason.innerHTML = reason; // innerHTML을 사용하여 strong 태그 렌더링
     },
 
     normalize: function (value, min, max) {
@@ -118,37 +146,23 @@ const ResultPageManager = {
         const satisfactionData = this.scenarios.map(s => s.satisfaction);
         const count = this.scenarios.length;
 
-        console.log("📊 시나리오 이름:", labels);
-        console.log("💰 예측 소득 변화율 (%):", incomeData);
-        console.log("🟣 예측 만족도 변화량:", satisfactionData);
-
         const bgColors = ['#7CB9E8', '#FFBC42', '#9ADE7B'].slice(0, count);
         const borderColors = ['#5C9BD8', '#DB9A00', '#70BA5F'].slice(0, count);
 
         const createChart = (canvas, chartLabel, data, bg, border, yAxisLabel) => {
             const dataMin = Math.min(...data);
             const dataMax = Math.max(...data);
-            
             let yMin, yMax;
-
-            // 데이터의 최소/최대값 범위를 기준으로 y축 범위를 설정하여 값의 차이를 명확하게 보여줍니다.
             const range = dataMax - dataMin;
-            
             if (range === 0) {
-                // 모든 데이터 값이 동일할 경우, 해당 값을 중심으로 위아래에 약간의 여백을 줍니다.
-                const buffer = Math.abs(dataMax) * 0.2 || 1; // 20% 버퍼, 값이 0일 경우 1
+                const buffer = Math.abs(dataMax) * 0.2 || 1;
                 yMin = dataMin - buffer;
                 yMax = dataMax + buffer;
             } else {
-                // 데이터 값의 차이가 있을 경우, 전체 범위의 20%를 추가 여백으로 주어 가독성을 높입니다.
                 const padding = range * 0.2;
                 yMin = dataMin - padding;
                 yMax = dataMax + padding;
             }
-
-            // 이전 로직과 달리, 데이터가 모두 양수이거나 음수일 때 y축을 0에 고정하지 않습니다.
-            // 이 변경으로 인해 값들이 서로 비슷하지만 0에서 멀리 떨어져 있을 때(예: 90, 95, 100)
-            // 차트 상의 차이가 훨씬 명확하게 드러납니다.
 
             new Chart(canvas, {
                 type: 'bar',
@@ -168,15 +182,13 @@ const ResultPageManager = {
                     plugins: { legend: { display: false } },
                     scales: {
                         x: {
-                            type: 'category',  // ✅ 핵심: 인덱스 아닌 라벨로 강제
+                            type: 'category',
                             grid: { display: false },
                             ticks: {
                                 autoSkip: false,
                                 maxRotation: 45,
                                 minRotation: 20,
-                                callback: function (value, index, ticks) {
-                                    // `this`는 scale 객체를 참조하므로 getLabelForValue를 사용해
-                                    // 인덱스에 해당하는 실제 라벨을 가져옵니다.
+                                callback: function (value) {
                                     const label = this.getLabelForValue(value);
                                     return label.split(' ').join('\n');
                                 }
@@ -198,6 +210,70 @@ const ResultPageManager = {
 
         createChart(this.elements.incomeChartCanvas, '월 소득 변화율', incomeData, bgColors, borderColors, '%');
         createChart(this.elements.satisfactionChartCanvas, '직무 만족도 변화', satisfactionData, bgColors, borderColors, '점');
+    },
+
+    createDistributionCharts: function () {
+        this.distributionCharts = {};
+        const createChart = (canvas, label) => {
+            return new Chart(canvas, {
+                type: 'bar',
+                data: {
+                    labels: [],
+                    datasets: [{
+                        label: label,
+                        data: [],
+                        backgroundColor: '#AED9E0',
+                        borderColor: '#7CB9E8',
+                        borderWidth: 1
+                    }]
+                },
+                options: {
+                    responsive: true,
+                    maintainAspectRatio: false,
+                    plugins: { legend: { display: false } },
+                    scales: {
+                        y: { title: { display: true, text: '사례 수 (명)' } },
+                        x: { title: { display: true, text: '변화량 구간' } }
+                    }
+                }
+            });
+        };
+        this.distributionCharts.income = createChart(this.elements.incomeDistributionChartCanvas, '소득 변화율 분포');
+        this.distributionCharts.satisfaction = createChart(this.elements.satisfactionDistributionChartCanvas, '만족도 변화 분포');
+    },
+
+    updateDistributionCharts: function (scenario) {
+        const distributionData = scenario.distribution;
+        this.elements.distributionChartTitle.textContent = scenario.name;
+
+        if (!distributionData) {
+            this.clearDistributionChart('income', '유사 사례가 부족하여 분포를 표시할 수 없습니다.');
+            this.clearDistributionChart('satisfaction', '유사 사례가 부족하여 분포를 표시할 수 없습니다.');
+            return;
+        }
+
+        this.updateSingleDistributionChart(this.distributionCharts.income, distributionData.income, '%');
+        this.updateSingleDistributionChart(this.distributionCharts.satisfaction, distributionData.satisfaction, '점');
+    },
+
+    updateSingleDistributionChart: function (chart, data, unit) {
+        const labels = data.bins.slice(0, -1).map((bin, i) => {
+            const nextBin = data.bins[i + 1];
+            // 소득 변화율(%)은 소수점 1자리까지, 만족도(점)는 소수점 1자리까지 표시
+            const start = unit === '%' ? (bin * 100).toFixed(1) : bin.toFixed(1);
+            const end = unit === '%' ? (nextBin * 100).toFixed(1) : nextBin.toFixed(1);
+            return `${start}~${end}${unit}`;
+        });
+        chart.data.labels = labels;
+        chart.data.datasets[0].data = data.counts;
+        chart.update();
+    },
+
+    clearDistributionChart: function (chartKey, message) {
+        const chart = this.distributionCharts[chartKey];
+        chart.data.labels = [message];
+        chart.data.datasets[0].data = [0];
+        chart.update();
     }
 };
 

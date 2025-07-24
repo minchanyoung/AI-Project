@@ -6,7 +6,7 @@ from xgboost import XGBRegressor
 from catboost import CatBoostRegressor
 
 # 1. 데이터 불러오기
-df = pd.read_csv("klips_data_21.csv")
+df = pd.read_csv("klips_data_23.csv")
 
 # 2. Feature / Target 설정
 features = [
@@ -16,8 +16,7 @@ features = [
     "satis_fair_eval", "satis_welfare", "prev_job_satisfaction",
     "prev_monthly_income", "job_category_income_avg",
     "income_relative_to_job", "job_category_education_avg", "education_relative_to_job",
-    "job_category_satisfaction_avg",
-    "age_x_job_category", "monthly_income_x_job_category",
+    "job_category_satisfaction_avg", "age_x_job_category", "monthly_income_x_job_category",
     "education_x_job_category", "income_relative_to_job_x_job_category"
 ]
 
