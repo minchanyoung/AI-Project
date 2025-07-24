@@ -8,11 +8,11 @@ document.addEventListener("DOMContentLoaded", () => {
 
     // 🔸 여기서 필요한 값들 읽어오기
     const range = document.getElementById("rangeLimit").value;
-    const targetIndustry = document.getElementById("industry").value;
+    //const targetIndustry = document.getElementById("industry").value;
     const detail = document.getElementById("detail").value;
 
     console.log("범위:", range);
-    console.log("기준 산업:", targetIndustry);
+    //console.log("기준 산업:", targetIndustry);
     console.log("주요 분석 항목:", detail);
 
     loadingOverlay.style.display = "flex";

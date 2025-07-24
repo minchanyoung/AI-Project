@@ -1,68 +1,96 @@
 document.addEventListener("DOMContentLoaded", () => {
-    const scriptTag = document.getElementById("contextData"); // 먼저 DOM에서 해당 태그 찾기
-    if (scriptTag) {
-        const jsonData = JSON.parse(scriptTag.textContent);  // JSON 파싱
-        console.log("✅ contextData:", jsonData);
+    // console.log(rangeLimit);
+    // console.log(mainType);
+    // console.log(dataMap);
 
-        // 예: 첫 번째 요소 확인
-        if (jsonData.length > 0) {
-            console.log("year:", jsonData[0].year);
-            console.log("industryType:", jsonData[0].industryType);
-            console.log("data:", jsonData[0].data);
-        }
-
-        var industryData = new Map();
-        for(let i=0; i<jsonData.length;++i){
-            var data = new Map();
-            for(let i=0; i<jsonData.length;++i){
-                data.set();
-            }
-            industryData.set();
-        }
-    } else {
-        console.error("❌ contextData 스크립트 태그를 찾을 수 없음");
-    }
 });
 
 const ctx = document.getElementById('industryChart').getContext('2d');
-	let industryData = {
-	    total: { name: '전체', data: [2.8,3.2,3.5,3.1,2.9], color: '#3498db' },
-	    agriculture: { name: '농업임업및어업', data: [1.2,1.4,1.5,1.3,1.1], color: '#2ecc71' },
-	    manufacturing: { name: '제조업', data: [3.0,3.3,3.6,3.2,3.1], color: '#e74c3c' },
-	    it: { name: '정보통신', data: [4.1,4.5,4.9,4.6,4.3], color: '#9b59b6' }
-	};
-	
-	let selectedIndustries = ['total'];
-	let industryChart = new Chart(ctx, {
-	    type: 'line',
-	    data: { labels: ['2025','2026','2027','2028','2029'], datasets: [] },
-	    options: {
-	        responsive: true,
-	        plugins: { legend: { display: true } },
-	        scales: {
-	            y: {
-	                ticks: { callback: val => val + '%' },
-	                min: 0, max: 6
-	            }
-	        }
-	    }
-	});
-	
-	function updateChart() {
-	    industryChart.data.datasets = selectedIndustries.map(key => {
+var now = new Date();	// 현재 날짜 및 시간
+var year = now.getFullYear();	// 연도
+const years = [year,year+1,year+2,year+3,year+4];
+const industryMap = {
+    total: "전체",
+    agriculture: "농업임업및어업",
+    mining: "광업",
+    manufacturing: "제조업",
+    electricity: "전기가스수도하수",
+    construction: "건설업",
+    wholesale: "도매및소매업",
+    transport: "운수및창고업",
+    hospitality: "숙박및음식점업",
+    it: "정보통신업",
+    finance: "금융및보험업",
+    realestate: "부동산업시설관리지원임대",
+    professional: "전문과학및기술서비스업",
+    education: "교육서비스업",
+    health: "보건업및사회복지서비스업",
+    culture: "오락문화및운동관련서비스업",
+    other: "기타공공수리및개인서비스업"
+};
+const industryColors = [
+    '#3498db', '#2ecc71', '#1abc9c', '#e74c3c', '#f39c12', '#d35400',
+    '#9b59b6', '#34495e', '#c0392b', '#8e44ad', '#2980b9', '#27ae60',
+    '#e67e22', '#16a085', '#bdc3c7', '#7f8c8d', '#95a5a6'
+];
+let industryData = {};
+let colorIndex = 0;
+for (const [key, name] of Object.entries(industryMap)) {
+    let values = [];
+    for (const year of years) {
+        const lookupKey = `${year}_${name}`;
+        console.log(lookupKey)
+        if (dataMap[lookupKey]) {
+            values.push(dataMap[lookupKey].data);
+            console.log(dataMap[lookupKey].data)
+        } else {
+            values.push(null); // 또는 0 또는 NaN 등
+        }
+    }
+    industryData[key] = {
+        name: name,
+        data: values,
+        color: industryColors[colorIndex++ % industryColors.length]
+    };
+}
+
+let selectedIndustries = ['total'];
+let industryChart = new Chart(ctx, {
+    type: 'line',
+    data: {
+        labels: years,
+        datasets: []
+    },
+    options: {
+        responsive: true,
+        plugins: {
+            legend: { display: true }
+        },
+        scales: {
+            y: {
+                ticks: {
+                    callback: val => val + '%'
+                },
+                min: -6,
+                max: 6
+            }
+        }
+    }
+});
+function updateChart() {
+    industryChart.data.datasets = selectedIndustries.map(key => {
         const item = industryData[key];
         return {
             label: item.name,
             data: item.data,
             borderColor: item.color,
-            backgroundColor: item.color + '20',
+            backgroundColor: item.color + '20', // 투명도 추가
             fill: true,
             tension: 0.3
         };
     });
     industryChart.update();
 }
-
 function updateList() {
     const list = document.getElementById('industryList');
     list.innerHTML = '';
@@ -80,22 +108,17 @@ function updateList() {
         list.appendChild(item);
     });
 }
-
 function removeIndustry(key) {
     selectedIndustries = selectedIndustries.filter(k => k !== key);
     updateChart();
     updateList();
 }
-
 document.getElementById('addIndustryBtn').addEventListener('click', () => {
     const value = document.getElementById('industrySelect').value;
     if (value && !selectedIndustries.includes(value)) {
         selectedIndustries.push(value);
-        updateChart();
-        updateList();
+        updateChart();   // ✅ 차트 갱신
+        updateList();    // ✅ 목록 갱신
     }
 });
-
-// Init
 updateChart();
-updateList();

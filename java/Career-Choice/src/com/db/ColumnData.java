@@ -105,56 +105,6 @@ public class ColumnData {
 		}
 		return null;
 	}
-	public static String getRealTableName(String[] columns) {
-		
-		for(int i=0;i<columns.length;++i) {
-			switch(columns[i]) {
-			case "companyCount": 
-			case "workerCount":
-				return "RealIndustryCountData";
-			case "ownerMaleRate":
-			case "ownerFemaleRate": 
-			case "singlePropCompanyRate": 
-			case "multiBusinessCompanyRate": 
-	        case "U1D5CompanyRate":
-			case "U5D10CompanyRate": 
-			case "U10D20CompanyRate": 
-			case "U20D50CompanyRate": 
-	        case "U50D100CompanyRate": 
-			case "U100D300CompanyRate": 
-			case "U300CompanyRate":
-				return "RealCompanyData";
-			case "workerMaleRate":
-			case "workerFemaleRate": 
-			case "singlePropWorkerRate": 
-			case "multiBusinessWorkerRate": 
-	        case "selfEmpFamilyWorkerRate":
-			case "fulltimeWorkerRate": 
-			case "dayWorkerRate": 
-			case "etcWorkerRate": 
-	        case "U1D5WorkerRate":
-			case "U5D10WorkerRate": 
-			case "U10D20WorkerRate": 
-			case "U20D50WorkerRate": 
-	        case "U50D100WorkerRate": 
-			case "U100D300WorkerRate": 
-			case "U300WorkerRate":
-				return "RealWorkerData";
-			case "avgAge":
-			case "avgServYear":
-	        case "avgWorkDay":
-			case "avgTotalWorkTime":
-			case "avgRegularWorkDay":
-	        case "avgOverWorkDay":
-			case "avgSalary":
-			case "avgFixedSalary":
-			case "avgOvertimeSalary":
-			case "avgBonusSalary":
-				return "RealAvgData";
-			}
-		}
-		return null;
-	}
 	public static String[] getTable(String column) {
 		switch(column) {
 		case "companyCount": 
@@ -205,17 +155,34 @@ public class ColumnData {
 	public static String getServiceType(String typeNum) {
 		switch(typeNum) {
 		case "0":
-			return WorkerDetailColumns[5] + ", " + WorkerDetailColumns[6];
+			return commonColumns[1] + ", " + commonColumns[2] + ", " + WorkerDetailColumns[5];
 		case "1":
-			return WorkAvgColumns[3] + ", " + WorkAvgColumns[7];
+			return commonColumns[1] + ", " + commonColumns[2] + ", " + WorkAvgColumns[7];//+ ", " + WorkAvgColumns[3] + ", " + WorkAvgColumns[7];
 		case "2":
-			return WorkAvgColumns[4] + ", " + WorkAvgColumns[5];
+			return commonColumns[1] + ", " + commonColumns[2] + ", " + WorkAvgColumns[5];//+ ", " + WorkAvgColumns[3] + ", " + WorkAvgColumns[5];
 		case "3":
-			return WorkAvgColumns[1];
+			return commonColumns[1] + ", " + commonColumns[2] + ", " + WorkAvgColumns[1];
 		case "4":
-			return countColumns[0] + ", " + countColumns[1] + ", " + CompanyDetailColumns[2];
+			return commonColumns[1] + ", " + commonColumns[2] + ", " + CompanyDetailColumns[2];
 		case "5":
-			return countColumns[0] + ", " + countColumns[1] + ", " + CompanyDetailColumns[4] + ", " + CompanyDetailColumns[5] + ", " + CompanyDetailColumns[6] + ", " + CompanyDetailColumns[7] + ", " + CompanyDetailColumns[8] + ", " + CompanyDetailColumns[9] + ", " + CompanyDetailColumns[10];
+			return commonColumns[1] + ", " + commonColumns[2] + ", " + countColumns[1];//", " + CompanyDetailColumns[4] + ", " + CompanyDetailColumns[5] + ", " + CompanyDetailColumns[6] + ", " + CompanyDetailColumns[7] + ", " + CompanyDetailColumns[8] + ", " + CompanyDetailColumns[9] + ", " + CompanyDetailColumns[10]
+		}
+		return null;
+	}
+	public static String getServiceTypeToTable(String typeNum) {
+		switch(typeNum) {
+		case "0":
+			return "PredictWorkerData";
+		case "1":
+			return "PredictAvgData";
+		case "2":
+			return "PredictAvgData";
+		case "3":
+			return "PredictAvgData";
+		case "4":
+			return "PredictCompanyData";
+		case "5":
+			return "PredictIndustryCountData";
 		}
 		return null;
 	}

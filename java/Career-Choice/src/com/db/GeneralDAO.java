@@ -27,6 +27,7 @@ public class GeneralDAO {
 		}
 	}
 	
+	// 함수만 있고 실적용은 안된 상태이니 디벨롭시킬떄 반드시 같이 사용할 것
 	public String JoinTable(String TableA, String[] ColumnsA,String TableB, String[] ColumnsB) {
 		String query = "(select ";
 		query += "dataId, ";
@@ -48,75 +49,79 @@ public class GeneralDAO {
 		return query;
 	}
 	
-//	public ArrayList<BaseVO<Integer>> getIntData(){
-//		return getIntData("RealIndustryCountData");
-//	}
-//	public ArrayList<BaseVO<Integer>> getIntData(String table){
-//		return getIntData("*", table, "", "");
-//	}
-//
-//	public ArrayList<BaseVO<Integer>> getIntData(String column, String table){
-//		return getIntData(column, table, "", "");
-//	}
-//	public ArrayList<BaseVO<Integer>> getIntData(String column, String table,  String where){
-//		return getIntData(column, table, where, "");
-//	}
-//	public ArrayList<BaseVO<Integer>> getIntData(String column, String table, String where, String groupBy) {
-//		ArrayList<BaseVO<Integer>> container = new ArrayList<BaseVO<Integer>>();
-//		
-//		try {
-//			con = dataFactory.getConnection();
-//			String query = "select "+ column +" from " + table;
-//			if(where.isEmpty() == false)
-//				query += " where " + table;
-//			if(groupBy.isEmpty() == false)
-//				query += " groupBy " + table;
-//			System.out.println("prepareStatement" + query);
-//			
-//			pstmt = con.prepareStatement(query);
-//			ResultSet rs = pstmt.executeQuery();
-//			String[] columns = column.split(", ");
-//			while(rs.next()) {
-//				int id = 0;
-//				int year = 0;// -> string?
-//				String industryType = "";
-//				for(int i=0; i<3; ++i) {
-//					if(columns[i].equals( ColumnData.commonColumns[0]))
-//						id = rs.getInt(ColumnData.commonColumns[0]);// -> string?
-//					else if(columns[i].equals( ColumnData.commonColumns[1]))
-//						year = rs.getInt(ColumnData.commonColumns[1]);// -> string?
-//					else if(columns[i].equals( ColumnData.commonColumns[2]))
-//						industryType = rs.getString(ColumnData.commonColumns[2]);// -> string?
-//				}
-//
-//				BaseVO<Integer> vo = new BaseVO<Integer>();
-//				vo.setId(id);
-//				vo.setYear(year);
-//				vo.setIndustryType(industryType);
-//				
-//				int d;
-//				ArrayList<Integer> dataList = new ArrayList<Integer>();
-//				for(int i=0; i<columns.length; ++i) {
-//					if(columns[i].equals( ColumnData.commonColumns[0]) || columns[i].equals( ColumnData.commonColumns[1]) || columns[i].equals( ColumnData.commonColumns[2]))
-//						continue;
-//					d = rs.getInt(columns[i]);
-//					dataList.add(d);
-//				}
-//				vo.setData(dataList);
-//				
-//				container.add(vo);
-//			}
-//			
-//			rs.close();
-//			pstmt.close();
-//			con.close();
-//		}
-//		catch(Exception e) {
-//			e.printStackTrace();
-//		}
-//		
-//		return container;
-//	}
+	public ArrayList<BaseVO<Integer>> getIntData(){
+		return getIntData("RealIndustryCountData");
+	}
+	public ArrayList<BaseVO<Integer>> getIntData(String table){
+		return getIntData("*", table, "", "");
+	}
+
+	public ArrayList<BaseVO<Integer>> getIntData(String column, String table){
+		return getIntData(column, table, "", "");
+	}
+	public ArrayList<BaseVO<Integer>> getIntData(String column, String table,  String where){
+		return getIntData(column, table, where, "");
+	}
+	public ArrayList<BaseVO<Integer>> getIntData(String column, String table, String where, String groupBy) {
+		ArrayList<BaseVO<Integer>> container = new ArrayList<BaseVO<Integer>>();
+		try {
+			con = dataFactory.getConnection();
+			String query = "select "+ column +" from " + table;
+			
+			
+			if(where.isEmpty() == false)
+				query += " where " + where;
+			if(groupBy.isEmpty() == false)
+				query += " groupBy " + groupBy;
+			System.out.println("prepareStatement" + query);
+			
+			pstmt = con.prepareStatement(query);
+			ResultSet rs = pstmt.executeQuery();
+			String[] columns = column.split(", ");
+			
+			while(rs.next()) {
+				int id = 0;
+				int year = 0;// -> string?
+				String industryType = "";
+				
+				for(int i=0; i<3; ++i) {
+					String s = columns[i];
+					if(columns[i].equals( ColumnData.commonColumns[0]))
+						id = rs.getInt(ColumnData.commonColumns[0]);// -> string?
+					else if(columns[i].equals( ColumnData.commonColumns[1]))
+						year = rs.getInt(ColumnData.commonColumns[1]);// -> string?
+					else if(columns[i].equals( ColumnData.commonColumns[2]))
+						industryType = rs.getString(ColumnData.commonColumns[2]);// -> string?
+				}
+
+				BaseVO<Integer> vo = new BaseVO<Integer>();
+				vo.setId(id);
+				vo.setYear(year);
+				vo.setIndustryType(industryType);
+				
+				int d;
+				ArrayList<Integer> dataList = new ArrayList<Integer>();
+				for(int i=0; i<columns.length; ++i) {
+					if(columns[i].equals( ColumnData.commonColumns[0]) || columns[i].equals( ColumnData.commonColumns[1]) || columns[i].equals( ColumnData.commonColumns[2]))
+						continue;
+					d = rs.getInt(columns[i]);
+					dataList.add(d);
+				}
+				vo.setData(dataList);
+				
+				container.add(vo);
+			}
+			
+			rs.close();
+			pstmt.close();
+			con.close();
+		}
+		catch(Exception e) {
+			e.printStackTrace();
+		}
+		
+		return container;
+	}
 
 	public ArrayList<BaseVO<Float>> getFloatData(){
 		return getFloatData("PredictIndustryCountData");
@@ -153,9 +158,9 @@ public class GeneralDAO {
 				String industryType = "";
 				
 				for(int i=0; i<3; ++i) {
-					if(columns[i].equals( ColumnData.commonColumns[0]))
-						id = rs.getInt(ColumnData.commonColumns[0]);// -> string?
-					else if(columns[i].equals( ColumnData.commonColumns[1]))
+//					if(columns[i].equals( ColumnData.commonColumns[0]))
+//						id = rs.getInt(ColumnData.commonColumns[0]);// -> string?
+					if(columns[i].equals( ColumnData.commonColumns[1]))
 						year = rs.getInt(ColumnData.commonColumns[1]);// -> string?
 					else if(columns[i].equals( ColumnData.commonColumns[2]))
 						industryType = rs.getString(ColumnData.commonColumns[2]);// -> string?

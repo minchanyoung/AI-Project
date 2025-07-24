@@ -15,7 +15,7 @@
   <nav>
     <ul class="nav-menu" id="navMenu">
       <li><a href="simulate.jsp">Simulate</a></li>
-      <li><a href="indurstryResult">indurstryAnalize</a></li>
+      <li><a href="IndustryForm.jsp">indurstryAnalize</a></li>
       <li><a href="advice.jsp">AI Advice</a></li>
       <li><a href="about.jsp">About</a></li>
       <li><a href="faq.jsp">FAQ</a></li>

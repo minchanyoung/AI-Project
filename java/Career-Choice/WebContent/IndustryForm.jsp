@@ -1,4 +1,5 @@
 <%@ page contentType="text/html; charset=UTF-8" language="java"%>
+<%@ include file="common/header.jsp"%>
 <!DOCTYPE html>
 <html lang="ko">
 <head>
@@ -16,7 +17,7 @@
 		  <label for="rangeLimit">범위 (1 ~ 10):</label>
 		  <input type="number" id="rangeLimit" name="rangeLimit" min="1" max="10" value="5"">
 	  </div>
-		
+		<%--
       <div class="form-group">
         <label for="industry">기준 산업 선택</label>
         <select id="industry" name="industry" required>
@@ -40,17 +41,18 @@
           <option value=기타공공수리및개인서비스업>기타 개인서비스</option>
         </select>
       </div>
+      --%>
 
       <div class="form-group">
         <label for="detail">비교 항목 선택</label>
         <select id="detail" name="detail" required>
           <option value="">-- 산업 선택 --</option>
-          <option value=0>고용안정성</option>
-          <option value=1>임금 수준</option>
-          <option value=2>노동 강도</option>
-          <option value=3>장기 근속 가능성</option>
-          <option value=4>진입장벽</option>
-          <option value=5>고용 밀도</option>
+          <option value=0>상용종사자 변화율</option>
+          <option value=1>임금 변화율</option>
+          <option value=2>근무일 변화율</option>
+          <option value=3>평균 근속 변화율</option>
+          <option value=4>단입사업체 비율 변화율</option>
+          <option value=5>종사자 변화율</option>
         </select>
       </div>
 
@@ -63,5 +65,6 @@
         <p>정보 구성 중입니다. 잠시만 기다려주세요</p>
     </div>
   <script src="js/IndustryForm.js"></script>
+	<%@ include file="common/footer.jsp"%>
 </body>
 </html>
