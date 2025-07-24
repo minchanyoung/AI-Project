@@ -38,8 +38,8 @@
 							</h1>
 							<p>AI와 함께 당신의 미래를 시뮬레이션 해보세요.</p>
 							<div class="buttons">
-								<a href="trend.jsp" class="start-btn">시작하기</a> <a
-									href="about.jsp" class="outline-btn">서비스 소개 보기</a>
+								<a href="IndustryForm.jsp" class="start-btn">시작하기</a> <a
+									href="about2.jsp" class="outline-btn">서비스 소개 보기</a>
 							</div>
 						</div>
 					</div>
