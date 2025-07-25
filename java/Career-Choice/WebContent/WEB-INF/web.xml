@@ -5,7 +5,7 @@
   <!-- Database Connection Info -->
   <context-param>
     <param-name>DB_URL</param-name>
-    <param-value>jdbc:oracle:thin:@localhost:1521:xe</param-value>
+    <param-value>jdbc:oracle:thin:192.168.51.23:1521:xe</param-value>
   </context-param>
   <context-param>
     <param-name>DB_USER</param-name>

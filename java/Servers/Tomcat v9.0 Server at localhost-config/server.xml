@@ -70,7 +70,6 @@
                connectionTimeout="20000"
                redirectPort="8443"
                maxParameterCount="1000"
-               URIEncoding="UTF-8"
                />
     -->
     <!-- Define an SSL/TLS HTTP/1.1 Connector on port 8443

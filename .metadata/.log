@@ -1,0 +1,1575 @@
+!SESSION 2025-07-25 09:46:21.862 -----------------------------------------------
+eclipse.buildId=4.13.0.I20190916-1045
+java.version=1.8.0_451
+java.vendor=Oracle Corporation
+BootLoader constants: OS=win32, ARCH=x86_64, WS=win32, NL=ko_KR
+Framework arguments:  -product org.eclipse.epp.package.jee.product
+Command-line arguments:  -os win32 -ws win32 -arch x86_64 -product org.eclipse.epp.package.jee.product
+
+!ENTRY com.python.pydev.analysis 4 0 2025-07-25 09:46:22.876
+!MESSAGE FrameworkEvent ERROR
+!STACK 0
+org.osgi.framework.BundleException: Could not resolve module: com.python.pydev.analysis [961]
+  Unresolved requirement: Require-Bundle: org.python.pydev.ast; bundle-version="[13.0.2,13.0.3)"
+    -> Bundle-SymbolicName: org.python.pydev.ast; bundle-version="13.0.2.202503021229"; singleton:="true"
+       org.python.pydev.ast [965]
+         Unresolved requirement: Require-Capability: osgi.ee; filter:="(&(osgi.ee=JavaSE)(version=17))"
+         Unresolved requirement: Require-Bundle: org.python.pydev.parser; bundle-version="[13.0.2,13.0.3)"
+           -> Bundle-SymbolicName: org.python.pydev.parser; bundle-version="13.0.2.202503021229"; singleton:="true"
+              org.python.pydev.parser [972]
+                Unresolved requirement: Require-Bundle: org.python.pydev.core; bundle-version="[13.0.2,13.0.3)"
+                  -> Bundle-SymbolicName: org.python.pydev.core; bundle-version="13.0.2.202503021229"; singleton:="true"
+                     org.python.pydev.core [966]
+                       Unresolved requirement: Require-Capability: osgi.ee; filter:="(&(osgi.ee=JavaSE)(version=17))"
+                       Unresolved requirement: Require-Bundle: org.python.pydev.shared_core; bundle-version="[13.0.2,13.0.3)"; visibility:="reexport"
+                         -> Bundle-SymbolicName: org.python.pydev.shared_core; bundle-version="13.0.2.202503021229"; singleton:="true"
+                            org.python.pydev.shared_core [974]
+                              Unresolved requirement: Require-Capability: osgi.ee; filter:="(&(osgi.ee=JavaSE)(version=17))"
+         Unresolved requirement: Require-Bundle: org.python.pydev.core; bundle-version="[13.0.2,13.0.3)"
+           -> Bundle-SymbolicName: org.python.pydev.core; bundle-version="13.0.2.202503021229"; singleton:="true"
+  Unresolved requirement: Require-Bundle: org.python.pydev.core; bundle-version="[13.0.2,13.0.3)"
+    -> Bundle-SymbolicName: org.python.pydev.core; bundle-version="13.0.2.202503021229"; singleton:="true"
+
+	at org.eclipse.osgi.container.Module.start(Module.java:462)
+	at org.eclipse.osgi.container.ModuleContainer$ContainerStartLevel$2.run(ModuleContainer.java:1844)
+	at org.eclipse.osgi.internal.framework.EquinoxContainerAdaptor$2$1.execute(EquinoxContainerAdaptor.java:150)
+	at org.eclipse.osgi.container.ModuleContainer$ContainerStartLevel.incStartLevel(ModuleContainer.java:1837)
+	at org.eclipse.osgi.container.ModuleContainer$ContainerStartLevel.incStartLevel(ModuleContainer.java:1778)
+	at org.eclipse.osgi.container.ModuleContainer$ContainerStartLevel.doContainerStartLevel(ModuleContainer.java:1742)
+	at org.eclipse.osgi.container.ModuleContainer$ContainerStartLevel.dispatchEvent(ModuleContainer.java:1664)
+	at org.eclipse.osgi.container.ModuleContainer$ContainerStartLevel.dispatchEvent(ModuleContainer.java:1)
+	at org.eclipse.osgi.framework.eventmgr.EventManager.dispatchEvent(EventManager.java:234)
+	at org.eclipse.osgi.framework.eventmgr.EventManager$EventThread.run(EventManager.java:345)
+
+!ENTRY com.python.pydev.debug 4 0 2025-07-25 09:46:22.876
+!MESSAGE FrameworkEvent ERROR
+!STACK 0
+org.osgi.framework.BundleException: Could not resolve module: com.python.pydev.debug [962]
+  Unresolved requirement: Require-Bundle: org.python.pydev.ast; bundle-version="[13.0.2,13.0.3)"
+    -> Bundle-SymbolicName: org.python.pydev.ast; bundle-version="13.0.2.202503021229"; singleton:="true"
+       org.python.pydev.ast [965]
+         Unresolved requirement: Require-Capability: osgi.ee; filter:="(&(osgi.ee=JavaSE)(version=17))"
+         Unresolved requirement: Require-Bundle: org.python.pydev.parser; bundle-version="[13.0.2,13.0.3)"
+           -> Bundle-SymbolicName: org.python.pydev.parser; bundle-version="13.0.2.202503021229"; singleton:="true"
+              org.python.pydev.parser [972]
+                Unresolved requirement: Require-Bundle: org.python.pydev.core; bundle-version="[13.0.2,13.0.3)"
+                  -> Bundle-SymbolicName: org.python.pydev.core; bundle-version="13.0.2.202503021229"; singleton:="true"
+                     org.python.pydev.core [966]
+                       Unresolved requirement: Require-Capability: osgi.ee; filter:="(&(osgi.ee=JavaSE)(version=17))"
+                       Unresolved requirement: Require-Bundle: org.python.pydev.shared_core; bundle-version="[13.0.2,13.0.3)"; visibility:="reexport"
+                         -> Bundle-SymbolicName: org.python.pydev.shared_core; bundle-version="13.0.2.202503021229"; singleton:="true"
+                            org.python.pydev.shared_core [974]
+                              Unresolved requirement: Require-Capability: osgi.ee; filter:="(&(osgi.ee=JavaSE)(version=17))"
+         Unresolved requirement: Require-Bundle: org.python.pydev.core; bundle-version="[13.0.2,13.0.3)"
+           -> Bundle-SymbolicName: org.python.pydev.core; bundle-version="13.0.2.202503021229"; singleton:="true"
+  Unresolved requirement: Require-Bundle: org.python.pydev.core; bundle-version="[13.0.2,13.0.3)"
+    -> Bundle-SymbolicName: org.python.pydev.core; bundle-version="13.0.2.202503021229"; singleton:="true"
+
+	at org.eclipse.osgi.container.Module.start(Module.java:462)
+	at org.eclipse.osgi.container.ModuleContainer$ContainerStartLevel$2.run(ModuleContainer.java:1844)
+	at org.eclipse.osgi.internal.framework.EquinoxContainerAdaptor$2$1.execute(EquinoxContainerAdaptor.java:150)
+	at org.eclipse.osgi.container.ModuleContainer$ContainerStartLevel.incStartLevel(ModuleContainer.java:1837)
+	at org.eclipse.osgi.container.ModuleContainer$ContainerStartLevel.incStartLevel(ModuleContainer.java:1778)
+	at org.eclipse.osgi.container.ModuleContainer$ContainerStartLevel.doContainerStartLevel(ModuleContainer.java:1742)
+	at org.eclipse.osgi.container.ModuleContainer$ContainerStartLevel.dispatchEvent(ModuleContainer.java:1664)
+	at org.eclipse.osgi.container.ModuleContainer$ContainerStartLevel.dispatchEvent(ModuleContainer.java:1)
+	at org.eclipse.osgi.framework.eventmgr.EventManager.dispatchEvent(EventManager.java:234)
+	at org.eclipse.osgi.framework.eventmgr.EventManager$EventThread.run(EventManager.java:345)
+
+!ENTRY com.python.pydev.refactoring 4 0 2025-07-25 09:46:22.876
+!MESSAGE FrameworkEvent ERROR
+!STACK 0
+org.osgi.framework.BundleException: Could not resolve module: com.python.pydev.refactoring [963]
+  Unresolved requirement: Require-Bundle: org.python.pydev.ast; bundle-version="[13.0.2,13.0.3)"
+    -> Bundle-SymbolicName: org.python.pydev.ast; bundle-version="13.0.2.202503021229"; singleton:="true"
+       org.python.pydev.ast [965]
+         Unresolved requirement: Require-Capability: osgi.ee; filter:="(&(osgi.ee=JavaSE)(version=17))"
+         Unresolved requirement: Require-Bundle: org.python.pydev.parser; bundle-version="[13.0.2,13.0.3)"
+           -> Bundle-SymbolicName: org.python.pydev.parser; bundle-version="13.0.2.202503021229"; singleton:="true"
+              org.python.pydev.parser [972]
+                Unresolved requirement: Require-Bundle: org.python.pydev.core; bundle-version="[13.0.2,13.0.3)"
+                  -> Bundle-SymbolicName: org.python.pydev.core; bundle-version="13.0.2.202503021229"; singleton:="true"
+                     org.python.pydev.core [966]
+                       Unresolved requirement: Require-Capability: osgi.ee; filter:="(&(osgi.ee=JavaSE)(version=17))"
+                       Unresolved requirement: Require-Bundle: org.python.pydev.shared_core; bundle-version="[13.0.2,13.0.3)"; visibility:="reexport"
+                         -> Bundle-SymbolicName: org.python.pydev.shared_core; bundle-version="13.0.2.202503021229"; singleton:="true"
+                            org.python.pydev.shared_core [974]
+                              Unresolved requirement: Require-Capability: osgi.ee; filter:="(&(osgi.ee=JavaSE)(version=17))"
+         Unresolved requirement: Require-Bundle: org.python.pydev.core; bundle-version="[13.0.2,13.0.3)"
+           -> Bundle-SymbolicName: org.python.pydev.core; bundle-version="13.0.2.202503021229"; singleton:="true"
+  Unresolved requirement: Require-Bundle: org.python.pydev.core; bundle-version="[13.0.2,13.0.3)"
+    -> Bundle-SymbolicName: org.python.pydev.core; bundle-version="13.0.2.202503021229"; singleton:="true"
+  Unresolved requirement: Require-Bundle: org.python.pydev; bundle-version="[13.0.2,13.0.3)"
+    -> Bundle-SymbolicName: org.python.pydev; bundle-version="13.0.2.202503021229"; singleton:="true"
+       org.python.pydev [964]
+         Unresolved requirement: Require-Bundle: org.python.pydev.ast; bundle-version="[13.0.2,13.0.3)"
+           -> Bundle-SymbolicName: org.python.pydev.ast; bundle-version="13.0.2.202503021229"; singleton:="true"
+  Unresolved requirement: Require-Bundle: org.python.pydev.shared_ui; bundle-version="[13.0.2,13.0.3)"
+    -> Bundle-SymbolicName: org.python.pydev.shared_ui; bundle-version="13.0.2.202503021229"; singleton:="true"
+       org.python.pydev.shared_ui [976]
+         Unresolved requirement: Require-Bundle: org.python.pydev.shared_core; bundle-version="[13.0.2,13.0.3)"
+           -> Bundle-SymbolicName: org.python.pydev.shared_core; bundle-version="13.0.2.202503021229"; singleton:="true"
+
+	at org.eclipse.osgi.container.Module.start(Module.java:462)
+	at org.eclipse.osgi.container.ModuleContainer$ContainerStartLevel$2.run(ModuleContainer.java:1844)
+	at org.eclipse.osgi.internal.framework.EquinoxContainerAdaptor$2$1.execute(EquinoxContainerAdaptor.java:150)
+	at org.eclipse.osgi.container.ModuleContainer$ContainerStartLevel.incStartLevel(ModuleContainer.java:1837)
+	at org.eclipse.osgi.container.ModuleContainer$ContainerStartLevel.incStartLevel(ModuleContainer.java:1778)
+	at org.eclipse.osgi.container.ModuleContainer$ContainerStartLevel.doContainerStartLevel(ModuleContainer.java:1742)
+	at org.eclipse.osgi.container.ModuleContainer$ContainerStartLevel.dispatchEvent(ModuleContainer.java:1664)
+	at org.eclipse.osgi.container.ModuleContainer$ContainerStartLevel.dispatchEvent(ModuleContainer.java:1)
+	at org.eclipse.osgi.framework.eventmgr.EventManager.dispatchEvent(EventManager.java:234)
+	at org.eclipse.osgi.framework.eventmgr.EventManager$EventThread.run(EventManager.java:345)
+
+!ENTRY org.python.pydev 4 0 2025-07-25 09:46:22.891
+!MESSAGE FrameworkEvent ERROR
+!STACK 0
+org.osgi.framework.BundleException: Could not resolve module: org.python.pydev [964]
+  Unresolved requirement: Require-Bundle: org.python.pydev.parser; bundle-version="[13.0.2,13.0.3)"
+    -> Bundle-SymbolicName: org.python.pydev.parser; bundle-version="13.0.2.202503021229"; singleton:="true"
+       org.python.pydev.parser [972]
+         Unresolved requirement: Require-Bundle: org.python.pydev.core; bundle-version="[13.0.2,13.0.3)"
+           -> Bundle-SymbolicName: org.python.pydev.core; bundle-version="13.0.2.202503021229"; singleton:="true"
+              org.python.pydev.core [966]
+                Unresolved requirement: Require-Capability: osgi.ee; filter:="(&(osgi.ee=JavaSE)(version=17))"
+                Unresolved requirement: Require-Bundle: org.python.pydev.shared_core; bundle-version="[13.0.2,13.0.3)"; visibility:="reexport"
+                  -> Bundle-SymbolicName: org.python.pydev.shared_core; bundle-version="13.0.2.202503021229"; singleton:="true"
+                     org.python.pydev.shared_core [974]
+                       Unresolved requirement: Require-Capability: osgi.ee; filter:="(&(osgi.ee=JavaSE)(version=17))"
+  Unresolved requirement: Require-Bundle: org.python.pydev.ast; bundle-version="[13.0.2,13.0.3)"
+    -> Bundle-SymbolicName: org.python.pydev.ast; bundle-version="13.0.2.202503021229"; singleton:="true"
+       org.python.pydev.ast [965]
+         Unresolved requirement: Require-Capability: osgi.ee; filter:="(&(osgi.ee=JavaSE)(version=17))"
+         Unresolved requirement: Require-Bundle: org.python.pydev.parser; bundle-version="[13.0.2,13.0.3)"
+           -> Bundle-SymbolicName: org.python.pydev.parser; bundle-version="13.0.2.202503021229"; singleton:="true"
+         Unresolved requirement: Require-Bundle: org.python.pydev.core; bundle-version="[13.0.2,13.0.3)"
+           -> Bundle-SymbolicName: org.python.pydev.core; bundle-version="13.0.2.202503021229"; singleton:="true"
+
+	at org.eclipse.osgi.container.Module.start(Module.java:462)
+	at org.eclipse.osgi.container.ModuleContainer$ContainerStartLevel$2.run(ModuleContainer.java:1844)
+	at org.eclipse.osgi.internal.framework.EquinoxContainerAdaptor$2$1.execute(EquinoxContainerAdaptor.java:150)
+	at org.eclipse.osgi.container.ModuleContainer$ContainerStartLevel.incStartLevel(ModuleContainer.java:1837)
+	at org.eclipse.osgi.container.ModuleContainer$ContainerStartLevel.incStartLevel(ModuleContainer.java:1778)
+	at org.eclipse.osgi.container.ModuleContainer$ContainerStartLevel.doContainerStartLevel(ModuleContainer.java:1742)
+	at org.eclipse.osgi.container.ModuleContainer$ContainerStartLevel.dispatchEvent(ModuleContainer.java:1664)
+	at org.eclipse.osgi.container.ModuleContainer$ContainerStartLevel.dispatchEvent(ModuleContainer.java:1)
+	at org.eclipse.osgi.framework.eventmgr.EventManager.dispatchEvent(EventManager.java:234)
+	at org.eclipse.osgi.framework.eventmgr.EventManager$EventThread.run(EventManager.java:345)
+
+!ENTRY org.python.pydev.ast 4 0 2025-07-25 09:46:22.891
+!MESSAGE FrameworkEvent ERROR
+!STACK 0
+org.osgi.framework.BundleException: Could not resolve module: org.python.pydev.ast [965]
+  Unresolved requirement: Require-Capability: osgi.ee; filter:="(&(osgi.ee=JavaSE)(version=17))"
+  Unresolved requirement: Require-Bundle: org.python.pydev.parser; bundle-version="[13.0.2,13.0.3)"
+    -> Bundle-SymbolicName: org.python.pydev.parser; bundle-version="13.0.2.202503021229"; singleton:="true"
+       org.python.pydev.parser [972]
+         Unresolved requirement: Require-Bundle: org.python.pydev.core; bundle-version="[13.0.2,13.0.3)"
+           -> Bundle-SymbolicName: org.python.pydev.core; bundle-version="13.0.2.202503021229"; singleton:="true"
+              org.python.pydev.core [966]
+                Unresolved requirement: Require-Capability: osgi.ee; filter:="(&(osgi.ee=JavaSE)(version=17))"
+                Unresolved requirement: Require-Bundle: org.python.pydev.shared_core; bundle-version="[13.0.2,13.0.3)"; visibility:="reexport"
+                  -> Bundle-SymbolicName: org.python.pydev.shared_core; bundle-version="13.0.2.202503021229"; singleton:="true"
+                     org.python.pydev.shared_core [974]
+                       Unresolved requirement: Require-Capability: osgi.ee; filter:="(&(osgi.ee=JavaSE)(version=17))"
+  Unresolved requirement: Require-Bundle: org.python.pydev.core; bundle-version="[13.0.2,13.0.3)"
+    -> Bundle-SymbolicName: org.python.pydev.core; bundle-version="13.0.2.202503021229"; singleton:="true"
+
+	at org.eclipse.osgi.container.Module.start(Module.java:462)
+	at org.eclipse.osgi.container.ModuleContainer$ContainerStartLevel$2.run(ModuleContainer.java:1844)
+	at org.eclipse.osgi.internal.framework.EquinoxContainerAdaptor$2$1.execute(EquinoxContainerAdaptor.java:150)
+	at org.eclipse.osgi.container.ModuleContainer$ContainerStartLevel.incStartLevel(ModuleContainer.java:1837)
+	at org.eclipse.osgi.container.ModuleContainer$ContainerStartLevel.incStartLevel(ModuleContainer.java:1778)
+	at org.eclipse.osgi.container.ModuleContainer$ContainerStartLevel.doContainerStartLevel(ModuleContainer.java:1742)
+	at org.eclipse.osgi.container.ModuleContainer$ContainerStartLevel.dispatchEvent(ModuleContainer.java:1664)
+	at org.eclipse.osgi.container.ModuleContainer$ContainerStartLevel.dispatchEvent(ModuleContainer.java:1)
+	at org.eclipse.osgi.framework.eventmgr.EventManager.dispatchEvent(EventManager.java:234)
+	at org.eclipse.osgi.framework.eventmgr.EventManager$EventThread.run(EventManager.java:345)
+
+!ENTRY org.python.pydev.core 4 0 2025-07-25 09:46:22.891
+!MESSAGE FrameworkEvent ERROR
+!STACK 0
+org.osgi.framework.BundleException: Could not resolve module: org.python.pydev.core [966]
+  Unresolved requirement: Require-Capability: osgi.ee; filter:="(&(osgi.ee=JavaSE)(version=17))"
+  Unresolved requirement: Require-Bundle: org.python.pydev.shared_core; bundle-version="[13.0.2,13.0.3)"; visibility:="reexport"
+    -> Bundle-SymbolicName: org.python.pydev.shared_core; bundle-version="13.0.2.202503021229"; singleton:="true"
+       org.python.pydev.shared_core [974]
+         Unresolved requirement: Require-Capability: osgi.ee; filter:="(&(osgi.ee=JavaSE)(version=17))"
+
+	at org.eclipse.osgi.container.Module.start(Module.java:462)
+	at org.eclipse.osgi.container.ModuleContainer$ContainerStartLevel$2.run(ModuleContainer.java:1844)
+	at org.eclipse.osgi.internal.framework.EquinoxContainerAdaptor$2$1.execute(EquinoxContainerAdaptor.java:150)
+	at org.eclipse.osgi.container.ModuleContainer$ContainerStartLevel.incStartLevel(ModuleContainer.java:1837)
+	at org.eclipse.osgi.container.ModuleContainer$ContainerStartLevel.incStartLevel(ModuleContainer.java:1778)
+	at org.eclipse.osgi.container.ModuleContainer$ContainerStartLevel.doContainerStartLevel(ModuleContainer.java:1742)
+	at org.eclipse.osgi.container.ModuleContainer$ContainerStartLevel.dispatchEvent(ModuleContainer.java:1664)
+	at org.eclipse.osgi.container.ModuleContainer$ContainerStartLevel.dispatchEvent(ModuleContainer.java:1)
+	at org.eclipse.osgi.framework.eventmgr.EventManager.dispatchEvent(EventManager.java:234)
+	at org.eclipse.osgi.framework.eventmgr.EventManager$EventThread.run(EventManager.java:345)
+
+!ENTRY org.python.pydev.customizations 4 0 2025-07-25 09:46:22.907
+!MESSAGE FrameworkEvent ERROR
+!STACK 0
+org.osgi.framework.BundleException: Could not resolve module: org.python.pydev.customizations [967]
+  Unresolved requirement: Require-Capability: osgi.ee; filter:="(&(osgi.ee=JavaSE)(version=17))"
+  Unresolved requirement: Require-Bundle: org.python.pydev; bundle-version="[13.0.2,13.0.3)"
+    -> Bundle-SymbolicName: org.python.pydev; bundle-version="13.0.2.202503021229"; singleton:="true"
+       org.python.pydev [964]
+         Unresolved requirement: Require-Bundle: org.python.pydev.ast; bundle-version="[13.0.2,13.0.3)"
+           -> Bundle-SymbolicName: org.python.pydev.ast; bundle-version="13.0.2.202503021229"; singleton:="true"
+              org.python.pydev.ast [965]
+                Unresolved requirement: Require-Bundle: org.python.pydev.core; bundle-version="[13.0.2,13.0.3)"
+                  -> Bundle-SymbolicName: org.python.pydev.core; bundle-version="13.0.2.202503021229"; singleton:="true"
+                     org.python.pydev.core [966]
+                       Unresolved requirement: Require-Capability: osgi.ee; filter:="(&(osgi.ee=JavaSE)(version=17))"
+                       Unresolved requirement: Require-Bundle: org.python.pydev.shared_core; bundle-version="[13.0.2,13.0.3)"; visibility:="reexport"
+                         -> Bundle-SymbolicName: org.python.pydev.shared_core; bundle-version="13.0.2.202503021229"; singleton:="true"
+                            org.python.pydev.shared_core [974]
+                              Unresolved requirement: Require-Capability: osgi.ee; filter:="(&(osgi.ee=JavaSE)(version=17))"
+  Unresolved requirement: Require-Bundle: org.python.pydev.debug; bundle-version="[13.0.2,13.0.3)"
+    -> Bundle-SymbolicName: org.python.pydev.debug; bundle-version="13.0.2.202503021229"; singleton:="true"
+       org.python.pydev.debug [968]
+         Unresolved requirement: Require-Bundle: org.python.pydev.core; bundle-version="[13.0.2,13.0.3)"
+           -> Bundle-SymbolicName: org.python.pydev.core; bundle-version="13.0.2.202503021229"; singleton:="true"
+  Unresolved requirement: Require-Bundle: org.python.pydev.shared_ui; bundle-version="[13.0.2,13.0.3)"
+    -> Bundle-SymbolicName: org.python.pydev.shared_ui; bundle-version="13.0.2.202503021229"; singleton:="true"
+       org.python.pydev.shared_ui [976]
+         Unresolved requirement: Require-Bundle: org.python.pydev.shared_core; bundle-version="[13.0.2,13.0.3)"
+           -> Bundle-SymbolicName: org.python.pydev.shared_core; bundle-version="13.0.2.202503021229"; singleton:="true"
+  Unresolved requirement: Require-Bundle: org.python.pydev.core; bundle-version="[13.0.2,13.0.3)"
+    -> Bundle-SymbolicName: org.python.pydev.core; bundle-version="13.0.2.202503021229"; singleton:="true"
+  Unresolved requirement: Require-Bundle: org.python.pydev.ast; bundle-version="[13.0.2,13.0.3)"
+    -> Bundle-SymbolicName: org.python.pydev.ast; bundle-version="13.0.2.202503021229"; singleton:="true"
+
+	at org.eclipse.osgi.container.Module.start(Module.java:462)
+	at org.eclipse.osgi.container.ModuleContainer$ContainerStartLevel$2.run(ModuleContainer.java:1844)
+	at org.eclipse.osgi.internal.framework.EquinoxContainerAdaptor$2$1.execute(EquinoxContainerAdaptor.java:150)
+	at org.eclipse.osgi.container.ModuleContainer$ContainerStartLevel.incStartLevel(ModuleContainer.java:1837)
+	at org.eclipse.osgi.container.ModuleContainer$ContainerStartLevel.incStartLevel(ModuleContainer.java:1778)
+	at org.eclipse.osgi.container.ModuleContainer$ContainerStartLevel.doContainerStartLevel(ModuleContainer.java:1742)
+	at org.eclipse.osgi.container.ModuleContainer$ContainerStartLevel.dispatchEvent(ModuleContainer.java:1664)
+	at org.eclipse.osgi.container.ModuleContainer$ContainerStartLevel.dispatchEvent(ModuleContainer.java:1)
+	at org.eclipse.osgi.framework.eventmgr.EventManager.dispatchEvent(EventManager.java:234)
+	at org.eclipse.osgi.framework.eventmgr.EventManager$EventThread.run(EventManager.java:345)
+
+!ENTRY org.python.pydev.debug 4 0 2025-07-25 09:46:22.907
+!MESSAGE FrameworkEvent ERROR
+!STACK 0
+org.osgi.framework.BundleException: Could not resolve module: org.python.pydev.debug [968]
+  Unresolved requirement: Require-Capability: osgi.ee; filter:="(&(osgi.ee=JavaSE)(version=17))"
+  Unresolved requirement: Require-Bundle: org.python.pydev.shared_interactive_console; bundle-version="[13.0.2,13.0.3)"
+    -> Bundle-SymbolicName: org.python.pydev.shared_interactive_console; bundle-version="13.0.2.202503021229"; singleton:="true"
+       org.python.pydev.shared_interactive_console [975]
+         Unresolved requirement: Require-Bundle: org.python.pydev.shared_core; bundle-version="[13.0.2,13.0.3)"
+           -> Bundle-SymbolicName: org.python.pydev.shared_core; bundle-version="13.0.2.202503021229"; singleton:="true"
+              org.python.pydev.shared_core [974]
+                Unresolved requirement: Require-Capability: osgi.ee; filter:="(&(osgi.ee=JavaSE)(version=17))"
+  Unresolved requirement: Require-Bundle: org.python.pydev.jython; bundle-version="[13.0.2,13.0.3)"
+    -> Bundle-SymbolicName: org.python.pydev.jython; bundle-version="13.0.2.202503021229"; singleton:="true"
+       org.python.pydev.jython [971]
+         Unresolved requirement: Require-Bundle: org.python.pydev.core; bundle-version="[13.0.2,13.0.3)"
+           -> Bundle-SymbolicName: org.python.pydev.core; bundle-version="13.0.2.202503021229"; singleton:="true"
+              org.python.pydev.core [966]
+                Unresolved requirement: Require-Capability: osgi.ee; filter:="(&(osgi.ee=JavaSE)(version=17))"
+                Unresolved requirement: Require-Bundle: org.python.pydev.shared_core; bundle-version="[13.0.2,13.0.3)"; visibility:="reexport"
+                  -> Bundle-SymbolicName: org.python.pydev.shared_core; bundle-version="13.0.2.202503021229"; singleton:="true"
+  Unresolved requirement: Require-Bundle: org.python.pydev; bundle-version="[13.0.2,13.0.3)"
+    -> Bundle-SymbolicName: org.python.pydev; bundle-version="13.0.2.202503021229"; singleton:="true"
+       org.python.pydev [964]
+         Unresolved requirement: Require-Bundle: org.python.pydev.ast; bundle-version="[13.0.2,13.0.3)"
+           -> Bundle-SymbolicName: org.python.pydev.ast; bundle-version="13.0.2.202503021229"; singleton:="true"
+              org.python.pydev.ast [965]
+                Unresolved requirement: Require-Bundle: org.python.pydev.core; bundle-version="[13.0.2,13.0.3)"
+                  -> Bundle-SymbolicName: org.python.pydev.core; bundle-version="13.0.2.202503021229"; singleton:="true"
+  Unresolved requirement: Require-Bundle: org.python.pydev.shared_ui; bundle-version="[13.0.2,13.0.3)"
+    -> Bundle-SymbolicName: org.python.pydev.shared_ui; bundle-version="13.0.2.202503021229"; singleton:="true"
+       org.python.pydev.shared_ui [976]
+         Unresolved requirement: Require-Bundle: org.python.pydev.shared_core; bundle-version="[13.0.2,13.0.3)"
+           -> Bundle-SymbolicName: org.python.pydev.shared_core; bundle-version="13.0.2.202503021229"; singleton:="true"
+  Unresolved requirement: Require-Bundle: org.python.pydev.core; bundle-version="[13.0.2,13.0.3)"
+    -> Bundle-SymbolicName: org.python.pydev.core; bundle-version="13.0.2.202503021229"; singleton:="true"
+  Unresolved requirement: Require-Bundle: org.python.pydev.ast; bundle-version="[13.0.2,13.0.3)"
+    -> Bundle-SymbolicName: org.python.pydev.ast; bundle-version="13.0.2.202503021229"; singleton:="true"
+  Unresolved requirement: Require-Bundle: org.python.pydev.parser; bundle-version="[13.0.2,13.0.3)"
+    -> Bundle-SymbolicName: org.python.pydev.parser; bundle-version="13.0.2.202503021229"; singleton:="true"
+       org.python.pydev.parser [972]
+         Unresolved requirement: Require-Bundle: org.python.pydev.core; bundle-version="[13.0.2,13.0.3)"
+           -> Bundle-SymbolicName: org.python.pydev.core; bundle-version="13.0.2.202503021229"; singleton:="true"
+
+	at org.eclipse.osgi.container.Module.start(Module.java:462)
+	at org.eclipse.osgi.container.ModuleContainer$ContainerStartLevel$2.run(ModuleContainer.java:1844)
+	at org.eclipse.osgi.internal.framework.EquinoxContainerAdaptor$2$1.execute(EquinoxContainerAdaptor.java:150)
+	at org.eclipse.osgi.container.ModuleContainer$ContainerStartLevel.incStartLevel(ModuleContainer.java:1837)
+	at org.eclipse.osgi.container.ModuleContainer$ContainerStartLevel.incStartLevel(ModuleContainer.java:1778)
+	at org.eclipse.osgi.container.ModuleContainer$ContainerStartLevel.doContainerStartLevel(ModuleContainer.java:1742)
+	at org.eclipse.osgi.container.ModuleContainer$ContainerStartLevel.dispatchEvent(ModuleContainer.java:1664)
+	at org.eclipse.osgi.container.ModuleContainer$ContainerStartLevel.dispatchEvent(ModuleContainer.java:1)
+	at org.eclipse.osgi.framework.eventmgr.EventManager.dispatchEvent(EventManager.java:234)
+	at org.eclipse.osgi.framework.eventmgr.EventManager$EventThread.run(EventManager.java:345)
+
+!ENTRY org.python.pydev.django 4 0 2025-07-25 09:46:22.923
+!MESSAGE FrameworkEvent ERROR
+!STACK 0
+org.osgi.framework.BundleException: Could not resolve module: org.python.pydev.django [969]
+  Unresolved requirement: Require-Bundle: org.python.pydev.core; bundle-version="[13.0.2,13.0.3)"
+    -> Bundle-SymbolicName: org.python.pydev.core; bundle-version="13.0.2.202503021229"; singleton:="true"
+       org.python.pydev.core [966]
+         Unresolved requirement: Require-Capability: osgi.ee; filter:="(&(osgi.ee=JavaSE)(version=17))"
+         Unresolved requirement: Require-Bundle: org.python.pydev.shared_core; bundle-version="[13.0.2,13.0.3)"; visibility:="reexport"
+           -> Bundle-SymbolicName: org.python.pydev.shared_core; bundle-version="13.0.2.202503021229"; singleton:="true"
+              org.python.pydev.shared_core [974]
+                Unresolved requirement: Require-Capability: osgi.ee; filter:="(&(osgi.ee=JavaSE)(version=17))"
+  Unresolved requirement: Require-Bundle: org.python.pydev; bundle-version="[13.0.2,13.0.3)"
+    -> Bundle-SymbolicName: org.python.pydev; bundle-version="13.0.2.202503021229"; singleton:="true"
+       org.python.pydev [964]
+         Unresolved requirement: Require-Bundle: org.python.pydev.parser; bundle-version="[13.0.2,13.0.3)"
+           -> Bundle-SymbolicName: org.python.pydev.parser; bundle-version="13.0.2.202503021229"; singleton:="true"
+              org.python.pydev.parser [972]
+                Unresolved requirement: Require-Bundle: org.python.pydev.core; bundle-version="[13.0.2,13.0.3)"
+                  -> Bundle-SymbolicName: org.python.pydev.core; bundle-version="13.0.2.202503021229"; singleton:="true"
+         Unresolved requirement: Require-Bundle: org.python.pydev.ast; bundle-version="[13.0.2,13.0.3)"
+           -> Bundle-SymbolicName: org.python.pydev.ast; bundle-version="13.0.2.202503021229"; singleton:="true"
+              org.python.pydev.ast [965]
+                Unresolved requirement: Require-Capability: osgi.ee; filter:="(&(osgi.ee=JavaSE)(version=17))"
+                Unresolved requirement: Require-Bundle: org.python.pydev.parser; bundle-version="[13.0.2,13.0.3)"
+                  -> Bundle-SymbolicName: org.python.pydev.parser; bundle-version="13.0.2.202503021229"; singleton:="true"
+                Unresolved requirement: Require-Bundle: org.python.pydev.core; bundle-version="[13.0.2,13.0.3)"
+                  -> Bundle-SymbolicName: org.python.pydev.core; bundle-version="13.0.2.202503021229"; singleton:="true"
+
+	at org.eclipse.osgi.container.Module.start(Module.java:462)
+	at org.eclipse.osgi.container.ModuleContainer$ContainerStartLevel$2.run(ModuleContainer.java:1844)
+	at org.eclipse.osgi.internal.framework.EquinoxContainerAdaptor$2$1.execute(EquinoxContainerAdaptor.java:150)
+	at org.eclipse.osgi.container.ModuleContainer$ContainerStartLevel.incStartLevel(ModuleContainer.java:1837)
+	at org.eclipse.osgi.container.ModuleContainer$ContainerStartLevel.incStartLevel(ModuleContainer.java:1778)
+	at org.eclipse.osgi.container.ModuleContainer$ContainerStartLevel.doContainerStartLevel(ModuleContainer.java:1742)
+	at org.eclipse.osgi.container.ModuleContainer$ContainerStartLevel.dispatchEvent(ModuleContainer.java:1664)
+	at org.eclipse.osgi.container.ModuleContainer$ContainerStartLevel.dispatchEvent(ModuleContainer.java:1)
+	at org.eclipse.osgi.framework.eventmgr.EventManager.dispatchEvent(EventManager.java:234)
+	at org.eclipse.osgi.framework.eventmgr.EventManager$EventThread.run(EventManager.java:345)
+
+!ENTRY org.python.pydev.jython 4 0 2025-07-25 09:46:22.923
+!MESSAGE FrameworkEvent ERROR
+!STACK 0
+org.osgi.framework.BundleException: Could not resolve module: org.python.pydev.jython [971]
+  Unresolved requirement: Require-Capability: osgi.ee; filter:="(&(osgi.ee=JavaSE)(version=17))"
+  Unresolved requirement: Require-Bundle: org.python.pydev.core; bundle-version="[13.0.2,13.0.3)"
+    -> Bundle-SymbolicName: org.python.pydev.core; bundle-version="13.0.2.202503021229"; singleton:="true"
+       org.python.pydev.core [966]
+         Unresolved requirement: Require-Capability: osgi.ee; filter:="(&(osgi.ee=JavaSE)(version=17))"
+         Unresolved requirement: Require-Bundle: org.python.pydev.shared_core; bundle-version="[13.0.2,13.0.3)"; visibility:="reexport"
+           -> Bundle-SymbolicName: org.python.pydev.shared_core; bundle-version="13.0.2.202503021229"; singleton:="true"
+              org.python.pydev.shared_core [974]
+                Unresolved requirement: Require-Capability: osgi.ee; filter:="(&(osgi.ee=JavaSE)(version=17))"
+  Unresolved requirement: Require-Bundle: org.python.pydev.shared_ui; bundle-version="[13.0.2,13.0.3)"
+    -> Bundle-SymbolicName: org.python.pydev.shared_ui; bundle-version="13.0.2.202503021229"; singleton:="true"
+       org.python.pydev.shared_ui [976]
+         Unresolved requirement: Require-Bundle: org.python.pydev.shared_core; bundle-version="[13.0.2,13.0.3)"
+           -> Bundle-SymbolicName: org.python.pydev.shared_core; bundle-version="13.0.2.202503021229"; singleton:="true"
+
+	at org.eclipse.osgi.container.Module.start(Module.java:462)
+	at org.eclipse.osgi.container.ModuleContainer$ContainerStartLevel$2.run(ModuleContainer.java:1844)
+	at org.eclipse.osgi.internal.framework.EquinoxContainerAdaptor$2$1.execute(EquinoxContainerAdaptor.java:150)
+	at org.eclipse.osgi.container.ModuleContainer$ContainerStartLevel.incStartLevel(ModuleContainer.java:1837)
+	at org.eclipse.osgi.container.ModuleContainer$ContainerStartLevel.incStartLevel(ModuleContainer.java:1778)
+	at org.eclipse.osgi.container.ModuleContainer$ContainerStartLevel.doContainerStartLevel(ModuleContainer.java:1742)
+	at org.eclipse.osgi.container.ModuleContainer$ContainerStartLevel.dispatchEvent(ModuleContainer.java:1664)
+	at org.eclipse.osgi.container.ModuleContainer$ContainerStartLevel.dispatchEvent(ModuleContainer.java:1)
+	at org.eclipse.osgi.framework.eventmgr.EventManager.dispatchEvent(EventManager.java:234)
+	at org.eclipse.osgi.framework.eventmgr.EventManager$EventThread.run(EventManager.java:345)
+
+!ENTRY org.python.pydev.parser 4 0 2025-07-25 09:46:22.923
+!MESSAGE FrameworkEvent ERROR
+!STACK 0
+org.osgi.framework.BundleException: Could not resolve module: org.python.pydev.parser [972]
+  Unresolved requirement: Require-Capability: osgi.ee; filter:="(&(osgi.ee=JavaSE)(version=17))"
+  Unresolved requirement: Require-Bundle: org.python.pydev.core; bundle-version="[13.0.2,13.0.3)"
+    -> Bundle-SymbolicName: org.python.pydev.core; bundle-version="13.0.2.202503021229"; singleton:="true"
+       org.python.pydev.core [966]
+         Unresolved requirement: Require-Capability: osgi.ee; filter:="(&(osgi.ee=JavaSE)(version=17))"
+         Unresolved requirement: Require-Bundle: org.python.pydev.shared_core; bundle-version="[13.0.2,13.0.3)"; visibility:="reexport"
+           -> Bundle-SymbolicName: org.python.pydev.shared_core; bundle-version="13.0.2.202503021229"; singleton:="true"
+              org.python.pydev.shared_core [974]
+                Unresolved requirement: Require-Capability: osgi.ee; filter:="(&(osgi.ee=JavaSE)(version=17))"
+
+	at org.eclipse.osgi.container.Module.start(Module.java:462)
+	at org.eclipse.osgi.container.ModuleContainer$ContainerStartLevel$2.run(ModuleContainer.java:1844)
+	at org.eclipse.osgi.internal.framework.EquinoxContainerAdaptor$2$1.execute(EquinoxContainerAdaptor.java:150)
+	at org.eclipse.osgi.container.ModuleContainer$ContainerStartLevel.incStartLevel(ModuleContainer.java:1837)
+	at org.eclipse.osgi.container.ModuleContainer$ContainerStartLevel.incStartLevel(ModuleContainer.java:1778)
+	at org.eclipse.osgi.container.ModuleContainer$ContainerStartLevel.doContainerStartLevel(ModuleContainer.java:1742)
+	at org.eclipse.osgi.container.ModuleContainer$ContainerStartLevel.dispatchEvent(ModuleContainer.java:1664)
+	at org.eclipse.osgi.container.ModuleContainer$ContainerStartLevel.dispatchEvent(ModuleContainer.java:1)
+	at org.eclipse.osgi.framework.eventmgr.EventManager.dispatchEvent(EventManager.java:234)
+	at org.eclipse.osgi.framework.eventmgr.EventManager$EventThread.run(EventManager.java:345)
+
+!ENTRY org.python.pydev.refactoring 4 0 2025-07-25 09:46:22.923
+!MESSAGE FrameworkEvent ERROR
+!STACK 0
+org.osgi.framework.BundleException: Could not resolve module: org.python.pydev.refactoring [973]
+  Unresolved requirement: Require-Capability: osgi.ee; filter:="(&(osgi.ee=JavaSE)(version=17))"
+  Unresolved requirement: Require-Bundle: org.python.pydev.parser; bundle-version="[13.0.2,13.0.3)"
+    -> Bundle-SymbolicName: org.python.pydev.parser; bundle-version="13.0.2.202503021229"; singleton:="true"
+       org.python.pydev.parser [972]
+         Unresolved requirement: Require-Bundle: org.python.pydev.core; bundle-version="[13.0.2,13.0.3)"
+           -> Bundle-SymbolicName: org.python.pydev.core; bundle-version="13.0.2.202503021229"; singleton:="true"
+              org.python.pydev.core [966]
+                Unresolved requirement: Require-Capability: osgi.ee; filter:="(&(osgi.ee=JavaSE)(version=17))"
+                Unresolved requirement: Require-Bundle: org.python.pydev.shared_core; bundle-version="[13.0.2,13.0.3)"; visibility:="reexport"
+                  -> Bundle-SymbolicName: org.python.pydev.shared_core; bundle-version="13.0.2.202503021229"; singleton:="true"
+                     org.python.pydev.shared_core [974]
+                       Unresolved requirement: Require-Capability: osgi.ee; filter:="(&(osgi.ee=JavaSE)(version=17))"
+  Unresolved requirement: Require-Bundle: org.python.pydev.core; bundle-version="[13.0.2,13.0.3)"
+    -> Bundle-SymbolicName: org.python.pydev.core; bundle-version="13.0.2.202503021229"; singleton:="true"
+  Unresolved requirement: Require-Bundle: org.python.pydev; bundle-version="[13.0.2,13.0.3)"
+    -> Bundle-SymbolicName: org.python.pydev; bundle-version="13.0.2.202503021229"; singleton:="true"
+       org.python.pydev [964]
+         Unresolved requirement: Require-Bundle: org.python.pydev.ast; bundle-version="[13.0.2,13.0.3)"
+           -> Bundle-SymbolicName: org.python.pydev.ast; bundle-version="13.0.2.202503021229"; singleton:="true"
+              org.python.pydev.ast [965]
+                Unresolved requirement: Require-Bundle: org.python.pydev.core; bundle-version="[13.0.2,13.0.3)"
+                  -> Bundle-SymbolicName: org.python.pydev.core; bundle-version="13.0.2.202503021229"; singleton:="true"
+  Unresolved requirement: Require-Bundle: org.python.pydev.shared_ui; bundle-version="[13.0.2,13.0.3)"
+    -> Bundle-SymbolicName: org.python.pydev.shared_ui; bundle-version="13.0.2.202503021229"; singleton:="true"
+       org.python.pydev.shared_ui [976]
+         Unresolved requirement: Require-Bundle: org.python.pydev.shared_core; bundle-version="[13.0.2,13.0.3)"
+           -> Bundle-SymbolicName: org.python.pydev.shared_core; bundle-version="13.0.2.202503021229"; singleton:="true"
+  Unresolved requirement: Require-Bundle: org.python.pydev.ast; bundle-version="[13.0.2,13.0.3)"
+    -> Bundle-SymbolicName: org.python.pydev.ast; bundle-version="13.0.2.202503021229"; singleton:="true"
+
+	at org.eclipse.osgi.container.Module.start(Module.java:462)
+	at org.eclipse.osgi.container.ModuleContainer$ContainerStartLevel$2.run(ModuleContainer.java:1844)
+	at org.eclipse.osgi.internal.framework.EquinoxContainerAdaptor$2$1.execute(EquinoxContainerAdaptor.java:150)
+	at org.eclipse.osgi.container.ModuleContainer$ContainerStartLevel.incStartLevel(ModuleContainer.java:1837)
+	at org.eclipse.osgi.container.ModuleContainer$ContainerStartLevel.incStartLevel(ModuleContainer.java:1778)
+	at org.eclipse.osgi.container.ModuleContainer$ContainerStartLevel.doContainerStartLevel(ModuleContainer.java:1742)
+	at org.eclipse.osgi.container.ModuleContainer$ContainerStartLevel.dispatchEvent(ModuleContainer.java:1664)
+	at org.eclipse.osgi.container.ModuleContainer$ContainerStartLevel.dispatchEvent(ModuleContainer.java:1)
+	at org.eclipse.osgi.framework.eventmgr.EventManager.dispatchEvent(EventManager.java:234)
+	at org.eclipse.osgi.framework.eventmgr.EventManager$EventThread.run(EventManager.java:345)
+
+!ENTRY org.python.pydev.shared_core 4 0 2025-07-25 09:46:22.938
+!MESSAGE FrameworkEvent ERROR
+!STACK 0
+org.osgi.framework.BundleException: Could not resolve module: org.python.pydev.shared_core [974]
+  Unresolved requirement: Require-Capability: osgi.ee; filter:="(&(osgi.ee=JavaSE)(version=17))"
+
+	at org.eclipse.osgi.container.Module.start(Module.java:462)
+	at org.eclipse.osgi.container.ModuleContainer$ContainerStartLevel$2.run(ModuleContainer.java:1844)
+	at org.eclipse.osgi.internal.framework.EquinoxContainerAdaptor$2$1.execute(EquinoxContainerAdaptor.java:150)
+	at org.eclipse.osgi.container.ModuleContainer$ContainerStartLevel.incStartLevel(ModuleContainer.java:1837)
+	at org.eclipse.osgi.container.ModuleContainer$ContainerStartLevel.incStartLevel(ModuleContainer.java:1778)
+	at org.eclipse.osgi.container.ModuleContainer$ContainerStartLevel.doContainerStartLevel(ModuleContainer.java:1742)
+	at org.eclipse.osgi.container.ModuleContainer$ContainerStartLevel.dispatchEvent(ModuleContainer.java:1664)
+	at org.eclipse.osgi.container.ModuleContainer$ContainerStartLevel.dispatchEvent(ModuleContainer.java:1)
+	at org.eclipse.osgi.framework.eventmgr.EventManager.dispatchEvent(EventManager.java:234)
+	at org.eclipse.osgi.framework.eventmgr.EventManager$EventThread.run(EventManager.java:345)
+
+!ENTRY org.python.pydev.shared_interactive_console 4 0 2025-07-25 09:46:22.938
+!MESSAGE FrameworkEvent ERROR
+!STACK 0
+org.osgi.framework.BundleException: Could not resolve module: org.python.pydev.shared_interactive_console [975]
+  Unresolved requirement: Require-Capability: osgi.ee; filter:="(&(osgi.ee=JavaSE)(version=17))"
+  Unresolved requirement: Require-Bundle: org.python.pydev.shared_core; bundle-version="[13.0.2,13.0.3)"
+    -> Bundle-SymbolicName: org.python.pydev.shared_core; bundle-version="13.0.2.202503021229"; singleton:="true"
+       org.python.pydev.shared_core [974]
+         Unresolved requirement: Require-Capability: osgi.ee; filter:="(&(osgi.ee=JavaSE)(version=17))"
+  Unresolved requirement: Require-Bundle: org.python.pydev.shared_ui; bundle-version="[13.0.2,13.0.3)"
+    -> Bundle-SymbolicName: org.python.pydev.shared_ui; bundle-version="13.0.2.202503021229"; singleton:="true"
+       org.python.pydev.shared_ui [976]
+         Unresolved requirement: Require-Bundle: org.python.pydev.shared_core; bundle-version="[13.0.2,13.0.3)"
+           -> Bundle-SymbolicName: org.python.pydev.shared_core; bundle-version="13.0.2.202503021229"; singleton:="true"
+  Unresolved requirement: Require-Bundle: org.python.pydev.core; bundle-version="[13.0.2,13.0.3)"
+    -> Bundle-SymbolicName: org.python.pydev.core; bundle-version="13.0.2.202503021229"; singleton:="true"
+       org.python.pydev.core [966]
+         Unresolved requirement: Require-Bundle: org.python.pydev.shared_core; bundle-version="[13.0.2,13.0.3)"; visibility:="reexport"
+           -> Bundle-SymbolicName: org.python.pydev.shared_core; bundle-version="13.0.2.202503021229"; singleton:="true"
+
+	at org.eclipse.osgi.container.Module.start(Module.java:462)
+	at org.eclipse.osgi.container.ModuleContainer$ContainerStartLevel$2.run(ModuleContainer.java:1844)
+	at org.eclipse.osgi.internal.framework.EquinoxContainerAdaptor$2$1.execute(EquinoxContainerAdaptor.java:150)
+	at org.eclipse.osgi.container.ModuleContainer$ContainerStartLevel.incStartLevel(ModuleContainer.java:1837)
+	at org.eclipse.osgi.container.ModuleContainer$ContainerStartLevel.incStartLevel(ModuleContainer.java:1778)
+	at org.eclipse.osgi.container.ModuleContainer$ContainerStartLevel.doContainerStartLevel(ModuleContainer.java:1742)
+	at org.eclipse.osgi.container.ModuleContainer$ContainerStartLevel.dispatchEvent(ModuleContainer.java:1664)
+	at org.eclipse.osgi.container.ModuleContainer$ContainerStartLevel.dispatchEvent(ModuleContainer.java:1)
+	at org.eclipse.osgi.framework.eventmgr.EventManager.dispatchEvent(EventManager.java:234)
+	at org.eclipse.osgi.framework.eventmgr.EventManager$EventThread.run(EventManager.java:345)
+
+!ENTRY org.python.pydev.shared_ui 4 0 2025-07-25 09:46:22.938
+!MESSAGE FrameworkEvent ERROR
+!STACK 0
+org.osgi.framework.BundleException: Could not resolve module: org.python.pydev.shared_ui [976]
+  Unresolved requirement: Require-Capability: osgi.ee; filter:="(&(osgi.ee=JavaSE)(version=17))"
+  Unresolved requirement: Require-Bundle: org.python.pydev.core
+    -> Bundle-SymbolicName: org.python.pydev.core; bundle-version="13.0.2.202503021229"; singleton:="true"
+       org.python.pydev.core [966]
+         Unresolved requirement: Require-Bundle: org.python.pydev.shared_core; bundle-version="[13.0.2,13.0.3)"; visibility:="reexport"
+           -> Bundle-SymbolicName: org.python.pydev.shared_core; bundle-version="13.0.2.202503021229"; singleton:="true"
+              org.python.pydev.shared_core [974]
+                Unresolved requirement: Require-Capability: osgi.ee; filter:="(&(osgi.ee=JavaSE)(version=17))"
+  Unresolved requirement: Require-Bundle: org.python.pydev.shared_core; bundle-version="[13.0.2,13.0.3)"
+    -> Bundle-SymbolicName: org.python.pydev.shared_core; bundle-version="13.0.2.202503021229"; singleton:="true"
+
+	at org.eclipse.osgi.container.Module.start(Module.java:462)
+	at org.eclipse.osgi.container.ModuleContainer$ContainerStartLevel$2.run(ModuleContainer.java:1844)
+	at org.eclipse.osgi.internal.framework.EquinoxContainerAdaptor$2$1.execute(EquinoxContainerAdaptor.java:150)
+	at org.eclipse.osgi.container.ModuleContainer$ContainerStartLevel.incStartLevel(ModuleContainer.java:1837)
+	at org.eclipse.osgi.container.ModuleContainer$ContainerStartLevel.incStartLevel(ModuleContainer.java:1778)
+	at org.eclipse.osgi.container.ModuleContainer$ContainerStartLevel.doContainerStartLevel(ModuleContainer.java:1742)
+	at org.eclipse.osgi.container.ModuleContainer$ContainerStartLevel.dispatchEvent(ModuleContainer.java:1664)
+	at org.eclipse.osgi.container.ModuleContainer$ContainerStartLevel.dispatchEvent(ModuleContainer.java:1)
+	at org.eclipse.osgi.framework.eventmgr.EventManager.dispatchEvent(EventManager.java:234)
+	at org.eclipse.osgi.framework.eventmgr.EventManager$EventThread.run(EventManager.java:345)
+
+!ENTRY com.genuitec.eclipse.code.ui 1 0 2025-07-25 09:46:33.006
+!MESSAGE CodeMix Engine will be started momentarily to support development activities
+!SESSION 2025-07-25 10:25:03.289 -----------------------------------------------
+eclipse.buildId=4.13.0.I20190916-1045
+java.version=1.8.0_451
+java.vendor=Oracle Corporation
+BootLoader constants: OS=win32, ARCH=x86_64, WS=win32, NL=ko_KR
+Framework arguments:  -product org.eclipse.epp.package.jee.product
+Command-line arguments:  -os win32 -ws win32 -arch x86_64 -product org.eclipse.epp.package.jee.product
+
+!ENTRY com.python.pydev.analysis 4 0 2025-07-25 10:25:04.443
+!MESSAGE FrameworkEvent ERROR
+!STACK 0
+org.osgi.framework.BundleException: Could not resolve module: com.python.pydev.analysis [961]
+  Unresolved requirement: Require-Bundle: org.python.pydev.ast; bundle-version="[13.0.2,13.0.3)"
+    -> Bundle-SymbolicName: org.python.pydev.ast; bundle-version="13.0.2.202503021229"; singleton:="true"
+       org.python.pydev.ast [965]
+         Unresolved requirement: Require-Capability: osgi.ee; filter:="(&(osgi.ee=JavaSE)(version=17))"
+         Unresolved requirement: Require-Bundle: org.python.pydev.parser; bundle-version="[13.0.2,13.0.3)"
+           -> Bundle-SymbolicName: org.python.pydev.parser; bundle-version="13.0.2.202503021229"; singleton:="true"
+              org.python.pydev.parser [972]
+                Unresolved requirement: Require-Bundle: org.python.pydev.core; bundle-version="[13.0.2,13.0.3)"
+                  -> Bundle-SymbolicName: org.python.pydev.core; bundle-version="13.0.2.202503021229"; singleton:="true"
+                     org.python.pydev.core [966]
+                       Unresolved requirement: Require-Capability: osgi.ee; filter:="(&(osgi.ee=JavaSE)(version=17))"
+                       Unresolved requirement: Require-Bundle: org.python.pydev.shared_core; bundle-version="[13.0.2,13.0.3)"; visibility:="reexport"
+                         -> Bundle-SymbolicName: org.python.pydev.shared_core; bundle-version="13.0.2.202503021229"; singleton:="true"
+                            org.python.pydev.shared_core [974]
+                              Unresolved requirement: Require-Capability: osgi.ee; filter:="(&(osgi.ee=JavaSE)(version=17))"
+         Unresolved requirement: Require-Bundle: org.python.pydev.core; bundle-version="[13.0.2,13.0.3)"
+           -> Bundle-SymbolicName: org.python.pydev.core; bundle-version="13.0.2.202503021229"; singleton:="true"
+  Unresolved requirement: Require-Bundle: org.python.pydev.core; bundle-version="[13.0.2,13.0.3)"
+    -> Bundle-SymbolicName: org.python.pydev.core; bundle-version="13.0.2.202503021229"; singleton:="true"
+
+	at org.eclipse.osgi.container.Module.start(Module.java:462)
+	at org.eclipse.osgi.container.ModuleContainer$ContainerStartLevel$2.run(ModuleContainer.java:1844)
+	at org.eclipse.osgi.internal.framework.EquinoxContainerAdaptor$2$1.execute(EquinoxContainerAdaptor.java:150)
+	at org.eclipse.osgi.container.ModuleContainer$ContainerStartLevel.incStartLevel(ModuleContainer.java:1837)
+	at org.eclipse.osgi.container.ModuleContainer$ContainerStartLevel.incStartLevel(ModuleContainer.java:1778)
+	at org.eclipse.osgi.container.ModuleContainer$ContainerStartLevel.doContainerStartLevel(ModuleContainer.java:1742)
+	at org.eclipse.osgi.container.ModuleContainer$ContainerStartLevel.dispatchEvent(ModuleContainer.java:1664)
+	at org.eclipse.osgi.container.ModuleContainer$ContainerStartLevel.dispatchEvent(ModuleContainer.java:1)
+	at org.eclipse.osgi.framework.eventmgr.EventManager.dispatchEvent(EventManager.java:234)
+	at org.eclipse.osgi.framework.eventmgr.EventManager$EventThread.run(EventManager.java:345)
+
+!ENTRY com.python.pydev.debug 4 0 2025-07-25 10:25:04.446
+!MESSAGE FrameworkEvent ERROR
+!STACK 0
+org.osgi.framework.BundleException: Could not resolve module: com.python.pydev.debug [962]
+  Unresolved requirement: Require-Bundle: org.python.pydev.ast; bundle-version="[13.0.2,13.0.3)"
+    -> Bundle-SymbolicName: org.python.pydev.ast; bundle-version="13.0.2.202503021229"; singleton:="true"
+       org.python.pydev.ast [965]
+         Unresolved requirement: Require-Capability: osgi.ee; filter:="(&(osgi.ee=JavaSE)(version=17))"
+         Unresolved requirement: Require-Bundle: org.python.pydev.parser; bundle-version="[13.0.2,13.0.3)"
+           -> Bundle-SymbolicName: org.python.pydev.parser; bundle-version="13.0.2.202503021229"; singleton:="true"
+              org.python.pydev.parser [972]
+                Unresolved requirement: Require-Bundle: org.python.pydev.core; bundle-version="[13.0.2,13.0.3)"
+                  -> Bundle-SymbolicName: org.python.pydev.core; bundle-version="13.0.2.202503021229"; singleton:="true"
+                     org.python.pydev.core [966]
+                       Unresolved requirement: Require-Capability: osgi.ee; filter:="(&(osgi.ee=JavaSE)(version=17))"
+                       Unresolved requirement: Require-Bundle: org.python.pydev.shared_core; bundle-version="[13.0.2,13.0.3)"; visibility:="reexport"
+                         -> Bundle-SymbolicName: org.python.pydev.shared_core; bundle-version="13.0.2.202503021229"; singleton:="true"
+                            org.python.pydev.shared_core [974]
+                              Unresolved requirement: Require-Capability: osgi.ee; filter:="(&(osgi.ee=JavaSE)(version=17))"
+         Unresolved requirement: Require-Bundle: org.python.pydev.core; bundle-version="[13.0.2,13.0.3)"
+           -> Bundle-SymbolicName: org.python.pydev.core; bundle-version="13.0.2.202503021229"; singleton:="true"
+  Unresolved requirement: Require-Bundle: org.python.pydev.core; bundle-version="[13.0.2,13.0.3)"
+    -> Bundle-SymbolicName: org.python.pydev.core; bundle-version="13.0.2.202503021229"; singleton:="true"
+
+	at org.eclipse.osgi.container.Module.start(Module.java:462)
+	at org.eclipse.osgi.container.ModuleContainer$ContainerStartLevel$2.run(ModuleContainer.java:1844)
+	at org.eclipse.osgi.internal.framework.EquinoxContainerAdaptor$2$1.execute(EquinoxContainerAdaptor.java:150)
+	at org.eclipse.osgi.container.ModuleContainer$ContainerStartLevel.incStartLevel(ModuleContainer.java:1837)
+	at org.eclipse.osgi.container.ModuleContainer$ContainerStartLevel.incStartLevel(ModuleContainer.java:1778)
+	at org.eclipse.osgi.container.ModuleContainer$ContainerStartLevel.doContainerStartLevel(ModuleContainer.java:1742)
+	at org.eclipse.osgi.container.ModuleContainer$ContainerStartLevel.dispatchEvent(ModuleContainer.java:1664)
+	at org.eclipse.osgi.container.ModuleContainer$ContainerStartLevel.dispatchEvent(ModuleContainer.java:1)
+	at org.eclipse.osgi.framework.eventmgr.EventManager.dispatchEvent(EventManager.java:234)
+	at org.eclipse.osgi.framework.eventmgr.EventManager$EventThread.run(EventManager.java:345)
+
+!ENTRY com.python.pydev.refactoring 4 0 2025-07-25 10:25:04.446
+!MESSAGE FrameworkEvent ERROR
+!STACK 0
+org.osgi.framework.BundleException: Could not resolve module: com.python.pydev.refactoring [963]
+  Unresolved requirement: Require-Bundle: org.python.pydev.core; bundle-version="[13.0.2,13.0.3)"
+    -> Bundle-SymbolicName: org.python.pydev.core; bundle-version="13.0.2.202503021229"; singleton:="true"
+       org.python.pydev.core [966]
+         Unresolved requirement: Require-Capability: osgi.ee; filter:="(&(osgi.ee=JavaSE)(version=17))"
+         Unresolved requirement: Require-Bundle: org.python.pydev.shared_core; bundle-version="[13.0.2,13.0.3)"; visibility:="reexport"
+           -> Bundle-SymbolicName: org.python.pydev.shared_core; bundle-version="13.0.2.202503021229"; singleton:="true"
+              org.python.pydev.shared_core [974]
+                Unresolved requirement: Require-Capability: osgi.ee; filter:="(&(osgi.ee=JavaSE)(version=17))"
+  Unresolved requirement: Require-Bundle: org.python.pydev; bundle-version="[13.0.2,13.0.3)"
+    -> Bundle-SymbolicName: org.python.pydev; bundle-version="13.0.2.202503021229"; singleton:="true"
+       org.python.pydev [964]
+         Unresolved requirement: Require-Bundle: org.python.pydev.ast; bundle-version="[13.0.2,13.0.3)"
+           -> Bundle-SymbolicName: org.python.pydev.ast; bundle-version="13.0.2.202503021229"; singleton:="true"
+              org.python.pydev.ast [965]
+                Unresolved requirement: Require-Capability: osgi.ee; filter:="(&(osgi.ee=JavaSE)(version=17))"
+                Unresolved requirement: Require-Bundle: org.python.pydev.parser; bundle-version="[13.0.2,13.0.3)"
+                  -> Bundle-SymbolicName: org.python.pydev.parser; bundle-version="13.0.2.202503021229"; singleton:="true"
+                     org.python.pydev.parser [972]
+                       Unresolved requirement: Require-Bundle: org.python.pydev.core; bundle-version="[13.0.2,13.0.3)"
+                         -> Bundle-SymbolicName: org.python.pydev.core; bundle-version="13.0.2.202503021229"; singleton:="true"
+                Unresolved requirement: Require-Bundle: org.python.pydev.core; bundle-version="[13.0.2,13.0.3)"
+                  -> Bundle-SymbolicName: org.python.pydev.core; bundle-version="13.0.2.202503021229"; singleton:="true"
+  Unresolved requirement: Require-Bundle: org.python.pydev.shared_ui; bundle-version="[13.0.2,13.0.3)"
+    -> Bundle-SymbolicName: org.python.pydev.shared_ui; bundle-version="13.0.2.202503021229"; singleton:="true"
+       org.python.pydev.shared_ui [976]
+         Unresolved requirement: Require-Bundle: org.python.pydev.shared_core; bundle-version="[13.0.2,13.0.3)"
+           -> Bundle-SymbolicName: org.python.pydev.shared_core; bundle-version="13.0.2.202503021229"; singleton:="true"
+  Unresolved requirement: Require-Bundle: org.python.pydev.ast; bundle-version="[13.0.2,13.0.3)"
+    -> Bundle-SymbolicName: org.python.pydev.ast; bundle-version="13.0.2.202503021229"; singleton:="true"
+
+	at org.eclipse.osgi.container.Module.start(Module.java:462)
+	at org.eclipse.osgi.container.ModuleContainer$ContainerStartLevel$2.run(ModuleContainer.java:1844)
+	at org.eclipse.osgi.internal.framework.EquinoxContainerAdaptor$2$1.execute(EquinoxContainerAdaptor.java:150)
+	at org.eclipse.osgi.container.ModuleContainer$ContainerStartLevel.incStartLevel(ModuleContainer.java:1837)
+	at org.eclipse.osgi.container.ModuleContainer$ContainerStartLevel.incStartLevel(ModuleContainer.java:1778)
+	at org.eclipse.osgi.container.ModuleContainer$ContainerStartLevel.doContainerStartLevel(ModuleContainer.java:1742)
+	at org.eclipse.osgi.container.ModuleContainer$ContainerStartLevel.dispatchEvent(ModuleContainer.java:1664)
+	at org.eclipse.osgi.container.ModuleContainer$ContainerStartLevel.dispatchEvent(ModuleContainer.java:1)
+	at org.eclipse.osgi.framework.eventmgr.EventManager.dispatchEvent(EventManager.java:234)
+	at org.eclipse.osgi.framework.eventmgr.EventManager$EventThread.run(EventManager.java:345)
+
+!ENTRY org.python.pydev 4 0 2025-07-25 10:25:04.446
+!MESSAGE FrameworkEvent ERROR
+!STACK 0
+org.osgi.framework.BundleException: Could not resolve module: org.python.pydev [964]
+  Unresolved requirement: Require-Bundle: org.python.pydev.parser; bundle-version="[13.0.2,13.0.3)"
+    -> Bundle-SymbolicName: org.python.pydev.parser; bundle-version="13.0.2.202503021229"; singleton:="true"
+       org.python.pydev.parser [972]
+         Unresolved requirement: Require-Bundle: org.python.pydev.core; bundle-version="[13.0.2,13.0.3)"
+           -> Bundle-SymbolicName: org.python.pydev.core; bundle-version="13.0.2.202503021229"; singleton:="true"
+              org.python.pydev.core [966]
+                Unresolved requirement: Require-Capability: osgi.ee; filter:="(&(osgi.ee=JavaSE)(version=17))"
+                Unresolved requirement: Require-Bundle: org.python.pydev.shared_core; bundle-version="[13.0.2,13.0.3)"; visibility:="reexport"
+                  -> Bundle-SymbolicName: org.python.pydev.shared_core; bundle-version="13.0.2.202503021229"; singleton:="true"
+                     org.python.pydev.shared_core [974]
+                       Unresolved requirement: Require-Capability: osgi.ee; filter:="(&(osgi.ee=JavaSE)(version=17))"
+  Unresolved requirement: Require-Bundle: org.python.pydev.ast; bundle-version="[13.0.2,13.0.3)"
+    -> Bundle-SymbolicName: org.python.pydev.ast; bundle-version="13.0.2.202503021229"; singleton:="true"
+       org.python.pydev.ast [965]
+         Unresolved requirement: Require-Capability: osgi.ee; filter:="(&(osgi.ee=JavaSE)(version=17))"
+         Unresolved requirement: Require-Bundle: org.python.pydev.parser; bundle-version="[13.0.2,13.0.3)"
+           -> Bundle-SymbolicName: org.python.pydev.parser; bundle-version="13.0.2.202503021229"; singleton:="true"
+         Unresolved requirement: Require-Bundle: org.python.pydev.core; bundle-version="[13.0.2,13.0.3)"
+           -> Bundle-SymbolicName: org.python.pydev.core; bundle-version="13.0.2.202503021229"; singleton:="true"
+
+	at org.eclipse.osgi.container.Module.start(Module.java:462)
+	at org.eclipse.osgi.container.ModuleContainer$ContainerStartLevel$2.run(ModuleContainer.java:1844)
+	at org.eclipse.osgi.internal.framework.EquinoxContainerAdaptor$2$1.execute(EquinoxContainerAdaptor.java:150)
+	at org.eclipse.osgi.container.ModuleContainer$ContainerStartLevel.incStartLevel(ModuleContainer.java:1837)
+	at org.eclipse.osgi.container.ModuleContainer$ContainerStartLevel.incStartLevel(ModuleContainer.java:1778)
+	at org.eclipse.osgi.container.ModuleContainer$ContainerStartLevel.doContainerStartLevel(ModuleContainer.java:1742)
+	at org.eclipse.osgi.container.ModuleContainer$ContainerStartLevel.dispatchEvent(ModuleContainer.java:1664)
+	at org.eclipse.osgi.container.ModuleContainer$ContainerStartLevel.dispatchEvent(ModuleContainer.java:1)
+	at org.eclipse.osgi.framework.eventmgr.EventManager.dispatchEvent(EventManager.java:234)
+	at org.eclipse.osgi.framework.eventmgr.EventManager$EventThread.run(EventManager.java:345)
+
+!ENTRY org.python.pydev.ast 4 0 2025-07-25 10:25:04.461
+!MESSAGE FrameworkEvent ERROR
+!STACK 0
+org.osgi.framework.BundleException: Could not resolve module: org.python.pydev.ast [965]
+  Unresolved requirement: Require-Capability: osgi.ee; filter:="(&(osgi.ee=JavaSE)(version=17))"
+  Unresolved requirement: Require-Bundle: org.python.pydev.parser; bundle-version="[13.0.2,13.0.3)"
+    -> Bundle-SymbolicName: org.python.pydev.parser; bundle-version="13.0.2.202503021229"; singleton:="true"
+       org.python.pydev.parser [972]
+         Unresolved requirement: Require-Bundle: org.python.pydev.core; bundle-version="[13.0.2,13.0.3)"
+           -> Bundle-SymbolicName: org.python.pydev.core; bundle-version="13.0.2.202503021229"; singleton:="true"
+              org.python.pydev.core [966]
+                Unresolved requirement: Require-Capability: osgi.ee; filter:="(&(osgi.ee=JavaSE)(version=17))"
+                Unresolved requirement: Require-Bundle: org.python.pydev.shared_core; bundle-version="[13.0.2,13.0.3)"; visibility:="reexport"
+                  -> Bundle-SymbolicName: org.python.pydev.shared_core; bundle-version="13.0.2.202503021229"; singleton:="true"
+                     org.python.pydev.shared_core [974]
+                       Unresolved requirement: Require-Capability: osgi.ee; filter:="(&(osgi.ee=JavaSE)(version=17))"
+  Unresolved requirement: Require-Bundle: org.python.pydev.core; bundle-version="[13.0.2,13.0.3)"
+    -> Bundle-SymbolicName: org.python.pydev.core; bundle-version="13.0.2.202503021229"; singleton:="true"
+
+	at org.eclipse.osgi.container.Module.start(Module.java:462)
+	at org.eclipse.osgi.container.ModuleContainer$ContainerStartLevel$2.run(ModuleContainer.java:1844)
+	at org.eclipse.osgi.internal.framework.EquinoxContainerAdaptor$2$1.execute(EquinoxContainerAdaptor.java:150)
+	at org.eclipse.osgi.container.ModuleContainer$ContainerStartLevel.incStartLevel(ModuleContainer.java:1837)
+	at org.eclipse.osgi.container.ModuleContainer$ContainerStartLevel.incStartLevel(ModuleContainer.java:1778)
+	at org.eclipse.osgi.container.ModuleContainer$ContainerStartLevel.doContainerStartLevel(ModuleContainer.java:1742)
+	at org.eclipse.osgi.container.ModuleContainer$ContainerStartLevel.dispatchEvent(ModuleContainer.java:1664)
+	at org.eclipse.osgi.container.ModuleContainer$ContainerStartLevel.dispatchEvent(ModuleContainer.java:1)
+	at org.eclipse.osgi.framework.eventmgr.EventManager.dispatchEvent(EventManager.java:234)
+	at org.eclipse.osgi.framework.eventmgr.EventManager$EventThread.run(EventManager.java:345)
+
+!ENTRY org.python.pydev.core 4 0 2025-07-25 10:25:04.462
+!MESSAGE FrameworkEvent ERROR
+!STACK 0
+org.osgi.framework.BundleException: Could not resolve module: org.python.pydev.core [966]
+  Unresolved requirement: Require-Capability: osgi.ee; filter:="(&(osgi.ee=JavaSE)(version=17))"
+  Unresolved requirement: Require-Bundle: org.python.pydev.shared_core; bundle-version="[13.0.2,13.0.3)"; visibility:="reexport"
+    -> Bundle-SymbolicName: org.python.pydev.shared_core; bundle-version="13.0.2.202503021229"; singleton:="true"
+       org.python.pydev.shared_core [974]
+         Unresolved requirement: Require-Capability: osgi.ee; filter:="(&(osgi.ee=JavaSE)(version=17))"
+
+	at org.eclipse.osgi.container.Module.start(Module.java:462)
+	at org.eclipse.osgi.container.ModuleContainer$ContainerStartLevel$2.run(ModuleContainer.java:1844)
+	at org.eclipse.osgi.internal.framework.EquinoxContainerAdaptor$2$1.execute(EquinoxContainerAdaptor.java:150)
+	at org.eclipse.osgi.container.ModuleContainer$ContainerStartLevel.incStartLevel(ModuleContainer.java:1837)
+	at org.eclipse.osgi.container.ModuleContainer$ContainerStartLevel.incStartLevel(ModuleContainer.java:1778)
+	at org.eclipse.osgi.container.ModuleContainer$ContainerStartLevel.doContainerStartLevel(ModuleContainer.java:1742)
+	at org.eclipse.osgi.container.ModuleContainer$ContainerStartLevel.dispatchEvent(ModuleContainer.java:1664)
+	at org.eclipse.osgi.container.ModuleContainer$ContainerStartLevel.dispatchEvent(ModuleContainer.java:1)
+	at org.eclipse.osgi.framework.eventmgr.EventManager.dispatchEvent(EventManager.java:234)
+	at org.eclipse.osgi.framework.eventmgr.EventManager$EventThread.run(EventManager.java:345)
+
+!ENTRY org.python.pydev.customizations 4 0 2025-07-25 10:25:04.478
+!MESSAGE FrameworkEvent ERROR
+!STACK 0
+org.osgi.framework.BundleException: Could not resolve module: org.python.pydev.customizations [967]
+  Unresolved requirement: Require-Capability: osgi.ee; filter:="(&(osgi.ee=JavaSE)(version=17))"
+  Unresolved requirement: Require-Bundle: org.python.pydev.ast; bundle-version="[13.0.2,13.0.3)"
+    -> Bundle-SymbolicName: org.python.pydev.ast; bundle-version="13.0.2.202503021229"; singleton:="true"
+       org.python.pydev.ast [965]
+         Unresolved requirement: Require-Bundle: org.python.pydev.core; bundle-version="[13.0.2,13.0.3)"
+           -> Bundle-SymbolicName: org.python.pydev.core; bundle-version="13.0.2.202503021229"; singleton:="true"
+              org.python.pydev.core [966]
+                Unresolved requirement: Require-Capability: osgi.ee; filter:="(&(osgi.ee=JavaSE)(version=17))"
+                Unresolved requirement: Require-Bundle: org.python.pydev.shared_core; bundle-version="[13.0.2,13.0.3)"; visibility:="reexport"
+                  -> Bundle-SymbolicName: org.python.pydev.shared_core; bundle-version="13.0.2.202503021229"; singleton:="true"
+                     org.python.pydev.shared_core [974]
+                       Unresolved requirement: Require-Capability: osgi.ee; filter:="(&(osgi.ee=JavaSE)(version=17))"
+  Unresolved requirement: Require-Bundle: org.python.pydev; bundle-version="[13.0.2,13.0.3)"
+    -> Bundle-SymbolicName: org.python.pydev; bundle-version="13.0.2.202503021229"; singleton:="true"
+       org.python.pydev [964]
+         Unresolved requirement: Require-Bundle: org.python.pydev.ast; bundle-version="[13.0.2,13.0.3)"
+           -> Bundle-SymbolicName: org.python.pydev.ast; bundle-version="13.0.2.202503021229"; singleton:="true"
+  Unresolved requirement: Require-Bundle: org.python.pydev.shared_ui; bundle-version="[13.0.2,13.0.3)"
+    -> Bundle-SymbolicName: org.python.pydev.shared_ui; bundle-version="13.0.2.202503021229"; singleton:="true"
+       org.python.pydev.shared_ui [976]
+         Unresolved requirement: Require-Bundle: org.python.pydev.shared_core; bundle-version="[13.0.2,13.0.3)"
+           -> Bundle-SymbolicName: org.python.pydev.shared_core; bundle-version="13.0.2.202503021229"; singleton:="true"
+  Unresolved requirement: Require-Bundle: org.python.pydev.debug; bundle-version="[13.0.2,13.0.3)"
+    -> Bundle-SymbolicName: org.python.pydev.debug; bundle-version="13.0.2.202503021229"; singleton:="true"
+       org.python.pydev.debug [968]
+         Unresolved requirement: Require-Bundle: org.python.pydev.core; bundle-version="[13.0.2,13.0.3)"
+           -> Bundle-SymbolicName: org.python.pydev.core; bundle-version="13.0.2.202503021229"; singleton:="true"
+  Unresolved requirement: Require-Bundle: org.python.pydev.core; bundle-version="[13.0.2,13.0.3)"
+    -> Bundle-SymbolicName: org.python.pydev.core; bundle-version="13.0.2.202503021229"; singleton:="true"
+
+	at org.eclipse.osgi.container.Module.start(Module.java:462)
+	at org.eclipse.osgi.container.ModuleContainer$ContainerStartLevel$2.run(ModuleContainer.java:1844)
+	at org.eclipse.osgi.internal.framework.EquinoxContainerAdaptor$2$1.execute(EquinoxContainerAdaptor.java:150)
+	at org.eclipse.osgi.container.ModuleContainer$ContainerStartLevel.incStartLevel(ModuleContainer.java:1837)
+	at org.eclipse.osgi.container.ModuleContainer$ContainerStartLevel.incStartLevel(ModuleContainer.java:1778)
+	at org.eclipse.osgi.container.ModuleContainer$ContainerStartLevel.doContainerStartLevel(ModuleContainer.java:1742)
+	at org.eclipse.osgi.container.ModuleContainer$ContainerStartLevel.dispatchEvent(ModuleContainer.java:1664)
+	at org.eclipse.osgi.container.ModuleContainer$ContainerStartLevel.dispatchEvent(ModuleContainer.java:1)
+	at org.eclipse.osgi.framework.eventmgr.EventManager.dispatchEvent(EventManager.java:234)
+	at org.eclipse.osgi.framework.eventmgr.EventManager$EventThread.run(EventManager.java:345)
+
+!ENTRY org.python.pydev.debug 4 0 2025-07-25 10:25:04.478
+!MESSAGE FrameworkEvent ERROR
+!STACK 0
+org.osgi.framework.BundleException: Could not resolve module: org.python.pydev.debug [968]
+  Unresolved requirement: Require-Capability: osgi.ee; filter:="(&(osgi.ee=JavaSE)(version=17))"
+  Unresolved requirement: Require-Bundle: org.python.pydev.shared_interactive_console; bundle-version="[13.0.2,13.0.3)"
+    -> Bundle-SymbolicName: org.python.pydev.shared_interactive_console; bundle-version="13.0.2.202503021229"; singleton:="true"
+       org.python.pydev.shared_interactive_console [975]
+         Unresolved requirement: Require-Bundle: org.python.pydev.shared_core; bundle-version="[13.0.2,13.0.3)"
+           -> Bundle-SymbolicName: org.python.pydev.shared_core; bundle-version="13.0.2.202503021229"; singleton:="true"
+              org.python.pydev.shared_core [974]
+                Unresolved requirement: Require-Capability: osgi.ee; filter:="(&(osgi.ee=JavaSE)(version=17))"
+  Unresolved requirement: Require-Bundle: org.python.pydev.core; bundle-version="[13.0.2,13.0.3)"
+    -> Bundle-SymbolicName: org.python.pydev.core; bundle-version="13.0.2.202503021229"; singleton:="true"
+       org.python.pydev.core [966]
+         Unresolved requirement: Require-Capability: osgi.ee; filter:="(&(osgi.ee=JavaSE)(version=17))"
+         Unresolved requirement: Require-Bundle: org.python.pydev.shared_core; bundle-version="[13.0.2,13.0.3)"; visibility:="reexport"
+           -> Bundle-SymbolicName: org.python.pydev.shared_core; bundle-version="13.0.2.202503021229"; singleton:="true"
+  Unresolved requirement: Require-Bundle: org.python.pydev; bundle-version="[13.0.2,13.0.3)"
+    -> Bundle-SymbolicName: org.python.pydev; bundle-version="13.0.2.202503021229"; singleton:="true"
+       org.python.pydev [964]
+         Unresolved requirement: Require-Bundle: org.python.pydev.ast; bundle-version="[13.0.2,13.0.3)"
+           -> Bundle-SymbolicName: org.python.pydev.ast; bundle-version="13.0.2.202503021229"; singleton:="true"
+              org.python.pydev.ast [965]
+                Unresolved requirement: Require-Bundle: org.python.pydev.core; bundle-version="[13.0.2,13.0.3)"
+                  -> Bundle-SymbolicName: org.python.pydev.core; bundle-version="13.0.2.202503021229"; singleton:="true"
+  Unresolved requirement: Require-Bundle: org.python.pydev.jython; bundle-version="[13.0.2,13.0.3)"
+    -> Bundle-SymbolicName: org.python.pydev.jython; bundle-version="13.0.2.202503021229"; singleton:="true"
+       org.python.pydev.jython [971]
+         Unresolved requirement: Require-Bundle: org.python.pydev.core; bundle-version="[13.0.2,13.0.3)"
+           -> Bundle-SymbolicName: org.python.pydev.core; bundle-version="13.0.2.202503021229"; singleton:="true"
+  Unresolved requirement: Require-Bundle: org.python.pydev.parser; bundle-version="[13.0.2,13.0.3)"
+    -> Bundle-SymbolicName: org.python.pydev.parser; bundle-version="13.0.2.202503021229"; singleton:="true"
+       org.python.pydev.parser [972]
+         Unresolved requirement: Require-Bundle: org.python.pydev.core; bundle-version="[13.0.2,13.0.3)"
+           -> Bundle-SymbolicName: org.python.pydev.core; bundle-version="13.0.2.202503021229"; singleton:="true"
+  Unresolved requirement: Require-Bundle: org.python.pydev.shared_ui; bundle-version="[13.0.2,13.0.3)"
+    -> Bundle-SymbolicName: org.python.pydev.shared_ui; bundle-version="13.0.2.202503021229"; singleton:="true"
+       org.python.pydev.shared_ui [976]
+         Unresolved requirement: Require-Bundle: org.python.pydev.shared_core; bundle-version="[13.0.2,13.0.3)"
+           -> Bundle-SymbolicName: org.python.pydev.shared_core; bundle-version="13.0.2.202503021229"; singleton:="true"
+  Unresolved requirement: Require-Bundle: org.python.pydev.ast; bundle-version="[13.0.2,13.0.3)"
+    -> Bundle-SymbolicName: org.python.pydev.ast; bundle-version="13.0.2.202503021229"; singleton:="true"
+
+	at org.eclipse.osgi.container.Module.start(Module.java:462)
+	at org.eclipse.osgi.container.ModuleContainer$ContainerStartLevel$2.run(ModuleContainer.java:1844)
+	at org.eclipse.osgi.internal.framework.EquinoxContainerAdaptor$2$1.execute(EquinoxContainerAdaptor.java:150)
+	at org.eclipse.osgi.container.ModuleContainer$ContainerStartLevel.incStartLevel(ModuleContainer.java:1837)
+	at org.eclipse.osgi.container.ModuleContainer$ContainerStartLevel.incStartLevel(ModuleContainer.java:1778)
+	at org.eclipse.osgi.container.ModuleContainer$ContainerStartLevel.doContainerStartLevel(ModuleContainer.java:1742)
+	at org.eclipse.osgi.container.ModuleContainer$ContainerStartLevel.dispatchEvent(ModuleContainer.java:1664)
+	at org.eclipse.osgi.container.ModuleContainer$ContainerStartLevel.dispatchEvent(ModuleContainer.java:1)
+	at org.eclipse.osgi.framework.eventmgr.EventManager.dispatchEvent(EventManager.java:234)
+	at org.eclipse.osgi.framework.eventmgr.EventManager$EventThread.run(EventManager.java:345)
+
+!ENTRY org.python.pydev.django 4 0 2025-07-25 10:25:04.478
+!MESSAGE FrameworkEvent ERROR
+!STACK 0
+org.osgi.framework.BundleException: Could not resolve module: org.python.pydev.django [969]
+  Unresolved requirement: Require-Bundle: org.python.pydev.core; bundle-version="[13.0.2,13.0.3)"
+    -> Bundle-SymbolicName: org.python.pydev.core; bundle-version="13.0.2.202503021229"; singleton:="true"
+       org.python.pydev.core [966]
+         Unresolved requirement: Require-Capability: osgi.ee; filter:="(&(osgi.ee=JavaSE)(version=17))"
+         Unresolved requirement: Require-Bundle: org.python.pydev.shared_core; bundle-version="[13.0.2,13.0.3)"; visibility:="reexport"
+           -> Bundle-SymbolicName: org.python.pydev.shared_core; bundle-version="13.0.2.202503021229"; singleton:="true"
+              org.python.pydev.shared_core [974]
+                Unresolved requirement: Require-Capability: osgi.ee; filter:="(&(osgi.ee=JavaSE)(version=17))"
+  Unresolved requirement: Require-Bundle: org.python.pydev; bundle-version="[13.0.2,13.0.3)"
+    -> Bundle-SymbolicName: org.python.pydev; bundle-version="13.0.2.202503021229"; singleton:="true"
+       org.python.pydev [964]
+         Unresolved requirement: Require-Bundle: org.python.pydev.parser; bundle-version="[13.0.2,13.0.3)"
+           -> Bundle-SymbolicName: org.python.pydev.parser; bundle-version="13.0.2.202503021229"; singleton:="true"
+              org.python.pydev.parser [972]
+                Unresolved requirement: Require-Bundle: org.python.pydev.core; bundle-version="[13.0.2,13.0.3)"
+                  -> Bundle-SymbolicName: org.python.pydev.core; bundle-version="13.0.2.202503021229"; singleton:="true"
+         Unresolved requirement: Require-Bundle: org.python.pydev.ast; bundle-version="[13.0.2,13.0.3)"
+           -> Bundle-SymbolicName: org.python.pydev.ast; bundle-version="13.0.2.202503021229"; singleton:="true"
+              org.python.pydev.ast [965]
+                Unresolved requirement: Require-Capability: osgi.ee; filter:="(&(osgi.ee=JavaSE)(version=17))"
+                Unresolved requirement: Require-Bundle: org.python.pydev.parser; bundle-version="[13.0.2,13.0.3)"
+                  -> Bundle-SymbolicName: org.python.pydev.parser; bundle-version="13.0.2.202503021229"; singleton:="true"
+                Unresolved requirement: Require-Bundle: org.python.pydev.core; bundle-version="[13.0.2,13.0.3)"
+                  -> Bundle-SymbolicName: org.python.pydev.core; bundle-version="13.0.2.202503021229"; singleton:="true"
+
+	at org.eclipse.osgi.container.Module.start(Module.java:462)
+	at org.eclipse.osgi.container.ModuleContainer$ContainerStartLevel$2.run(ModuleContainer.java:1844)
+	at org.eclipse.osgi.internal.framework.EquinoxContainerAdaptor$2$1.execute(EquinoxContainerAdaptor.java:150)
+	at org.eclipse.osgi.container.ModuleContainer$ContainerStartLevel.incStartLevel(ModuleContainer.java:1837)
+	at org.eclipse.osgi.container.ModuleContainer$ContainerStartLevel.incStartLevel(ModuleContainer.java:1778)
+	at org.eclipse.osgi.container.ModuleContainer$ContainerStartLevel.doContainerStartLevel(ModuleContainer.java:1742)
+	at org.eclipse.osgi.container.ModuleContainer$ContainerStartLevel.dispatchEvent(ModuleContainer.java:1664)
+	at org.eclipse.osgi.container.ModuleContainer$ContainerStartLevel.dispatchEvent(ModuleContainer.java:1)
+	at org.eclipse.osgi.framework.eventmgr.EventManager.dispatchEvent(EventManager.java:234)
+	at org.eclipse.osgi.framework.eventmgr.EventManager$EventThread.run(EventManager.java:345)
+
+!ENTRY org.python.pydev.jython 4 0 2025-07-25 10:25:04.493
+!MESSAGE FrameworkEvent ERROR
+!STACK 0
+org.osgi.framework.BundleException: Could not resolve module: org.python.pydev.jython [971]
+  Unresolved requirement: Require-Capability: osgi.ee; filter:="(&(osgi.ee=JavaSE)(version=17))"
+  Unresolved requirement: Require-Bundle: org.python.pydev.shared_ui; bundle-version="[13.0.2,13.0.3)"
+    -> Bundle-SymbolicName: org.python.pydev.shared_ui; bundle-version="13.0.2.202503021229"; singleton:="true"
+       org.python.pydev.shared_ui [976]
+         Unresolved requirement: Require-Bundle: org.python.pydev.shared_core; bundle-version="[13.0.2,13.0.3)"
+           -> Bundle-SymbolicName: org.python.pydev.shared_core; bundle-version="13.0.2.202503021229"; singleton:="true"
+              org.python.pydev.shared_core [974]
+                Unresolved requirement: Require-Capability: osgi.ee; filter:="(&(osgi.ee=JavaSE)(version=17))"
+  Unresolved requirement: Require-Bundle: org.python.pydev.core; bundle-version="[13.0.2,13.0.3)"
+    -> Bundle-SymbolicName: org.python.pydev.core; bundle-version="13.0.2.202503021229"; singleton:="true"
+       org.python.pydev.core [966]
+         Unresolved requirement: Require-Capability: osgi.ee; filter:="(&(osgi.ee=JavaSE)(version=17))"
+         Unresolved requirement: Require-Bundle: org.python.pydev.shared_core; bundle-version="[13.0.2,13.0.3)"; visibility:="reexport"
+           -> Bundle-SymbolicName: org.python.pydev.shared_core; bundle-version="13.0.2.202503021229"; singleton:="true"
+
+	at org.eclipse.osgi.container.Module.start(Module.java:462)
+	at org.eclipse.osgi.container.ModuleContainer$ContainerStartLevel$2.run(ModuleContainer.java:1844)
+	at org.eclipse.osgi.internal.framework.EquinoxContainerAdaptor$2$1.execute(EquinoxContainerAdaptor.java:150)
+	at org.eclipse.osgi.container.ModuleContainer$ContainerStartLevel.incStartLevel(ModuleContainer.java:1837)
+	at org.eclipse.osgi.container.ModuleContainer$ContainerStartLevel.incStartLevel(ModuleContainer.java:1778)
+	at org.eclipse.osgi.container.ModuleContainer$ContainerStartLevel.doContainerStartLevel(ModuleContainer.java:1742)
+	at org.eclipse.osgi.container.ModuleContainer$ContainerStartLevel.dispatchEvent(ModuleContainer.java:1664)
+	at org.eclipse.osgi.container.ModuleContainer$ContainerStartLevel.dispatchEvent(ModuleContainer.java:1)
+	at org.eclipse.osgi.framework.eventmgr.EventManager.dispatchEvent(EventManager.java:234)
+	at org.eclipse.osgi.framework.eventmgr.EventManager$EventThread.run(EventManager.java:345)
+
+!ENTRY org.python.pydev.parser 4 0 2025-07-25 10:25:04.496
+!MESSAGE FrameworkEvent ERROR
+!STACK 0
+org.osgi.framework.BundleException: Could not resolve module: org.python.pydev.parser [972]
+  Unresolved requirement: Require-Capability: osgi.ee; filter:="(&(osgi.ee=JavaSE)(version=17))"
+  Unresolved requirement: Require-Bundle: org.python.pydev.core; bundle-version="[13.0.2,13.0.3)"
+    -> Bundle-SymbolicName: org.python.pydev.core; bundle-version="13.0.2.202503021229"; singleton:="true"
+       org.python.pydev.core [966]
+         Unresolved requirement: Require-Capability: osgi.ee; filter:="(&(osgi.ee=JavaSE)(version=17))"
+         Unresolved requirement: Require-Bundle: org.python.pydev.shared_core; bundle-version="[13.0.2,13.0.3)"; visibility:="reexport"
+           -> Bundle-SymbolicName: org.python.pydev.shared_core; bundle-version="13.0.2.202503021229"; singleton:="true"
+              org.python.pydev.shared_core [974]
+                Unresolved requirement: Require-Capability: osgi.ee; filter:="(&(osgi.ee=JavaSE)(version=17))"
+
+	at org.eclipse.osgi.container.Module.start(Module.java:462)
+	at org.eclipse.osgi.container.ModuleContainer$ContainerStartLevel$2.run(ModuleContainer.java:1844)
+	at org.eclipse.osgi.internal.framework.EquinoxContainerAdaptor$2$1.execute(EquinoxContainerAdaptor.java:150)
+	at org.eclipse.osgi.container.ModuleContainer$ContainerStartLevel.incStartLevel(ModuleContainer.java:1837)
+	at org.eclipse.osgi.container.ModuleContainer$ContainerStartLevel.incStartLevel(ModuleContainer.java:1778)
+	at org.eclipse.osgi.container.ModuleContainer$ContainerStartLevel.doContainerStartLevel(ModuleContainer.java:1742)
+	at org.eclipse.osgi.container.ModuleContainer$ContainerStartLevel.dispatchEvent(ModuleContainer.java:1664)
+	at org.eclipse.osgi.container.ModuleContainer$ContainerStartLevel.dispatchEvent(ModuleContainer.java:1)
+	at org.eclipse.osgi.framework.eventmgr.EventManager.dispatchEvent(EventManager.java:234)
+	at org.eclipse.osgi.framework.eventmgr.EventManager$EventThread.run(EventManager.java:345)
+
+!ENTRY org.python.pydev.refactoring 4 0 2025-07-25 10:25:04.496
+!MESSAGE FrameworkEvent ERROR
+!STACK 0
+org.osgi.framework.BundleException: Could not resolve module: org.python.pydev.refactoring [973]
+  Unresolved requirement: Require-Capability: osgi.ee; filter:="(&(osgi.ee=JavaSE)(version=17))"
+  Unresolved requirement: Require-Bundle: org.python.pydev.parser; bundle-version="[13.0.2,13.0.3)"
+    -> Bundle-SymbolicName: org.python.pydev.parser; bundle-version="13.0.2.202503021229"; singleton:="true"
+       org.python.pydev.parser [972]
+         Unresolved requirement: Require-Bundle: org.python.pydev.core; bundle-version="[13.0.2,13.0.3)"
+           -> Bundle-SymbolicName: org.python.pydev.core; bundle-version="13.0.2.202503021229"; singleton:="true"
+              org.python.pydev.core [966]
+                Unresolved requirement: Require-Capability: osgi.ee; filter:="(&(osgi.ee=JavaSE)(version=17))"
+                Unresolved requirement: Require-Bundle: org.python.pydev.shared_core; bundle-version="[13.0.2,13.0.3)"; visibility:="reexport"
+                  -> Bundle-SymbolicName: org.python.pydev.shared_core; bundle-version="13.0.2.202503021229"; singleton:="true"
+                     org.python.pydev.shared_core [974]
+                       Unresolved requirement: Require-Capability: osgi.ee; filter:="(&(osgi.ee=JavaSE)(version=17))"
+  Unresolved requirement: Require-Bundle: org.python.pydev; bundle-version="[13.0.2,13.0.3)"
+    -> Bundle-SymbolicName: org.python.pydev; bundle-version="13.0.2.202503021229"; singleton:="true"
+       org.python.pydev [964]
+         Unresolved requirement: Require-Bundle: org.python.pydev.ast; bundle-version="[13.0.2,13.0.3)"
+           -> Bundle-SymbolicName: org.python.pydev.ast; bundle-version="13.0.2.202503021229"; singleton:="true"
+              org.python.pydev.ast [965]
+                Unresolved requirement: Require-Bundle: org.python.pydev.core; bundle-version="[13.0.2,13.0.3)"
+                  -> Bundle-SymbolicName: org.python.pydev.core; bundle-version="13.0.2.202503021229"; singleton:="true"
+  Unresolved requirement: Require-Bundle: org.python.pydev.core; bundle-version="[13.0.2,13.0.3)"
+    -> Bundle-SymbolicName: org.python.pydev.core; bundle-version="13.0.2.202503021229"; singleton:="true"
+  Unresolved requirement: Require-Bundle: org.python.pydev.ast; bundle-version="[13.0.2,13.0.3)"
+    -> Bundle-SymbolicName: org.python.pydev.ast; bundle-version="13.0.2.202503021229"; singleton:="true"
+  Unresolved requirement: Require-Bundle: org.python.pydev.shared_ui; bundle-version="[13.0.2,13.0.3)"
+    -> Bundle-SymbolicName: org.python.pydev.shared_ui; bundle-version="13.0.2.202503021229"; singleton:="true"
+       org.python.pydev.shared_ui [976]
+         Unresolved requirement: Require-Bundle: org.python.pydev.shared_core; bundle-version="[13.0.2,13.0.3)"
+           -> Bundle-SymbolicName: org.python.pydev.shared_core; bundle-version="13.0.2.202503021229"; singleton:="true"
+
+	at org.eclipse.osgi.container.Module.start(Module.java:462)
+	at org.eclipse.osgi.container.ModuleContainer$ContainerStartLevel$2.run(ModuleContainer.java:1844)
+	at org.eclipse.osgi.internal.framework.EquinoxContainerAdaptor$2$1.execute(EquinoxContainerAdaptor.java:150)
+	at org.eclipse.osgi.container.ModuleContainer$ContainerStartLevel.incStartLevel(ModuleContainer.java:1837)
+	at org.eclipse.osgi.container.ModuleContainer$ContainerStartLevel.incStartLevel(ModuleContainer.java:1778)
+	at org.eclipse.osgi.container.ModuleContainer$ContainerStartLevel.doContainerStartLevel(ModuleContainer.java:1742)
+	at org.eclipse.osgi.container.ModuleContainer$ContainerStartLevel.dispatchEvent(ModuleContainer.java:1664)
+	at org.eclipse.osgi.container.ModuleContainer$ContainerStartLevel.dispatchEvent(ModuleContainer.java:1)
+	at org.eclipse.osgi.framework.eventmgr.EventManager.dispatchEvent(EventManager.java:234)
+	at org.eclipse.osgi.framework.eventmgr.EventManager$EventThread.run(EventManager.java:345)
+
+!ENTRY org.python.pydev.shared_core 4 0 2025-07-25 10:25:04.496
+!MESSAGE FrameworkEvent ERROR
+!STACK 0
+org.osgi.framework.BundleException: Could not resolve module: org.python.pydev.shared_core [974]
+  Unresolved requirement: Require-Capability: osgi.ee; filter:="(&(osgi.ee=JavaSE)(version=17))"
+
+	at org.eclipse.osgi.container.Module.start(Module.java:462)
+	at org.eclipse.osgi.container.ModuleContainer$ContainerStartLevel$2.run(ModuleContainer.java:1844)
+	at org.eclipse.osgi.internal.framework.EquinoxContainerAdaptor$2$1.execute(EquinoxContainerAdaptor.java:150)
+	at org.eclipse.osgi.container.ModuleContainer$ContainerStartLevel.incStartLevel(ModuleContainer.java:1837)
+	at org.eclipse.osgi.container.ModuleContainer$ContainerStartLevel.incStartLevel(ModuleContainer.java:1778)
+	at org.eclipse.osgi.container.ModuleContainer$ContainerStartLevel.doContainerStartLevel(ModuleContainer.java:1742)
+	at org.eclipse.osgi.container.ModuleContainer$ContainerStartLevel.dispatchEvent(ModuleContainer.java:1664)
+	at org.eclipse.osgi.container.ModuleContainer$ContainerStartLevel.dispatchEvent(ModuleContainer.java:1)
+	at org.eclipse.osgi.framework.eventmgr.EventManager.dispatchEvent(EventManager.java:234)
+	at org.eclipse.osgi.framework.eventmgr.EventManager$EventThread.run(EventManager.java:345)
+
+!ENTRY org.python.pydev.shared_interactive_console 4 0 2025-07-25 10:25:04.496
+!MESSAGE FrameworkEvent ERROR
+!STACK 0
+org.osgi.framework.BundleException: Could not resolve module: org.python.pydev.shared_interactive_console [975]
+  Unresolved requirement: Require-Capability: osgi.ee; filter:="(&(osgi.ee=JavaSE)(version=17))"
+  Unresolved requirement: Require-Bundle: org.python.pydev.core; bundle-version="[13.0.2,13.0.3)"
+    -> Bundle-SymbolicName: org.python.pydev.core; bundle-version="13.0.2.202503021229"; singleton:="true"
+       org.python.pydev.core [966]
+         Unresolved requirement: Require-Bundle: org.python.pydev.shared_core; bundle-version="[13.0.2,13.0.3)"; visibility:="reexport"
+           -> Bundle-SymbolicName: org.python.pydev.shared_core; bundle-version="13.0.2.202503021229"; singleton:="true"
+              org.python.pydev.shared_core [974]
+                Unresolved requirement: Require-Capability: osgi.ee; filter:="(&(osgi.ee=JavaSE)(version=17))"
+  Unresolved requirement: Require-Bundle: org.python.pydev.shared_core; bundle-version="[13.0.2,13.0.3)"
+    -> Bundle-SymbolicName: org.python.pydev.shared_core; bundle-version="13.0.2.202503021229"; singleton:="true"
+  Unresolved requirement: Require-Bundle: org.python.pydev.shared_ui; bundle-version="[13.0.2,13.0.3)"
+    -> Bundle-SymbolicName: org.python.pydev.shared_ui; bundle-version="13.0.2.202503021229"; singleton:="true"
+       org.python.pydev.shared_ui [976]
+         Unresolved requirement: Require-Bundle: org.python.pydev.shared_core; bundle-version="[13.0.2,13.0.3)"
+           -> Bundle-SymbolicName: org.python.pydev.shared_core; bundle-version="13.0.2.202503021229"; singleton:="true"
+
+	at org.eclipse.osgi.container.Module.start(Module.java:462)
+	at org.eclipse.osgi.container.ModuleContainer$ContainerStartLevel$2.run(ModuleContainer.java:1844)
+	at org.eclipse.osgi.internal.framework.EquinoxContainerAdaptor$2$1.execute(EquinoxContainerAdaptor.java:150)
+	at org.eclipse.osgi.container.ModuleContainer$ContainerStartLevel.incStartLevel(ModuleContainer.java:1837)
+	at org.eclipse.osgi.container.ModuleContainer$ContainerStartLevel.incStartLevel(ModuleContainer.java:1778)
+	at org.eclipse.osgi.container.ModuleContainer$ContainerStartLevel.doContainerStartLevel(ModuleContainer.java:1742)
+	at org.eclipse.osgi.container.ModuleContainer$ContainerStartLevel.dispatchEvent(ModuleContainer.java:1664)
+	at org.eclipse.osgi.container.ModuleContainer$ContainerStartLevel.dispatchEvent(ModuleContainer.java:1)
+	at org.eclipse.osgi.framework.eventmgr.EventManager.dispatchEvent(EventManager.java:234)
+	at org.eclipse.osgi.framework.eventmgr.EventManager$EventThread.run(EventManager.java:345)
+
+!ENTRY org.python.pydev.shared_ui 4 0 2025-07-25 10:25:04.510
+!MESSAGE FrameworkEvent ERROR
+!STACK 0
+org.osgi.framework.BundleException: Could not resolve module: org.python.pydev.shared_ui [976]
+  Unresolved requirement: Require-Capability: osgi.ee; filter:="(&(osgi.ee=JavaSE)(version=17))"
+  Unresolved requirement: Require-Bundle: org.python.pydev.core
+    -> Bundle-SymbolicName: org.python.pydev.core; bundle-version="13.0.2.202503021229"; singleton:="true"
+       org.python.pydev.core [966]
+         Unresolved requirement: Require-Bundle: org.python.pydev.shared_core; bundle-version="[13.0.2,13.0.3)"; visibility:="reexport"
+           -> Bundle-SymbolicName: org.python.pydev.shared_core; bundle-version="13.0.2.202503021229"; singleton:="true"
+              org.python.pydev.shared_core [974]
+                Unresolved requirement: Require-Capability: osgi.ee; filter:="(&(osgi.ee=JavaSE)(version=17))"
+  Unresolved requirement: Require-Bundle: org.python.pydev.shared_core; bundle-version="[13.0.2,13.0.3)"
+    -> Bundle-SymbolicName: org.python.pydev.shared_core; bundle-version="13.0.2.202503021229"; singleton:="true"
+
+	at org.eclipse.osgi.container.Module.start(Module.java:462)
+	at org.eclipse.osgi.container.ModuleContainer$ContainerStartLevel$2.run(ModuleContainer.java:1844)
+	at org.eclipse.osgi.internal.framework.EquinoxContainerAdaptor$2$1.execute(EquinoxContainerAdaptor.java:150)
+	at org.eclipse.osgi.container.ModuleContainer$ContainerStartLevel.incStartLevel(ModuleContainer.java:1837)
+	at org.eclipse.osgi.container.ModuleContainer$ContainerStartLevel.incStartLevel(ModuleContainer.java:1778)
+	at org.eclipse.osgi.container.ModuleContainer$ContainerStartLevel.doContainerStartLevel(ModuleContainer.java:1742)
+	at org.eclipse.osgi.container.ModuleContainer$ContainerStartLevel.dispatchEvent(ModuleContainer.java:1664)
+	at org.eclipse.osgi.container.ModuleContainer$ContainerStartLevel.dispatchEvent(ModuleContainer.java:1)
+	at org.eclipse.osgi.framework.eventmgr.EventManager.dispatchEvent(EventManager.java:234)
+	at org.eclipse.osgi.framework.eventmgr.EventManager$EventThread.run(EventManager.java:345)
+
+!ENTRY com.genuitec.eclipse.code.ui 1 0 2025-07-25 10:25:18.875
+!MESSAGE CodeMix Engine will be started momentarily to support development activities
+!SESSION 2025-07-25 10:33:42.517 -----------------------------------------------
+eclipse.buildId=4.13.0.I20190916-1045
+java.version=1.8.0_451
+java.vendor=Oracle Corporation
+BootLoader constants: OS=win32, ARCH=x86_64, WS=win32, NL=ko_KR
+Framework arguments:  -product org.eclipse.epp.package.jee.product
+Command-line arguments:  -os win32 -ws win32 -arch x86_64 -product org.eclipse.epp.package.jee.product
+
+!ENTRY com.python.pydev.analysis 4 0 2025-07-25 10:33:43.593
+!MESSAGE FrameworkEvent ERROR
+!STACK 0
+org.osgi.framework.BundleException: Could not resolve module: com.python.pydev.analysis [961]
+  Unresolved requirement: Require-Bundle: org.python.pydev.ast; bundle-version="[13.0.2,13.0.3)"
+    -> Bundle-SymbolicName: org.python.pydev.ast; bundle-version="13.0.2.202503021229"; singleton:="true"
+       org.python.pydev.ast [965]
+         Unresolved requirement: Require-Capability: osgi.ee; filter:="(&(osgi.ee=JavaSE)(version=17))"
+         Unresolved requirement: Require-Bundle: org.python.pydev.core; bundle-version="[13.0.2,13.0.3)"
+           -> Bundle-SymbolicName: org.python.pydev.core; bundle-version="13.0.2.202503021229"; singleton:="true"
+              org.python.pydev.core [966]
+                Unresolved requirement: Require-Capability: osgi.ee; filter:="(&(osgi.ee=JavaSE)(version=17))"
+                Unresolved requirement: Require-Bundle: org.python.pydev.shared_core; bundle-version="[13.0.2,13.0.3)"; visibility:="reexport"
+                  -> Bundle-SymbolicName: org.python.pydev.shared_core; bundle-version="13.0.2.202503021229"; singleton:="true"
+                     org.python.pydev.shared_core [974]
+                       Unresolved requirement: Require-Capability: osgi.ee; filter:="(&(osgi.ee=JavaSE)(version=17))"
+         Unresolved requirement: Require-Bundle: org.python.pydev.parser; bundle-version="[13.0.2,13.0.3)"
+           -> Bundle-SymbolicName: org.python.pydev.parser; bundle-version="13.0.2.202503021229"; singleton:="true"
+              org.python.pydev.parser [972]
+                Unresolved requirement: Require-Bundle: org.python.pydev.core; bundle-version="[13.0.2,13.0.3)"
+                  -> Bundle-SymbolicName: org.python.pydev.core; bundle-version="13.0.2.202503021229"; singleton:="true"
+  Unresolved requirement: Require-Bundle: org.python.pydev.core; bundle-version="[13.0.2,13.0.3)"
+    -> Bundle-SymbolicName: org.python.pydev.core; bundle-version="13.0.2.202503021229"; singleton:="true"
+
+	at org.eclipse.osgi.container.Module.start(Module.java:462)
+	at org.eclipse.osgi.container.ModuleContainer$ContainerStartLevel$2.run(ModuleContainer.java:1844)
+	at org.eclipse.osgi.internal.framework.EquinoxContainerAdaptor$2$1.execute(EquinoxContainerAdaptor.java:150)
+	at org.eclipse.osgi.container.ModuleContainer$ContainerStartLevel.incStartLevel(ModuleContainer.java:1837)
+	at org.eclipse.osgi.container.ModuleContainer$ContainerStartLevel.incStartLevel(ModuleContainer.java:1778)
+	at org.eclipse.osgi.container.ModuleContainer$ContainerStartLevel.doContainerStartLevel(ModuleContainer.java:1742)
+	at org.eclipse.osgi.container.ModuleContainer$ContainerStartLevel.dispatchEvent(ModuleContainer.java:1664)
+	at org.eclipse.osgi.container.ModuleContainer$ContainerStartLevel.dispatchEvent(ModuleContainer.java:1)
+	at org.eclipse.osgi.framework.eventmgr.EventManager.dispatchEvent(EventManager.java:234)
+	at org.eclipse.osgi.framework.eventmgr.EventManager$EventThread.run(EventManager.java:345)
+
+!ENTRY com.python.pydev.debug 4 0 2025-07-25 10:33:43.596
+!MESSAGE FrameworkEvent ERROR
+!STACK 0
+org.osgi.framework.BundleException: Could not resolve module: com.python.pydev.debug [962]
+  Unresolved requirement: Require-Bundle: org.python.pydev.core; bundle-version="[13.0.2,13.0.3)"
+    -> Bundle-SymbolicName: org.python.pydev.core; bundle-version="13.0.2.202503021229"; singleton:="true"
+       org.python.pydev.core [966]
+         Unresolved requirement: Require-Capability: osgi.ee; filter:="(&(osgi.ee=JavaSE)(version=17))"
+         Unresolved requirement: Require-Bundle: org.python.pydev.shared_core; bundle-version="[13.0.2,13.0.3)"; visibility:="reexport"
+           -> Bundle-SymbolicName: org.python.pydev.shared_core; bundle-version="13.0.2.202503021229"; singleton:="true"
+              org.python.pydev.shared_core [974]
+                Unresolved requirement: Require-Capability: osgi.ee; filter:="(&(osgi.ee=JavaSE)(version=17))"
+  Unresolved requirement: Require-Bundle: org.python.pydev.ast; bundle-version="[13.0.2,13.0.3)"
+    -> Bundle-SymbolicName: org.python.pydev.ast; bundle-version="13.0.2.202503021229"; singleton:="true"
+       org.python.pydev.ast [965]
+         Unresolved requirement: Require-Capability: osgi.ee; filter:="(&(osgi.ee=JavaSE)(version=17))"
+         Unresolved requirement: Require-Bundle: org.python.pydev.core; bundle-version="[13.0.2,13.0.3)"
+           -> Bundle-SymbolicName: org.python.pydev.core; bundle-version="13.0.2.202503021229"; singleton:="true"
+         Unresolved requirement: Require-Bundle: org.python.pydev.parser; bundle-version="[13.0.2,13.0.3)"
+           -> Bundle-SymbolicName: org.python.pydev.parser; bundle-version="13.0.2.202503021229"; singleton:="true"
+              org.python.pydev.parser [972]
+                Unresolved requirement: Require-Bundle: org.python.pydev.core; bundle-version="[13.0.2,13.0.3)"
+                  -> Bundle-SymbolicName: org.python.pydev.core; bundle-version="13.0.2.202503021229"; singleton:="true"
+
+	at org.eclipse.osgi.container.Module.start(Module.java:462)
+	at org.eclipse.osgi.container.ModuleContainer$ContainerStartLevel$2.run(ModuleContainer.java:1844)
+	at org.eclipse.osgi.internal.framework.EquinoxContainerAdaptor$2$1.execute(EquinoxContainerAdaptor.java:150)
+	at org.eclipse.osgi.container.ModuleContainer$ContainerStartLevel.incStartLevel(ModuleContainer.java:1837)
+	at org.eclipse.osgi.container.ModuleContainer$ContainerStartLevel.incStartLevel(ModuleContainer.java:1778)
+	at org.eclipse.osgi.container.ModuleContainer$ContainerStartLevel.doContainerStartLevel(ModuleContainer.java:1742)
+	at org.eclipse.osgi.container.ModuleContainer$ContainerStartLevel.dispatchEvent(ModuleContainer.java:1664)
+	at org.eclipse.osgi.container.ModuleContainer$ContainerStartLevel.dispatchEvent(ModuleContainer.java:1)
+	at org.eclipse.osgi.framework.eventmgr.EventManager.dispatchEvent(EventManager.java:234)
+	at org.eclipse.osgi.framework.eventmgr.EventManager$EventThread.run(EventManager.java:345)
+
+!ENTRY com.python.pydev.refactoring 4 0 2025-07-25 10:33:43.600
+!MESSAGE FrameworkEvent ERROR
+!STACK 0
+org.osgi.framework.BundleException: Could not resolve module: com.python.pydev.refactoring [963]
+  Unresolved requirement: Require-Bundle: org.python.pydev.ast; bundle-version="[13.0.2,13.0.3)"
+    -> Bundle-SymbolicName: org.python.pydev.ast; bundle-version="13.0.2.202503021229"; singleton:="true"
+       org.python.pydev.ast [965]
+         Unresolved requirement: Require-Capability: osgi.ee; filter:="(&(osgi.ee=JavaSE)(version=17))"
+         Unresolved requirement: Require-Bundle: org.python.pydev.core; bundle-version="[13.0.2,13.0.3)"
+           -> Bundle-SymbolicName: org.python.pydev.core; bundle-version="13.0.2.202503021229"; singleton:="true"
+              org.python.pydev.core [966]
+                Unresolved requirement: Require-Capability: osgi.ee; filter:="(&(osgi.ee=JavaSE)(version=17))"
+                Unresolved requirement: Require-Bundle: org.python.pydev.shared_core; bundle-version="[13.0.2,13.0.3)"; visibility:="reexport"
+                  -> Bundle-SymbolicName: org.python.pydev.shared_core; bundle-version="13.0.2.202503021229"; singleton:="true"
+                     org.python.pydev.shared_core [974]
+                       Unresolved requirement: Require-Capability: osgi.ee; filter:="(&(osgi.ee=JavaSE)(version=17))"
+         Unresolved requirement: Require-Bundle: org.python.pydev.parser; bundle-version="[13.0.2,13.0.3)"
+           -> Bundle-SymbolicName: org.python.pydev.parser; bundle-version="13.0.2.202503021229"; singleton:="true"
+              org.python.pydev.parser [972]
+                Unresolved requirement: Require-Bundle: org.python.pydev.core; bundle-version="[13.0.2,13.0.3)"
+                  -> Bundle-SymbolicName: org.python.pydev.core; bundle-version="13.0.2.202503021229"; singleton:="true"
+  Unresolved requirement: Require-Bundle: org.python.pydev.shared_ui; bundle-version="[13.0.2,13.0.3)"
+    -> Bundle-SymbolicName: org.python.pydev.shared_ui; bundle-version="13.0.2.202503021229"; singleton:="true"
+       org.python.pydev.shared_ui [976]
+         Unresolved requirement: Require-Bundle: org.python.pydev.shared_core; bundle-version="[13.0.2,13.0.3)"
+           -> Bundle-SymbolicName: org.python.pydev.shared_core; bundle-version="13.0.2.202503021229"; singleton:="true"
+  Unresolved requirement: Require-Bundle: org.python.pydev; bundle-version="[13.0.2,13.0.3)"
+    -> Bundle-SymbolicName: org.python.pydev; bundle-version="13.0.2.202503021229"; singleton:="true"
+       org.python.pydev [964]
+         Unresolved requirement: Require-Bundle: org.python.pydev.ast; bundle-version="[13.0.2,13.0.3)"
+           -> Bundle-SymbolicName: org.python.pydev.ast; bundle-version="13.0.2.202503021229"; singleton:="true"
+  Unresolved requirement: Require-Bundle: org.python.pydev.core; bundle-version="[13.0.2,13.0.3)"
+    -> Bundle-SymbolicName: org.python.pydev.core; bundle-version="13.0.2.202503021229"; singleton:="true"
+
+	at org.eclipse.osgi.container.Module.start(Module.java:462)
+	at org.eclipse.osgi.container.ModuleContainer$ContainerStartLevel$2.run(ModuleContainer.java:1844)
+	at org.eclipse.osgi.internal.framework.EquinoxContainerAdaptor$2$1.execute(EquinoxContainerAdaptor.java:150)
+	at org.eclipse.osgi.container.ModuleContainer$ContainerStartLevel.incStartLevel(ModuleContainer.java:1837)
+	at org.eclipse.osgi.container.ModuleContainer$ContainerStartLevel.incStartLevel(ModuleContainer.java:1778)
+	at org.eclipse.osgi.container.ModuleContainer$ContainerStartLevel.doContainerStartLevel(ModuleContainer.java:1742)
+	at org.eclipse.osgi.container.ModuleContainer$ContainerStartLevel.dispatchEvent(ModuleContainer.java:1664)
+	at org.eclipse.osgi.container.ModuleContainer$ContainerStartLevel.dispatchEvent(ModuleContainer.java:1)
+	at org.eclipse.osgi.framework.eventmgr.EventManager.dispatchEvent(EventManager.java:234)
+	at org.eclipse.osgi.framework.eventmgr.EventManager$EventThread.run(EventManager.java:345)
+
+!ENTRY org.python.pydev 4 0 2025-07-25 10:33:43.604
+!MESSAGE FrameworkEvent ERROR
+!STACK 0
+org.osgi.framework.BundleException: Could not resolve module: org.python.pydev [964]
+  Unresolved requirement: Require-Bundle: org.python.pydev.parser; bundle-version="[13.0.2,13.0.3)"
+    -> Bundle-SymbolicName: org.python.pydev.parser; bundle-version="13.0.2.202503021229"; singleton:="true"
+       org.python.pydev.parser [972]
+         Unresolved requirement: Require-Bundle: org.python.pydev.core; bundle-version="[13.0.2,13.0.3)"
+           -> Bundle-SymbolicName: org.python.pydev.core; bundle-version="13.0.2.202503021229"; singleton:="true"
+              org.python.pydev.core [966]
+                Unresolved requirement: Require-Capability: osgi.ee; filter:="(&(osgi.ee=JavaSE)(version=17))"
+                Unresolved requirement: Require-Bundle: org.python.pydev.shared_core; bundle-version="[13.0.2,13.0.3)"; visibility:="reexport"
+                  -> Bundle-SymbolicName: org.python.pydev.shared_core; bundle-version="13.0.2.202503021229"; singleton:="true"
+                     org.python.pydev.shared_core [974]
+                       Unresolved requirement: Require-Capability: osgi.ee; filter:="(&(osgi.ee=JavaSE)(version=17))"
+  Unresolved requirement: Require-Bundle: org.python.pydev.ast; bundle-version="[13.0.2,13.0.3)"
+    -> Bundle-SymbolicName: org.python.pydev.ast; bundle-version="13.0.2.202503021229"; singleton:="true"
+       org.python.pydev.ast [965]
+         Unresolved requirement: Require-Capability: osgi.ee; filter:="(&(osgi.ee=JavaSE)(version=17))"
+         Unresolved requirement: Require-Bundle: org.python.pydev.core; bundle-version="[13.0.2,13.0.3)"
+           -> Bundle-SymbolicName: org.python.pydev.core; bundle-version="13.0.2.202503021229"; singleton:="true"
+         Unresolved requirement: Require-Bundle: org.python.pydev.parser; bundle-version="[13.0.2,13.0.3)"
+           -> Bundle-SymbolicName: org.python.pydev.parser; bundle-version="13.0.2.202503021229"; singleton:="true"
+
+	at org.eclipse.osgi.container.Module.start(Module.java:462)
+	at org.eclipse.osgi.container.ModuleContainer$ContainerStartLevel$2.run(ModuleContainer.java:1844)
+	at org.eclipse.osgi.internal.framework.EquinoxContainerAdaptor$2$1.execute(EquinoxContainerAdaptor.java:150)
+	at org.eclipse.osgi.container.ModuleContainer$ContainerStartLevel.incStartLevel(ModuleContainer.java:1837)
+	at org.eclipse.osgi.container.ModuleContainer$ContainerStartLevel.incStartLevel(ModuleContainer.java:1778)
+	at org.eclipse.osgi.container.ModuleContainer$ContainerStartLevel.doContainerStartLevel(ModuleContainer.java:1742)
+	at org.eclipse.osgi.container.ModuleContainer$ContainerStartLevel.dispatchEvent(ModuleContainer.java:1664)
+	at org.eclipse.osgi.container.ModuleContainer$ContainerStartLevel.dispatchEvent(ModuleContainer.java:1)
+	at org.eclipse.osgi.framework.eventmgr.EventManager.dispatchEvent(EventManager.java:234)
+	at org.eclipse.osgi.framework.eventmgr.EventManager$EventThread.run(EventManager.java:345)
+
+!ENTRY org.python.pydev.ast 4 0 2025-07-25 10:33:43.608
+!MESSAGE FrameworkEvent ERROR
+!STACK 0
+org.osgi.framework.BundleException: Could not resolve module: org.python.pydev.ast [965]
+  Unresolved requirement: Require-Capability: osgi.ee; filter:="(&(osgi.ee=JavaSE)(version=17))"
+  Unresolved requirement: Require-Bundle: org.python.pydev.core; bundle-version="[13.0.2,13.0.3)"
+    -> Bundle-SymbolicName: org.python.pydev.core; bundle-version="13.0.2.202503021229"; singleton:="true"
+       org.python.pydev.core [966]
+         Unresolved requirement: Require-Capability: osgi.ee; filter:="(&(osgi.ee=JavaSE)(version=17))"
+         Unresolved requirement: Require-Bundle: org.python.pydev.shared_core; bundle-version="[13.0.2,13.0.3)"; visibility:="reexport"
+           -> Bundle-SymbolicName: org.python.pydev.shared_core; bundle-version="13.0.2.202503021229"; singleton:="true"
+              org.python.pydev.shared_core [974]
+                Unresolved requirement: Require-Capability: osgi.ee; filter:="(&(osgi.ee=JavaSE)(version=17))"
+  Unresolved requirement: Require-Bundle: org.python.pydev.parser; bundle-version="[13.0.2,13.0.3)"
+    -> Bundle-SymbolicName: org.python.pydev.parser; bundle-version="13.0.2.202503021229"; singleton:="true"
+       org.python.pydev.parser [972]
+         Unresolved requirement: Require-Bundle: org.python.pydev.core; bundle-version="[13.0.2,13.0.3)"
+           -> Bundle-SymbolicName: org.python.pydev.core; bundle-version="13.0.2.202503021229"; singleton:="true"
+
+	at org.eclipse.osgi.container.Module.start(Module.java:462)
+	at org.eclipse.osgi.container.ModuleContainer$ContainerStartLevel$2.run(ModuleContainer.java:1844)
+	at org.eclipse.osgi.internal.framework.EquinoxContainerAdaptor$2$1.execute(EquinoxContainerAdaptor.java:150)
+	at org.eclipse.osgi.container.ModuleContainer$ContainerStartLevel.incStartLevel(ModuleContainer.java:1837)
+	at org.eclipse.osgi.container.ModuleContainer$ContainerStartLevel.incStartLevel(ModuleContainer.java:1778)
+	at org.eclipse.osgi.container.ModuleContainer$ContainerStartLevel.doContainerStartLevel(ModuleContainer.java:1742)
+	at org.eclipse.osgi.container.ModuleContainer$ContainerStartLevel.dispatchEvent(ModuleContainer.java:1664)
+	at org.eclipse.osgi.container.ModuleContainer$ContainerStartLevel.dispatchEvent(ModuleContainer.java:1)
+	at org.eclipse.osgi.framework.eventmgr.EventManager.dispatchEvent(EventManager.java:234)
+	at org.eclipse.osgi.framework.eventmgr.EventManager$EventThread.run(EventManager.java:345)
+
+!ENTRY org.python.pydev.core 4 0 2025-07-25 10:33:43.611
+!MESSAGE FrameworkEvent ERROR
+!STACK 0
+org.osgi.framework.BundleException: Could not resolve module: org.python.pydev.core [966]
+  Unresolved requirement: Require-Capability: osgi.ee; filter:="(&(osgi.ee=JavaSE)(version=17))"
+  Unresolved requirement: Require-Bundle: org.python.pydev.shared_core; bundle-version="[13.0.2,13.0.3)"; visibility:="reexport"
+    -> Bundle-SymbolicName: org.python.pydev.shared_core; bundle-version="13.0.2.202503021229"; singleton:="true"
+       org.python.pydev.shared_core [974]
+         Unresolved requirement: Require-Capability: osgi.ee; filter:="(&(osgi.ee=JavaSE)(version=17))"
+
+	at org.eclipse.osgi.container.Module.start(Module.java:462)
+	at org.eclipse.osgi.container.ModuleContainer$ContainerStartLevel$2.run(ModuleContainer.java:1844)
+	at org.eclipse.osgi.internal.framework.EquinoxContainerAdaptor$2$1.execute(EquinoxContainerAdaptor.java:150)
+	at org.eclipse.osgi.container.ModuleContainer$ContainerStartLevel.incStartLevel(ModuleContainer.java:1837)
+	at org.eclipse.osgi.container.ModuleContainer$ContainerStartLevel.incStartLevel(ModuleContainer.java:1778)
+	at org.eclipse.osgi.container.ModuleContainer$ContainerStartLevel.doContainerStartLevel(ModuleContainer.java:1742)
+	at org.eclipse.osgi.container.ModuleContainer$ContainerStartLevel.dispatchEvent(ModuleContainer.java:1664)
+	at org.eclipse.osgi.container.ModuleContainer$ContainerStartLevel.dispatchEvent(ModuleContainer.java:1)
+	at org.eclipse.osgi.framework.eventmgr.EventManager.dispatchEvent(EventManager.java:234)
+	at org.eclipse.osgi.framework.eventmgr.EventManager$EventThread.run(EventManager.java:345)
+
+!ENTRY org.python.pydev.customizations 4 0 2025-07-25 10:33:43.626
+!MESSAGE FrameworkEvent ERROR
+!STACK 0
+org.osgi.framework.BundleException: Could not resolve module: org.python.pydev.customizations [967]
+  Unresolved requirement: Require-Capability: osgi.ee; filter:="(&(osgi.ee=JavaSE)(version=17))"
+  Unresolved requirement: Require-Bundle: org.python.pydev.shared_ui; bundle-version="[13.0.2,13.0.3)"
+    -> Bundle-SymbolicName: org.python.pydev.shared_ui; bundle-version="13.0.2.202503021229"; singleton:="true"
+       org.python.pydev.shared_ui [976]
+         Unresolved requirement: Require-Bundle: org.python.pydev.shared_core; bundle-version="[13.0.2,13.0.3)"
+           -> Bundle-SymbolicName: org.python.pydev.shared_core; bundle-version="13.0.2.202503021229"; singleton:="true"
+              org.python.pydev.shared_core [974]
+                Unresolved requirement: Require-Capability: osgi.ee; filter:="(&(osgi.ee=JavaSE)(version=17))"
+  Unresolved requirement: Require-Bundle: org.python.pydev.core; bundle-version="[13.0.2,13.0.3)"
+    -> Bundle-SymbolicName: org.python.pydev.core; bundle-version="13.0.2.202503021229"; singleton:="true"
+       org.python.pydev.core [966]
+         Unresolved requirement: Require-Capability: osgi.ee; filter:="(&(osgi.ee=JavaSE)(version=17))"
+         Unresolved requirement: Require-Bundle: org.python.pydev.shared_core; bundle-version="[13.0.2,13.0.3)"; visibility:="reexport"
+           -> Bundle-SymbolicName: org.python.pydev.shared_core; bundle-version="13.0.2.202503021229"; singleton:="true"
+  Unresolved requirement: Require-Bundle: org.python.pydev.ast; bundle-version="[13.0.2,13.0.3)"
+    -> Bundle-SymbolicName: org.python.pydev.ast; bundle-version="13.0.2.202503021229"; singleton:="true"
+       org.python.pydev.ast [965]
+         Unresolved requirement: Require-Bundle: org.python.pydev.core; bundle-version="[13.0.2,13.0.3)"
+           -> Bundle-SymbolicName: org.python.pydev.core; bundle-version="13.0.2.202503021229"; singleton:="true"
+  Unresolved requirement: Require-Bundle: org.python.pydev.debug; bundle-version="[13.0.2,13.0.3)"
+    -> Bundle-SymbolicName: org.python.pydev.debug; bundle-version="13.0.2.202503021229"; singleton:="true"
+       org.python.pydev.debug [968]
+         Unresolved requirement: Require-Bundle: org.python.pydev.core; bundle-version="[13.0.2,13.0.3)"
+           -> Bundle-SymbolicName: org.python.pydev.core; bundle-version="13.0.2.202503021229"; singleton:="true"
+  Unresolved requirement: Require-Bundle: org.python.pydev; bundle-version="[13.0.2,13.0.3)"
+    -> Bundle-SymbolicName: org.python.pydev; bundle-version="13.0.2.202503021229"; singleton:="true"
+       org.python.pydev [964]
+         Unresolved requirement: Require-Bundle: org.python.pydev.ast; bundle-version="[13.0.2,13.0.3)"
+           -> Bundle-SymbolicName: org.python.pydev.ast; bundle-version="13.0.2.202503021229"; singleton:="true"
+
+	at org.eclipse.osgi.container.Module.start(Module.java:462)
+	at org.eclipse.osgi.container.ModuleContainer$ContainerStartLevel$2.run(ModuleContainer.java:1844)
+	at org.eclipse.osgi.internal.framework.EquinoxContainerAdaptor$2$1.execute(EquinoxContainerAdaptor.java:150)
+	at org.eclipse.osgi.container.ModuleContainer$ContainerStartLevel.incStartLevel(ModuleContainer.java:1837)
+	at org.eclipse.osgi.container.ModuleContainer$ContainerStartLevel.incStartLevel(ModuleContainer.java:1778)
+	at org.eclipse.osgi.container.ModuleContainer$ContainerStartLevel.doContainerStartLevel(ModuleContainer.java:1742)
+	at org.eclipse.osgi.container.ModuleContainer$ContainerStartLevel.dispatchEvent(ModuleContainer.java:1664)
+	at org.eclipse.osgi.container.ModuleContainer$ContainerStartLevel.dispatchEvent(ModuleContainer.java:1)
+	at org.eclipse.osgi.framework.eventmgr.EventManager.dispatchEvent(EventManager.java:234)
+	at org.eclipse.osgi.framework.eventmgr.EventManager$EventThread.run(EventManager.java:345)
+
+!ENTRY org.python.pydev.debug 4 0 2025-07-25 10:33:43.631
+!MESSAGE FrameworkEvent ERROR
+!STACK 0
+org.osgi.framework.BundleException: Could not resolve module: org.python.pydev.debug [968]
+  Unresolved requirement: Require-Capability: osgi.ee; filter:="(&(osgi.ee=JavaSE)(version=17))"
+  Unresolved requirement: Require-Bundle: org.python.pydev.shared_interactive_console; bundle-version="[13.0.2,13.0.3)"
+    -> Bundle-SymbolicName: org.python.pydev.shared_interactive_console; bundle-version="13.0.2.202503021229"; singleton:="true"
+       org.python.pydev.shared_interactive_console [975]
+         Unresolved requirement: Require-Bundle: org.python.pydev.shared_core; bundle-version="[13.0.2,13.0.3)"
+           -> Bundle-SymbolicName: org.python.pydev.shared_core; bundle-version="13.0.2.202503021229"; singleton:="true"
+              org.python.pydev.shared_core [974]
+                Unresolved requirement: Require-Capability: osgi.ee; filter:="(&(osgi.ee=JavaSE)(version=17))"
+  Unresolved requirement: Require-Bundle: org.python.pydev.parser; bundle-version="[13.0.2,13.0.3)"
+    -> Bundle-SymbolicName: org.python.pydev.parser; bundle-version="13.0.2.202503021229"; singleton:="true"
+       org.python.pydev.parser [972]
+         Unresolved requirement: Require-Bundle: org.python.pydev.core; bundle-version="[13.0.2,13.0.3)"
+           -> Bundle-SymbolicName: org.python.pydev.core; bundle-version="13.0.2.202503021229"; singleton:="true"
+              org.python.pydev.core [966]
+                Unresolved requirement: Require-Capability: osgi.ee; filter:="(&(osgi.ee=JavaSE)(version=17))"
+                Unresolved requirement: Require-Bundle: org.python.pydev.shared_core; bundle-version="[13.0.2,13.0.3)"; visibility:="reexport"
+                  -> Bundle-SymbolicName: org.python.pydev.shared_core; bundle-version="13.0.2.202503021229"; singleton:="true"
+  Unresolved requirement: Require-Bundle: org.python.pydev.shared_ui; bundle-version="[13.0.2,13.0.3)"
+    -> Bundle-SymbolicName: org.python.pydev.shared_ui; bundle-version="13.0.2.202503021229"; singleton:="true"
+       org.python.pydev.shared_ui [976]
+         Unresolved requirement: Require-Bundle: org.python.pydev.shared_core; bundle-version="[13.0.2,13.0.3)"
+           -> Bundle-SymbolicName: org.python.pydev.shared_core; bundle-version="13.0.2.202503021229"; singleton:="true"
+  Unresolved requirement: Require-Bundle: org.python.pydev.core; bundle-version="[13.0.2,13.0.3)"
+    -> Bundle-SymbolicName: org.python.pydev.core; bundle-version="13.0.2.202503021229"; singleton:="true"
+  Unresolved requirement: Require-Bundle: org.python.pydev.ast; bundle-version="[13.0.2,13.0.3)"
+    -> Bundle-SymbolicName: org.python.pydev.ast; bundle-version="13.0.2.202503021229"; singleton:="true"
+       org.python.pydev.ast [965]
+         Unresolved requirement: Require-Bundle: org.python.pydev.core; bundle-version="[13.0.2,13.0.3)"
+           -> Bundle-SymbolicName: org.python.pydev.core; bundle-version="13.0.2.202503021229"; singleton:="true"
+  Unresolved requirement: Require-Bundle: org.python.pydev.jython; bundle-version="[13.0.2,13.0.3)"
+    -> Bundle-SymbolicName: org.python.pydev.jython; bundle-version="13.0.2.202503021229"; singleton:="true"
+       org.python.pydev.jython [971]
+         Unresolved requirement: Require-Bundle: org.python.pydev.core; bundle-version="[13.0.2,13.0.3)"
+           -> Bundle-SymbolicName: org.python.pydev.core; bundle-version="13.0.2.202503021229"; singleton:="true"
+  Unresolved requirement: Require-Bundle: org.python.pydev; bundle-version="[13.0.2,13.0.3)"
+    -> Bundle-SymbolicName: org.python.pydev; bundle-version="13.0.2.202503021229"; singleton:="true"
+       org.python.pydev [964]
+         Unresolved requirement: Require-Bundle: org.python.pydev.ast; bundle-version="[13.0.2,13.0.3)"
+           -> Bundle-SymbolicName: org.python.pydev.ast; bundle-version="13.0.2.202503021229"; singleton:="true"
+
+	at org.eclipse.osgi.container.Module.start(Module.java:462)
+	at org.eclipse.osgi.container.ModuleContainer$ContainerStartLevel$2.run(ModuleContainer.java:1844)
+	at org.eclipse.osgi.internal.framework.EquinoxContainerAdaptor$2$1.execute(EquinoxContainerAdaptor.java:150)
+	at org.eclipse.osgi.container.ModuleContainer$ContainerStartLevel.incStartLevel(ModuleContainer.java:1837)
+	at org.eclipse.osgi.container.ModuleContainer$ContainerStartLevel.incStartLevel(ModuleContainer.java:1778)
+	at org.eclipse.osgi.container.ModuleContainer$ContainerStartLevel.doContainerStartLevel(ModuleContainer.java:1742)
+	at org.eclipse.osgi.container.ModuleContainer$ContainerStartLevel.dispatchEvent(ModuleContainer.java:1664)
+	at org.eclipse.osgi.container.ModuleContainer$ContainerStartLevel.dispatchEvent(ModuleContainer.java:1)
+	at org.eclipse.osgi.framework.eventmgr.EventManager.dispatchEvent(EventManager.java:234)
+	at org.eclipse.osgi.framework.eventmgr.EventManager$EventThread.run(EventManager.java:345)
+
+!ENTRY org.python.pydev.django 4 0 2025-07-25 10:33:43.635
+!MESSAGE FrameworkEvent ERROR
+!STACK 0
+org.osgi.framework.BundleException: Could not resolve module: org.python.pydev.django [969]
+  Unresolved requirement: Require-Bundle: org.python.pydev.core; bundle-version="[13.0.2,13.0.3)"
+    -> Bundle-SymbolicName: org.python.pydev.core; bundle-version="13.0.2.202503021229"; singleton:="true"
+       org.python.pydev.core [966]
+         Unresolved requirement: Require-Capability: osgi.ee; filter:="(&(osgi.ee=JavaSE)(version=17))"
+         Unresolved requirement: Require-Bundle: org.python.pydev.shared_core; bundle-version="[13.0.2,13.0.3)"; visibility:="reexport"
+           -> Bundle-SymbolicName: org.python.pydev.shared_core; bundle-version="13.0.2.202503021229"; singleton:="true"
+              org.python.pydev.shared_core [974]
+                Unresolved requirement: Require-Capability: osgi.ee; filter:="(&(osgi.ee=JavaSE)(version=17))"
+  Unresolved requirement: Require-Bundle: org.python.pydev; bundle-version="[13.0.2,13.0.3)"
+    -> Bundle-SymbolicName: org.python.pydev; bundle-version="13.0.2.202503021229"; singleton:="true"
+       org.python.pydev [964]
+         Unresolved requirement: Require-Bundle: org.python.pydev.parser; bundle-version="[13.0.2,13.0.3)"
+           -> Bundle-SymbolicName: org.python.pydev.parser; bundle-version="13.0.2.202503021229"; singleton:="true"
+              org.python.pydev.parser [972]
+                Unresolved requirement: Require-Bundle: org.python.pydev.core; bundle-version="[13.0.2,13.0.3)"
+                  -> Bundle-SymbolicName: org.python.pydev.core; bundle-version="13.0.2.202503021229"; singleton:="true"
+         Unresolved requirement: Require-Bundle: org.python.pydev.ast; bundle-version="[13.0.2,13.0.3)"
+           -> Bundle-SymbolicName: org.python.pydev.ast; bundle-version="13.0.2.202503021229"; singleton:="true"
+              org.python.pydev.ast [965]
+                Unresolved requirement: Require-Capability: osgi.ee; filter:="(&(osgi.ee=JavaSE)(version=17))"
+                Unresolved requirement: Require-Bundle: org.python.pydev.core; bundle-version="[13.0.2,13.0.3)"
+                  -> Bundle-SymbolicName: org.python.pydev.core; bundle-version="13.0.2.202503021229"; singleton:="true"
+                Unresolved requirement: Require-Bundle: org.python.pydev.parser; bundle-version="[13.0.2,13.0.3)"
+                  -> Bundle-SymbolicName: org.python.pydev.parser; bundle-version="13.0.2.202503021229"; singleton:="true"
+
+	at org.eclipse.osgi.container.Module.start(Module.java:462)
+	at org.eclipse.osgi.container.ModuleContainer$ContainerStartLevel$2.run(ModuleContainer.java:1844)
+	at org.eclipse.osgi.internal.framework.EquinoxContainerAdaptor$2$1.execute(EquinoxContainerAdaptor.java:150)
+	at org.eclipse.osgi.container.ModuleContainer$ContainerStartLevel.incStartLevel(ModuleContainer.java:1837)
+	at org.eclipse.osgi.container.ModuleContainer$ContainerStartLevel.incStartLevel(ModuleContainer.java:1778)
+	at org.eclipse.osgi.container.ModuleContainer$ContainerStartLevel.doContainerStartLevel(ModuleContainer.java:1742)
+	at org.eclipse.osgi.container.ModuleContainer$ContainerStartLevel.dispatchEvent(ModuleContainer.java:1664)
+	at org.eclipse.osgi.container.ModuleContainer$ContainerStartLevel.dispatchEvent(ModuleContainer.java:1)
+	at org.eclipse.osgi.framework.eventmgr.EventManager.dispatchEvent(EventManager.java:234)
+	at org.eclipse.osgi.framework.eventmgr.EventManager$EventThread.run(EventManager.java:345)
+
+!ENTRY org.python.pydev.jython 4 0 2025-07-25 10:33:43.639
+!MESSAGE FrameworkEvent ERROR
+!STACK 0
+org.osgi.framework.BundleException: Could not resolve module: org.python.pydev.jython [971]
+  Unresolved requirement: Require-Capability: osgi.ee; filter:="(&(osgi.ee=JavaSE)(version=17))"
+  Unresolved requirement: Require-Bundle: org.python.pydev.shared_ui; bundle-version="[13.0.2,13.0.3)"
+    -> Bundle-SymbolicName: org.python.pydev.shared_ui; bundle-version="13.0.2.202503021229"; singleton:="true"
+       org.python.pydev.shared_ui [976]
+         Unresolved requirement: Require-Bundle: org.python.pydev.shared_core; bundle-version="[13.0.2,13.0.3)"
+           -> Bundle-SymbolicName: org.python.pydev.shared_core; bundle-version="13.0.2.202503021229"; singleton:="true"
+              org.python.pydev.shared_core [974]
+                Unresolved requirement: Require-Capability: osgi.ee; filter:="(&(osgi.ee=JavaSE)(version=17))"
+  Unresolved requirement: Require-Bundle: org.python.pydev.core; bundle-version="[13.0.2,13.0.3)"
+    -> Bundle-SymbolicName: org.python.pydev.core; bundle-version="13.0.2.202503021229"; singleton:="true"
+       org.python.pydev.core [966]
+         Unresolved requirement: Require-Capability: osgi.ee; filter:="(&(osgi.ee=JavaSE)(version=17))"
+         Unresolved requirement: Require-Bundle: org.python.pydev.shared_core; bundle-version="[13.0.2,13.0.3)"; visibility:="reexport"
+           -> Bundle-SymbolicName: org.python.pydev.shared_core; bundle-version="13.0.2.202503021229"; singleton:="true"
+
+	at org.eclipse.osgi.container.Module.start(Module.java:462)
+	at org.eclipse.osgi.container.ModuleContainer$ContainerStartLevel$2.run(ModuleContainer.java:1844)
+	at org.eclipse.osgi.internal.framework.EquinoxContainerAdaptor$2$1.execute(EquinoxContainerAdaptor.java:150)
+	at org.eclipse.osgi.container.ModuleContainer$ContainerStartLevel.incStartLevel(ModuleContainer.java:1837)
+	at org.eclipse.osgi.container.ModuleContainer$ContainerStartLevel.incStartLevel(ModuleContainer.java:1778)
+	at org.eclipse.osgi.container.ModuleContainer$ContainerStartLevel.doContainerStartLevel(ModuleContainer.java:1742)
+	at org.eclipse.osgi.container.ModuleContainer$ContainerStartLevel.dispatchEvent(ModuleContainer.java:1664)
+	at org.eclipse.osgi.container.ModuleContainer$ContainerStartLevel.dispatchEvent(ModuleContainer.java:1)
+	at org.eclipse.osgi.framework.eventmgr.EventManager.dispatchEvent(EventManager.java:234)
+	at org.eclipse.osgi.framework.eventmgr.EventManager$EventThread.run(EventManager.java:345)
+
+!ENTRY org.python.pydev.parser 4 0 2025-07-25 10:33:43.642
+!MESSAGE FrameworkEvent ERROR
+!STACK 0
+org.osgi.framework.BundleException: Could not resolve module: org.python.pydev.parser [972]
+  Unresolved requirement: Require-Capability: osgi.ee; filter:="(&(osgi.ee=JavaSE)(version=17))"
+  Unresolved requirement: Require-Bundle: org.python.pydev.core; bundle-version="[13.0.2,13.0.3)"
+    -> Bundle-SymbolicName: org.python.pydev.core; bundle-version="13.0.2.202503021229"; singleton:="true"
+       org.python.pydev.core [966]
+         Unresolved requirement: Require-Capability: osgi.ee; filter:="(&(osgi.ee=JavaSE)(version=17))"
+         Unresolved requirement: Require-Bundle: org.python.pydev.shared_core; bundle-version="[13.0.2,13.0.3)"; visibility:="reexport"
+           -> Bundle-SymbolicName: org.python.pydev.shared_core; bundle-version="13.0.2.202503021229"; singleton:="true"
+              org.python.pydev.shared_core [974]
+                Unresolved requirement: Require-Capability: osgi.ee; filter:="(&(osgi.ee=JavaSE)(version=17))"
+
+	at org.eclipse.osgi.container.Module.start(Module.java:462)
+	at org.eclipse.osgi.container.ModuleContainer$ContainerStartLevel$2.run(ModuleContainer.java:1844)
+	at org.eclipse.osgi.internal.framework.EquinoxContainerAdaptor$2$1.execute(EquinoxContainerAdaptor.java:150)
+	at org.eclipse.osgi.container.ModuleContainer$ContainerStartLevel.incStartLevel(ModuleContainer.java:1837)
+	at org.eclipse.osgi.container.ModuleContainer$ContainerStartLevel.incStartLevel(ModuleContainer.java:1778)
+	at org.eclipse.osgi.container.ModuleContainer$ContainerStartLevel.doContainerStartLevel(ModuleContainer.java:1742)
+	at org.eclipse.osgi.container.ModuleContainer$ContainerStartLevel.dispatchEvent(ModuleContainer.java:1664)
+	at org.eclipse.osgi.container.ModuleContainer$ContainerStartLevel.dispatchEvent(ModuleContainer.java:1)
+	at org.eclipse.osgi.framework.eventmgr.EventManager.dispatchEvent(EventManager.java:234)
+	at org.eclipse.osgi.framework.eventmgr.EventManager$EventThread.run(EventManager.java:345)
+
+!ENTRY org.python.pydev.refactoring 4 0 2025-07-25 10:33:43.646
+!MESSAGE FrameworkEvent ERROR
+!STACK 0
+org.osgi.framework.BundleException: Could not resolve module: org.python.pydev.refactoring [973]
+  Unresolved requirement: Require-Capability: osgi.ee; filter:="(&(osgi.ee=JavaSE)(version=17))"
+  Unresolved requirement: Require-Bundle: org.python.pydev.ast; bundle-version="[13.0.2,13.0.3)"
+    -> Bundle-SymbolicName: org.python.pydev.ast; bundle-version="13.0.2.202503021229"; singleton:="true"
+       org.python.pydev.ast [965]
+         Unresolved requirement: Require-Bundle: org.python.pydev.core; bundle-version="[13.0.2,13.0.3)"
+           -> Bundle-SymbolicName: org.python.pydev.core; bundle-version="13.0.2.202503021229"; singleton:="true"
+              org.python.pydev.core [966]
+                Unresolved requirement: Require-Capability: osgi.ee; filter:="(&(osgi.ee=JavaSE)(version=17))"
+                Unresolved requirement: Require-Bundle: org.python.pydev.shared_core; bundle-version="[13.0.2,13.0.3)"; visibility:="reexport"
+                  -> Bundle-SymbolicName: org.python.pydev.shared_core; bundle-version="13.0.2.202503021229"; singleton:="true"
+                     org.python.pydev.shared_core [974]
+                       Unresolved requirement: Require-Capability: osgi.ee; filter:="(&(osgi.ee=JavaSE)(version=17))"
+  Unresolved requirement: Require-Bundle: org.python.pydev.shared_ui; bundle-version="[13.0.2,13.0.3)"
+    -> Bundle-SymbolicName: org.python.pydev.shared_ui; bundle-version="13.0.2.202503021229"; singleton:="true"
+       org.python.pydev.shared_ui [976]
+         Unresolved requirement: Require-Bundle: org.python.pydev.shared_core; bundle-version="[13.0.2,13.0.3)"
+           -> Bundle-SymbolicName: org.python.pydev.shared_core; bundle-version="13.0.2.202503021229"; singleton:="true"
+  Unresolved requirement: Require-Bundle: org.python.pydev; bundle-version="[13.0.2,13.0.3)"
+    -> Bundle-SymbolicName: org.python.pydev; bundle-version="13.0.2.202503021229"; singleton:="true"
+       org.python.pydev [964]
+         Unresolved requirement: Require-Bundle: org.python.pydev.ast; bundle-version="[13.0.2,13.0.3)"
+           -> Bundle-SymbolicName: org.python.pydev.ast; bundle-version="13.0.2.202503021229"; singleton:="true"
+  Unresolved requirement: Require-Bundle: org.python.pydev.core; bundle-version="[13.0.2,13.0.3)"
+    -> Bundle-SymbolicName: org.python.pydev.core; bundle-version="13.0.2.202503021229"; singleton:="true"
+  Unresolved requirement: Require-Bundle: org.python.pydev.parser; bundle-version="[13.0.2,13.0.3)"
+    -> Bundle-SymbolicName: org.python.pydev.parser; bundle-version="13.0.2.202503021229"; singleton:="true"
+       org.python.pydev.parser [972]
+         Unresolved requirement: Require-Bundle: org.python.pydev.core; bundle-version="[13.0.2,13.0.3)"
+           -> Bundle-SymbolicName: org.python.pydev.core; bundle-version="13.0.2.202503021229"; singleton:="true"
+
+	at org.eclipse.osgi.container.Module.start(Module.java:462)
+	at org.eclipse.osgi.container.ModuleContainer$ContainerStartLevel$2.run(ModuleContainer.java:1844)
+	at org.eclipse.osgi.internal.framework.EquinoxContainerAdaptor$2$1.execute(EquinoxContainerAdaptor.java:150)
+	at org.eclipse.osgi.container.ModuleContainer$ContainerStartLevel.incStartLevel(ModuleContainer.java:1837)
+	at org.eclipse.osgi.container.ModuleContainer$ContainerStartLevel.incStartLevel(ModuleContainer.java:1778)
+	at org.eclipse.osgi.container.ModuleContainer$ContainerStartLevel.doContainerStartLevel(ModuleContainer.java:1742)
+	at org.eclipse.osgi.container.ModuleContainer$ContainerStartLevel.dispatchEvent(ModuleContainer.java:1664)
+	at org.eclipse.osgi.container.ModuleContainer$ContainerStartLevel.dispatchEvent(ModuleContainer.java:1)
+	at org.eclipse.osgi.framework.eventmgr.EventManager.dispatchEvent(EventManager.java:234)
+	at org.eclipse.osgi.framework.eventmgr.EventManager$EventThread.run(EventManager.java:345)
+
+!ENTRY org.python.pydev.shared_core 4 0 2025-07-25 10:33:43.657
+!MESSAGE FrameworkEvent ERROR
+!STACK 0
+org.osgi.framework.BundleException: Could not resolve module: org.python.pydev.shared_core [974]
+  Unresolved requirement: Require-Capability: osgi.ee; filter:="(&(osgi.ee=JavaSE)(version=17))"
+
+	at org.eclipse.osgi.container.Module.start(Module.java:462)
+	at org.eclipse.osgi.container.ModuleContainer$ContainerStartLevel$2.run(ModuleContainer.java:1844)
+	at org.eclipse.osgi.internal.framework.EquinoxContainerAdaptor$2$1.execute(EquinoxContainerAdaptor.java:150)
+	at org.eclipse.osgi.container.ModuleContainer$ContainerStartLevel.incStartLevel(ModuleContainer.java:1837)
+	at org.eclipse.osgi.container.ModuleContainer$ContainerStartLevel.incStartLevel(ModuleContainer.java:1778)
+	at org.eclipse.osgi.container.ModuleContainer$ContainerStartLevel.doContainerStartLevel(ModuleContainer.java:1742)
+	at org.eclipse.osgi.container.ModuleContainer$ContainerStartLevel.dispatchEvent(ModuleContainer.java:1664)
+	at org.eclipse.osgi.container.ModuleContainer$ContainerStartLevel.dispatchEvent(ModuleContainer.java:1)
+	at org.eclipse.osgi.framework.eventmgr.EventManager.dispatchEvent(EventManager.java:234)
+	at org.eclipse.osgi.framework.eventmgr.EventManager$EventThread.run(EventManager.java:345)
+
+!ENTRY org.python.pydev.shared_interactive_console 4 0 2025-07-25 10:33:43.660
+!MESSAGE FrameworkEvent ERROR
+!STACK 0
+org.osgi.framework.BundleException: Could not resolve module: org.python.pydev.shared_interactive_console [975]
+  Unresolved requirement: Require-Capability: osgi.ee; filter:="(&(osgi.ee=JavaSE)(version=17))"
+  Unresolved requirement: Require-Bundle: org.python.pydev.shared_ui; bundle-version="[13.0.2,13.0.3)"
+    -> Bundle-SymbolicName: org.python.pydev.shared_ui; bundle-version="13.0.2.202503021229"; singleton:="true"
+       org.python.pydev.shared_ui [976]
+         Unresolved requirement: Require-Bundle: org.python.pydev.shared_core; bundle-version="[13.0.2,13.0.3)"
+           -> Bundle-SymbolicName: org.python.pydev.shared_core; bundle-version="13.0.2.202503021229"; singleton:="true"
+              org.python.pydev.shared_core [974]
+                Unresolved requirement: Require-Capability: osgi.ee; filter:="(&(osgi.ee=JavaSE)(version=17))"
+  Unresolved requirement: Require-Bundle: org.python.pydev.shared_core; bundle-version="[13.0.2,13.0.3)"
+    -> Bundle-SymbolicName: org.python.pydev.shared_core; bundle-version="13.0.2.202503021229"; singleton:="true"
+  Unresolved requirement: Require-Bundle: org.python.pydev.core; bundle-version="[13.0.2,13.0.3)"
+    -> Bundle-SymbolicName: org.python.pydev.core; bundle-version="13.0.2.202503021229"; singleton:="true"
+       org.python.pydev.core [966]
+         Unresolved requirement: Require-Bundle: org.python.pydev.shared_core; bundle-version="[13.0.2,13.0.3)"; visibility:="reexport"
+           -> Bundle-SymbolicName: org.python.pydev.shared_core; bundle-version="13.0.2.202503021229"; singleton:="true"
+
+	at org.eclipse.osgi.container.Module.start(Module.java:462)
+	at org.eclipse.osgi.container.ModuleContainer$ContainerStartLevel$2.run(ModuleContainer.java:1844)
+	at org.eclipse.osgi.internal.framework.EquinoxContainerAdaptor$2$1.execute(EquinoxContainerAdaptor.java:150)
+	at org.eclipse.osgi.container.ModuleContainer$ContainerStartLevel.incStartLevel(ModuleContainer.java:1837)
+	at org.eclipse.osgi.container.ModuleContainer$ContainerStartLevel.incStartLevel(ModuleContainer.java:1778)
+	at org.eclipse.osgi.container.ModuleContainer$ContainerStartLevel.doContainerStartLevel(ModuleContainer.java:1742)
+	at org.eclipse.osgi.container.ModuleContainer$ContainerStartLevel.dispatchEvent(ModuleContainer.java:1664)
+	at org.eclipse.osgi.container.ModuleContainer$ContainerStartLevel.dispatchEvent(ModuleContainer.java:1)
+	at org.eclipse.osgi.framework.eventmgr.EventManager.dispatchEvent(EventManager.java:234)
+	at org.eclipse.osgi.framework.eventmgr.EventManager$EventThread.run(EventManager.java:345)
+
+!ENTRY org.python.pydev.shared_ui 4 0 2025-07-25 10:33:43.663
+!MESSAGE FrameworkEvent ERROR
+!STACK 0
+org.osgi.framework.BundleException: Could not resolve module: org.python.pydev.shared_ui [976]
+  Unresolved requirement: Require-Capability: osgi.ee; filter:="(&(osgi.ee=JavaSE)(version=17))"
+  Unresolved requirement: Require-Bundle: org.python.pydev.core
+    -> Bundle-SymbolicName: org.python.pydev.core; bundle-version="13.0.2.202503021229"; singleton:="true"
+       org.python.pydev.core [966]
+         Unresolved requirement: Require-Bundle: org.python.pydev.shared_core; bundle-version="[13.0.2,13.0.3)"; visibility:="reexport"
+           -> Bundle-SymbolicName: org.python.pydev.shared_core; bundle-version="13.0.2.202503021229"; singleton:="true"
+              org.python.pydev.shared_core [974]
+                Unresolved requirement: Require-Capability: osgi.ee; filter:="(&(osgi.ee=JavaSE)(version=17))"
+  Unresolved requirement: Require-Bundle: org.python.pydev.shared_core; bundle-version="[13.0.2,13.0.3)"
+    -> Bundle-SymbolicName: org.python.pydev.shared_core; bundle-version="13.0.2.202503021229"; singleton:="true"
+
+	at org.eclipse.osgi.container.Module.start(Module.java:462)
+	at org.eclipse.osgi.container.ModuleContainer$ContainerStartLevel$2.run(ModuleContainer.java:1844)
+	at org.eclipse.osgi.internal.framework.EquinoxContainerAdaptor$2$1.execute(EquinoxContainerAdaptor.java:150)
+	at org.eclipse.osgi.container.ModuleContainer$ContainerStartLevel.incStartLevel(ModuleContainer.java:1837)
+	at org.eclipse.osgi.container.ModuleContainer$ContainerStartLevel.incStartLevel(ModuleContainer.java:1778)
+	at org.eclipse.osgi.container.ModuleContainer$ContainerStartLevel.doContainerStartLevel(ModuleContainer.java:1742)
+	at org.eclipse.osgi.container.ModuleContainer$ContainerStartLevel.dispatchEvent(ModuleContainer.java:1664)
+	at org.eclipse.osgi.container.ModuleContainer$ContainerStartLevel.dispatchEvent(ModuleContainer.java:1)
+	at org.eclipse.osgi.framework.eventmgr.EventManager.dispatchEvent(EventManager.java:234)
+	at org.eclipse.osgi.framework.eventmgr.EventManager$EventThread.run(EventManager.java:345)
+
+!ENTRY com.genuitec.eclipse.code.ui 1 0 2025-07-25 10:33:56.121
+!MESSAGE CodeMix Engine will be started momentarily to support development activities
