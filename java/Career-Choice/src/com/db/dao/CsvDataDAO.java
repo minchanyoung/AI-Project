@@ -10,17 +10,11 @@ import com.opencsv.CSVReader;
 
 public class CsvDataDAO {
     private static final String TABLE = "MERGED_DATA";
-    private DataSource ds;
+    private final DataSource ds;
 
     public CsvDataDAO() throws NamingException {
-		try {
-			Context ctx = new InitialContext();
-			Context envContext = (Context) ctx.lookup("java:/comp/env");
-			ds = (DataSource) envContext.lookup("jdbc/Oracle11g");
-		}
-		catch (Exception e) {
-			e.printStackTrace();
-		}
+        Context ctx = new InitialContext();
+        ds = (DataSource) ctx.lookup("java:comp/env/jdbc/OracleDB");
     }
 
     // 1) 테이블 DROP & CREATE (CSV 헤더로 컬럼 생성)
@@ -39,9 +33,24 @@ public class CsvDataDAO {
                 headers[0] = headers[0].substring(1);
             }
 
-            // 컬럼 DDL 조합
-            String cols = String.join(" VARCHAR2(100),\n    ",
-                            headers).concat(" VARCHAR2(100)");
+            StringBuilder cols = new StringBuilder();
+            for (int i = 0; i < headers.length; i++) {
+                String colName = headers[i];
+                if (colName.startsWith("\uFEFF")) {
+                    colName = colName.substring(1);
+                }
+
+                if ("YEAR".equalsIgnoreCase(colName)) {
+                    cols.append(colName).append(" NUMBER");
+                } else {
+                    cols.append(colName).append(" VARCHAR2(100)");
+                }
+
+                if (i < headers.length - 1) {
+                    cols.append(",\n    ");
+                }
+            }
+
 
             String dropSql =
               "BEGIN\n" +
