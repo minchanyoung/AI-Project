@@ -48,6 +48,56 @@ public class GeneralDAO {
 		System.out.println(query);
 		return query;
 	}
+
+	public ArrayList<BaseVO<Float>> getLegacyData(String table){
+		return getLegacyData("*", table, "");
+	}
+	public ArrayList<BaseVO<Float>> getLegacyData(String column, String table){
+		return getLegacyData(column, table, "", "");
+	}
+	public ArrayList<BaseVO<Float>> getLegacyData(String column, String table,  String where){
+		return getLegacyData(column, table, where, "");
+	}
+	public ArrayList<BaseVO<Float>> getLegacyData(String column, String table, String where, String groupBy){
+		ArrayList<BaseVO<Float>> container = new ArrayList<BaseVO<Float>>();
+		try {
+			con = dataFactory.getConnection();
+			String query = "select "+ column +" from " + table;
+			if(where.isEmpty() == false)
+				query += " where " + where;
+			if(groupBy.isEmpty() == false)
+				query += " groupBy " + groupBy;
+			
+			System.out.println("prepareStatement: " + query);
+			
+			pstmt = con.prepareStatement(query);
+			ResultSet rs = pstmt.executeQuery();
+			String[] columns = column.split(", ");
+			
+			while(rs.next()) {
+				BaseVO<Float> vo = new BaseVO<Float>();
+				
+				float d;
+				ArrayList<Float> dataList = new ArrayList<Float>();
+				for(int i=0; i<columns.length; ++i) {
+					d = rs.getFloat(columns[i]);
+					dataList.add(d);
+				}
+				vo.setData(dataList);
+				
+				container.add(vo);
+			}
+			
+			rs.close();
+			pstmt.close();
+			con.close();
+		}
+		catch(Exception e) {
+			e.printStackTrace();
+		}
+		
+		return container;
+	}
 	
 	public ArrayList<BaseVO<Integer>> getIntData(){
 		return getIntData("RealIndustryCountData");
@@ -73,7 +123,7 @@ public class GeneralDAO {
 				query += " where " + where;
 			if(groupBy.isEmpty() == false)
 				query += " groupBy " + groupBy;
-			System.out.println("prepareStatement" + query);
+			System.out.println("prepareStatement: " + query);
 			
 			pstmt = con.prepareStatement(query);
 			ResultSet rs = pstmt.executeQuery();
@@ -146,7 +196,7 @@ public class GeneralDAO {
 				query += " where " + where;
 			if(groupBy.isEmpty() == false)
 				query += " groupBy " + groupBy;
-			System.out.println("prepareStatement" + query);
+			System.out.println("prepareStatement: " + query);
 			
 			pstmt = con.prepareStatement(query);
 			ResultSet rs = pstmt.executeQuery();
