@@ -10,6 +10,7 @@
   <link rel="stylesheet" href="css/footer.css">
   <link rel="stylesheet" href="css/main.css">
   <link rel="stylesheet" href="css/IndustryResult.css">
+  <script src="js/main.js" defer></script>
 </head>
 <body>
 	<div class="page-wrapper">

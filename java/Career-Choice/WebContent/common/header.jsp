@@ -15,7 +15,6 @@
       <li><a href="simulate.jsp">Simulate</a></li>
       <li><a href="advice.jsp">AI Advice</a></li>
       <li><a href="about.jsp">About</a></li>
-      <li><a href="about2.jsp">About</a></li>
       <li><a href="faq.jsp">FAQ</a></li>
 
       <% if (user == null) { %>

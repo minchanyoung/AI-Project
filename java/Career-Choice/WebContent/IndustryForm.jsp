@@ -9,6 +9,7 @@
   <link rel="stylesheet" href="css/header.css">
   <link rel="stylesheet" href="css/footer.css">
   <link rel="stylesheet" href="css/IndustryForm.css">
+  <script src="js/main.js" defer></script>
 </head>
 <body>
   <div class="wrapper">

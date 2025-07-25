@@ -7,8 +7,8 @@
     display: flex;
     flex-grow: 1;
     gap: 24px;
-    padding: 120px 5% 40px;
-    max-width: 1920px; /* 너비 확장 */
+    padding: 120px max(2%, 20px) 40px; /* 좌우 패딩 조정 */
+    max-width: 1920px;
     width: 100%;
     margin: 0 auto;
 }
@@ -17,8 +17,9 @@
    🔹 사이드바 영역
 ========================== */
 .sidebar {
-    flex-shrink: 0;
-    width: 320px; /* 너비 조정 */
+    flex: 1; /* flex-grow, flex-shrink, flex-basis */
+    min-width: 280px; /* 최소 너비 설정 */
+    max-width: 320px; /* 최대 너비 유지 */
     background: var(--bg-color-alt);
     padding: 24px;
     border-radius: var(--border-radius-md);
@@ -49,13 +50,16 @@
    🔹 메인 콘텐츠 영역
 ========================== */
 .main-content {
-    flex-grow: 1;
+    flex: 3; /* 사이드바보다 3배 더 많은 공간 차지 */
     background: var(--bg-color-alt);
-    padding: 30px;
+    padding: 20px 30px 30px; /* 상단 패딩 축소 */
     border-radius: var(--border-radius-md);
     border: 1px solid var(--border-color);
     box-shadow: 0 4px 12px var(--shadow-color);
-    min-width: 0;
+    min-width: 0; /* flex 아이템이 수축할 수 있도록 함 */
+    display: flex; /* Flexbox 레이아웃 적용 */
+    flex-direction: column; /* 세로 방향 정렬 */
+    align-items: center; /* 자식 요소(카드)를 가운데 정렬 */
 }
 
 .main-content .page-title {
@@ -63,7 +67,9 @@
     padding-bottom: 15px;
     border-bottom: 1px solid var(--border-color);
     font-size: 2rem;
-    margin-bottom: 30px;
+    margin-bottom: 20px; /* 차트와의 간격 조정 */
+    flex-shrink: 0; /* 제목은 줄어들지 않도록 설정 */
+    width: 100%; /* 부모의 align-items: center 설정에 따라 너비 100%를 유지 */
 }
 
 /* ==========================
@@ -76,14 +82,17 @@
     align-items: center;
     background-color: var(--bg-color);
     border: 1px solid #ccc;
+    flex-grow: 1; /* 남은 공간을 모두 차지하도록 설정 */
+    width: 100%; /* 캔버스 래퍼의 너비에 맞춰짐 */
+    max-width: calc(600px + 40px); /* 캔버스(600px) + 좌우 패딩(40px) */
 }
 
 .chart-canvas-wrapper {
     position: relative;
     width: 100%;
-    aspect-ratio: 1 / 1;
-    max-width: 800px; /* 최대 너비 설정 */
-    margin: 0 auto; /* 가운데 정렬 */
+    height: 100%; /* 부모 요소(chart-area)의 높이를 채움 */
+    /* max-width는 부모인 .chart-area.card에서 제어 */
+    margin: 0 auto;
 }
 
 canvas {
@@ -148,7 +157,7 @@ canvas {
 /* ==========================
    🔹 반응형 디자인
 ========================== */
-@media (min-width: 992px) {
+@media (min-width: 1024px) { /* 데스크탑 뷰포트 조정 */
     .sidebar {
         position: sticky;
         top: 120px;
@@ -158,21 +167,31 @@ canvas {
     }
 }
 
-@media (max-width: 991.98px) {
+@media (max-width: 1023.98px) { /* 태블릿 및 모바일 뷰포트 조정 */
     .page-wrapper {
         flex-direction: column;
         padding: 90px 3% 20px;
     }
     .sidebar {
-        width: auto;
+        width: 100%;
         max-width: 100%;
         margin-bottom: 20px;
         position: static;
+        flex: none; /* flex 속성 초기화 */
     }
-    /* chart-canvas-wrapper의 높이는 aspect-ratio에 의해 자동 조절됩니다. */
+    .main-content {
+        flex: none; /* flex 속성 초기화 */
+    }
+    .chart-canvas-wrapper {
+        aspect-ratio: 1 / 1; /* 모바일에서는 1:1 비율 유지 */
     }
 }
 
 @media (max-width: 599.98px) {
-    /* 모바일 차트 높이는 aspect-ratio에 의해 자동 조절됩니다. */
+    .main-content {
+        padding: 20px;
+    }
+    .page-wrapper {
+        padding: 80px 2% 20px;
+    }
 }
