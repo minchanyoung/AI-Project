@@ -34,9 +34,9 @@
 					<div class="swiper-slide" style="background-image:url(images/career_image_2.jpg)">
 						<div class="hero-content">
 							<h1>
-								데이터 기반으로,<br> <span class="highlight">새로운 길</span>을 탐색하세요
+								당신의 관심 분야,<br> <span class="highlight">성장 가능성</span>은 얼마나 될까요?
 							</h1>
-							<p>AI와 함께 당신의 미래를 시뮬레이션 해보세요.</p>
+							<p>데이터로 보는 전망, 지금 확인해 보세요</p>
 							<div class="buttons">
 								<a href="IndustryForm.jsp" class="start-btn">시작하기</a> <a
 									href="about2.jsp" class="outline-btn">서비스 소개 보기</a>
@@ -61,7 +61,7 @@
 						</div>
 						<h3>Trend</h3>
 						<p>산업군 연도별 성장률을 통해<br>노동시장의 흐름을 확인하세요.</p>
-						<a href="trend.jsp" class="card-button">자세히 보기</a>
+						<a href="IndustryForm.jsp" class="card-button">자세히 보기</a>
 					</div>
 					<div class="card">
 						<div class="card-icon">

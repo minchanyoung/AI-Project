@@ -40,10 +40,10 @@ body {
    🔹 공통 레이아웃
 ========================== */
 .wrapper {
-    max-width: 960px;
+    width: 95%;
+    max-width: 1800px;
     margin: 120px auto 0; /* bottom margin 제거 */
     padding: 0 20px 80px; /* bottom padding으로 공간 확보 */
-    width: 100%;
     flex-grow: 1; /* 남은 공간을 채우도록 설정 */
 }
 
