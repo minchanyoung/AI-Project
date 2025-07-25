@@ -4,21 +4,22 @@
 <html lang="ko">
 <head>
 <meta charset="UTF-8">
-<title>사업차 상업부문 지역 분석</title>
+<title>산업별 동향 분석 | CAREER.AI</title>
   <link rel="stylesheet" href="css/base.css">
-<link rel="stylesheet" href="css/header.css">
-<link rel="stylesheet" href="css/footer.css">
-<link rel="stylesheet" href="css/IndustryResult.css">
+  <link rel="stylesheet" href="css/header.css">
+  <link rel="stylesheet" href="css/footer.css">
+  <link rel="stylesheet" href="css/main.css">
+  <link rel="stylesheet" href="css/IndustryResult.css">
 </head>
 <body>
-	<div class="analysis-container">
-		<h1 class="page-title">사업차 상업부문 지역 분석</h1>
-		<div class="main-content">
-			<!-- Sidebar -->
-			<div class="sidebar">
-				<h3>선택된 상업</h3>
-				<select id="industrySelect" style="width: 100%; padding: 8px;">
-					<option value="">-- 상업 선택 --</option>
+	<div class="page-wrapper">
+		<!-- Sidebar -->
+		<aside class="sidebar card">
+			<h3>산업 선택 및 비교</h3>
+			<div class="form-group">
+				<label for="industrySelect">산업 선택</label>
+				<select id="industrySelect">
+					<option value="">-- 산업 선택 --</option>
 					<option value="agriculture">농업, 임업 및 어업</option>
 					<option value="mining">광업</option>
 					<option value="manufacturing">제조업</option>
@@ -36,15 +37,24 @@
 					<option value="culture">오락 문화 및 운동관련서비스업</option>
 					<option value="other">기타 공공 수리 및 개인서비스업</option>
 				</select>
-				<button id="addIndustryBtn" class="add-btn">+추가</button>
-				<div class="industry-list-wrapper" id="industryList"></div>
 			</div>
+			<button id="addIndustryBtn" class="btn btn-primary">+ 추가</button>
+			<hr>
+			<h4>비교 목록</h4>
+			<div class="industry-list-wrapper" id="industryList">
+				<!-- Selected industries will be listed here -->
+			</div>
+		</aside>
 
-			<!-- Chart -->
-			<div class="chart-area">
-				<canvas id="industryChart"></canvas>
+		<!-- Main Content -->
+		<main class="main-content">
+			<h1 class="page-title">산업별 동향 분석</h1>
+			<div class="chart-area card">
+				<div class="chart-canvas-wrapper">
+					<canvas id="industryChart"></canvas>
+				</div>
 			</div>
-		</div>
+		</main>
 	</div>
 	
 	<script src="https://cdnjs.cloudflare.com/ajax/libs/Chart.js/3.9.1/chart.min.js"></script>
@@ -82,9 +92,6 @@
 </script>
 	
 	<script src="js/IndustryResult.js"></script>
-	<script>
-	
-	</script>
 	<%@ include file="common/footer.jsp"%>
 </body>
 </html>

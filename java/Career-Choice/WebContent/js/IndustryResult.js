@@ -66,6 +66,7 @@ let industryChart = new Chart(ctx, {
     },
     options: {
         responsive: true,
+        maintainAspectRatio: false, // CSS 크기를 따르도록 재설정
         plugins: {
             legend: { display: true }
         },
