@@ -169,6 +169,23 @@ public class ColumnData {
 		}
 		return null;
 	}
+	public static String getServiceLegacyType(String typeNum) {
+		switch(typeNum) {
+		case "0":
+			return "year" + ", " + "industryType" + ", " + WorkerDetailColumns[5];
+		case "1":
+			return "year" + ", " + "industryType" + ", " + WorkAvgColumns[7];//+ ", " + WorkAvgColumns[3] + ", " + WorkAvgColumns[7];
+		case "2":
+			return "year" + ", " + "industryType" + ", " + WorkAvgColumns[5];//+ ", " + WorkAvgColumns[3] + ", " + WorkAvgColumns[5];
+		case "3":
+			return "year" + ", " + "industryType" + ", " + WorkAvgColumns[1];
+		case "4":
+			return "year" + ", " + "industryType" + ", " + CompanyDetailColumns[2];
+		case "5":
+			return "year" + ", " + "industryType" + ", " + countColumns[1];//", " + CompanyDetailColumns[4] + ", " + CompanyDetailColumns[5] + ", " + CompanyDetailColumns[6] + ", " + CompanyDetailColumns[7] + ", " + CompanyDetailColumns[8] + ", " + CompanyDetailColumns[9] + ", " + CompanyDetailColumns[10]
+		}
+		return null;
+	}
 	public static String getServiceTypeToTable(String typeNum) {
 		switch(typeNum) {
 		case "0":

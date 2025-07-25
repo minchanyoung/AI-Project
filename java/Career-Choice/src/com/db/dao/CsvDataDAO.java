@@ -10,11 +10,17 @@ import com.opencsv.CSVReader;
 
 public class CsvDataDAO {
     private static final String TABLE = "MERGED_DATA";
-    private final DataSource ds;
+    private DataSource ds;
 
     public CsvDataDAO() throws NamingException {
-        Context ctx = new InitialContext();
-        ds = (DataSource) ctx.lookup("java:comp/env/jdbc/OracleDB");
+		try {
+			Context ctx = new InitialContext();
+			Context envContext = (Context) ctx.lookup("java:/comp/env");
+			ds = (DataSource) envContext.lookup("jdbc/Oracle11g");
+		}
+		catch (Exception e) {
+			e.printStackTrace();
+		}
     }
 
     // 1) 테이블 DROP & CREATE (CSV 헤더로 컬럼 생성)

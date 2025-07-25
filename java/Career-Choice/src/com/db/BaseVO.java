@@ -22,6 +22,7 @@ public class BaseVO<E> implements InterfaceVO<E>{
 		this.id = id;
 	}
 
+
 	@Override
 	public int getYear() {
 		return year;

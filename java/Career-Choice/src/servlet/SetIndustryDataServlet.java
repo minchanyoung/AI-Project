@@ -61,7 +61,7 @@ public class SetIndustryDataServlet extends HttpServlet {
 		// 필요한것만 셀렉하도록 재설정
 		GeneralDAO dao = new GeneralDAO();
 		
-		String columns = ColumnData.getServiceType(detail);
+		String columns = ColumnData.getServiceLegacyType(detail);
 		String selectQuery = columns;
 		
 //		ArrayList<String> lString = new ArrayList<String>();
@@ -71,25 +71,25 @@ public class SetIndustryDataServlet extends HttpServlet {
 //				lString.add(sliceColumn[i]);
 //		}
 
-		String table = ColumnData.getServiceTypeToTable(detail);
-		String fromQuery = table;
+//		String table = ColumnData.getServiceTypeToTable(detail);
+		String fromQuery = "MERGED_DATA";
 //		if(lString.size() >= 2)
 //			for(int i = 0;i<lString.size()-1;++i) {
 //			fromQuery += dao.JoinTable(ColumnData.getPredictTableName(lString.get(i)),);
 //		else
 //		fromQuery += lString.get(0) + " ";
 		
-		String whereQuery = "dataYear >= " + String.valueOf(startYear) + " AND " + "dataYear <= " + String.valueOf(endYear);
+		String whereQuery = "year >= " + String.valueOf(startYear) + " AND " + "year <= " + String.valueOf(endYear);
 		
-		ArrayList<BaseVO<Float>> dataList = dao.getFloatData(selectQuery, fromQuery, whereQuery);
+		ArrayList<BaseVO<String>> dataList = dao.getLegacyData(selectQuery, fromQuery, whereQuery);
 
 
 		for(int i=0;i<dataList.size();++i) {
 			JSONObject objMap = new JSONObject();
-			BaseVO<Float> vo = dataList.get(i);
+			BaseVO<String> vo = dataList.get(i);
 			objMap.put("year", vo.getYear());
 			objMap.put("type", vo.getIndustryType());
-			ArrayList<Float> data = vo.getData();
+			ArrayList<String> data = vo.getData();
 			switch(detail) {
 //			case "1":
 //			case "2":

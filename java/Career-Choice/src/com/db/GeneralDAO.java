@@ -49,24 +49,24 @@ public class GeneralDAO {
 		return query;
 	}
 
-	public ArrayList<BaseVO<Float>> getLegacyData(String table){
+	public ArrayList<BaseVO<String>> getLegacyData(String table){
 		return getLegacyData("*", table, "");
 	}
-	public ArrayList<BaseVO<Float>> getLegacyData(String column, String table){
+	public ArrayList<BaseVO<String>> getLegacyData(String column, String table){
 		return getLegacyData(column, table, "", "");
 	}
-	public ArrayList<BaseVO<Float>> getLegacyData(String column, String table,  String where){
+	public ArrayList<BaseVO<String>> getLegacyData(String column, String table,  String where){
 		return getLegacyData(column, table, where, "");
 	}
-	public ArrayList<BaseVO<Float>> getLegacyData(String column, String table, String where, String groupBy){
-		ArrayList<BaseVO<Float>> container = new ArrayList<BaseVO<Float>>();
+	public ArrayList<BaseVO<String>> getLegacyData(String column, String table, String where, String groupBy){
+		ArrayList<BaseVO<String>> container = new ArrayList<BaseVO<String>>();
 		try {
 			con = dataFactory.getConnection();
 			String query = "select "+ column +" from " + table;
-			if(where.isEmpty() == false)
-				query += " where " + where;
-			if(groupBy.isEmpty() == false)
-				query += " groupBy " + groupBy;
+//			if(where.isEmpty() == false)
+//				query += " where " + where;
+//			if(groupBy.isEmpty() == false)
+//				query += " groupBy " + groupBy;
 			
 			System.out.println("prepareStatement: " + query);
 			
@@ -75,12 +75,19 @@ public class GeneralDAO {
 			String[] columns = column.split(", ");
 			
 			while(rs.next()) {
-				BaseVO<Float> vo = new BaseVO<Float>();
+				int year = 0;// -> string?
+				String industryType = "";
 				
-				float d;
-				ArrayList<Float> dataList = new ArrayList<Float>();
+				BaseVO<String> vo = new BaseVO<String>();
+
+				year = rs.getInt("year");// -> string?
+				vo.setYear(year);
+				industryType = rs.getString("INDUSTRYTYPE");// -> string?
+				vo.setIndustryType(industryType);
+				String d;
+				ArrayList<String> dataList = new ArrayList<String>();
 				for(int i=0; i<columns.length; ++i) {
-					d = rs.getFloat(columns[i]);
+					d = rs.getString(columns[i]);
 					dataList.add(d);
 				}
 				vo.setData(dataList);
