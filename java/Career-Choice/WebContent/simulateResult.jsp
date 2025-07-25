@@ -116,7 +116,7 @@
         </aside>
 
         <main class="main-content">
-            <h2>커리어 시뮬레이션 결과</h2>
+            <h2>커리어 선택 예측 결과</h2>
             <% if (request.getAttribute("errorMessage") != null) { %>
                 <p style="color:red;"><%= request.getAttribute("errorMessage") %></p>
             <% } %>

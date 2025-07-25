@@ -11,10 +11,10 @@
 
   <nav>
     <ul class="nav-menu" id="navMenu">
-      <li><a href="IndustryForm.jsp">Trend</a></li>
-      <li><a href="simulate.jsp">Simulate</a></li>
-      <li><a href="advice.jsp">AI Advice</a></li>
-      <li><a href="about.jsp">About</a></li>
+      <li><a href="IndustryForm.jsp">노동시장 예측</a></li>
+      <li><a href="simulate.jsp">내 커리어 예측</a></li>
+      <li><a href="advice.jsp">AI 조언</a></li>
+      <li><a href="about.jsp">서비스 소개</a></li>
       <li><a href="faq.jsp">FAQ</a></li>
 
       <% if (user == null) { %>

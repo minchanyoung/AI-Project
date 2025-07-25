@@ -3,7 +3,7 @@
 <html>
 <head>
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>커리어 선택 시뮬레이션 | CAREER.AI</title>
+    <title>커리어 선택 예측 | CAREER.AI</title>
     <link rel="stylesheet" href="css/base.css">
     <link rel="stylesheet" href="css/header.css">
     <link rel="stylesheet" href="css/footer.css">
@@ -13,7 +13,7 @@
 <body>
     <%@ include file="common/header.jsp"%>
     <div class="form-wrapper simulate-wrapper">
-        <h2>커리어 선택 시뮬레이션</h2>
+        <h2>커리어 선택 예측</h2>
         <%-- 오류 메시지 표시 --%>
         <% String errorMessage = (String) request.getAttribute("errorMessage"); %>
         <% if (errorMessage != null && !errorMessage.isEmpty()) { %>

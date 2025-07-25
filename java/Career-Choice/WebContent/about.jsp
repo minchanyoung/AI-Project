@@ -20,7 +20,7 @@
 
         <div id="service-intro" class="tab-content" style="display: block;">
             <div class="section">
-                <h1>CAREER.AI 커리어 시뮬레이션 서비스</h1>
+                <h1>CAREER.AI 커리어 선택 예측 서비스</h1>
                 <p>
                     <strong>CAREER.AI</strong>는 중요한 커리어 선택의 순간, 당신의 곁에서 든든한 나침반이 되어주는 AI 커리어 파트너입니다. <span
                         class="highlight">나와 비슷한 사람들의 실제 데이터</span>를 통해 미래를 예측하고, <span class="highlight">나만을 위한 AI의 조언</span>을 더해 후회 없는 선택을 할 수 있도록 지원합니다.
@@ -98,7 +98,7 @@
 
         <div id="industry-analysis" class="tab-content">
             <div class="section">
-                <h1>CAREER.AI 산업 구조 분석 서비스</h1>
+                <h1>CAREER.AI 노동시장 흐름 예측 서비스</h1>
                 <p>
                     <strong>CAREER.AI</strong>는 산업별 구조 데이터를 기반으로 머신러닝 회귀 분석을 수행하여, <span class="highlight">각 산업의 고유한 특성과 성장 신호</span>를 도출합니다. 단순 수치 나열이 아닌 <span class="highlight">해석 가능한 AI 분석 결과</span>를 통해, 산업의 구조적 강점과 리스크를 명확히 파악할 수 있습니다.
                 </p>
