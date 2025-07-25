@@ -65,7 +65,7 @@ public class GeneralDAO {
 	public ArrayList<BaseVO<Integer>> getIntData(String column, String table, String where, String groupBy) {
 		ArrayList<BaseVO<Integer>> container = new ArrayList<BaseVO<Integer>>();
 		try {
-			con = dataFactory.getConnection("jdbc:oracle:thin:@192.168.0.10:1521:orcl");
+			con = dataFactory.getConnection();
 			String query = "select "+ column +" from " + table;
 			
 			
