@@ -8,7 +8,10 @@ document.addEventListener("DOMContentLoaded", () => {
 const ctx = document.getElementById('industryChart').getContext('2d');
 var now = new Date();	// 현재 날짜 및 시간
 var year = now.getFullYear();	// 연도
-const years = [year,year+1,year+2,year+3,year+4];
+const years = [];
+for (let i = 0; i < rangeLimit; i++) {
+  years.push(year+i); 
+}
 const industryMap = {
     total: "전체",
     agriculture: "농업임업및어업",
@@ -76,19 +79,35 @@ let industryChart = new Chart(ctx, {
             }
         }
     }
-});
-function updateChart() {
+});function updateChart() {
+    // 모든 데이터 값 추출
+    let allValues = [];
+    selectedIndustries.forEach(key => {
+        const item = industryData[key];
+        allValues = allValues.concat(item.data);
+    });
+
+    // 최댓값과 최솟값 계산
+    const maxVal = Math.max(...allValues);
+    const minVal = Math.min(...allValues);
+
+    // 차트에 적용
+    industryChart.options.scales.y.max = Math.ceil(maxVal) + 3;
+    industryChart.options.scales.y.min = Math.floor(minVal) - 3;
+
+    // 데이터셋 재설정
     industryChart.data.datasets = selectedIndustries.map(key => {
         const item = industryData[key];
         return {
             label: item.name,
             data: item.data,
             borderColor: item.color,
-            backgroundColor: item.color + '20', // 투명도 추가
+            backgroundColor: item.color + '20',
             fill: true,
             tension: 0.3
         };
     });
+
     industryChart.update();
 }
 function updateList() {

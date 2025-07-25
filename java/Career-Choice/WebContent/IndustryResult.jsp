@@ -5,7 +5,9 @@
 <head>
 <meta charset="UTF-8">
 <title>사업차 상업부문 지역 분석</title>
-<link rel="stylesheet" href="css/main.css">
+  <link rel="stylesheet" href="css/base.css">
+<link rel="stylesheet" href="css/header.css">
+<link rel="stylesheet" href="css/footer.css">
 <link rel="stylesheet" href="css/IndustryResult.css">
 </head>
 <body>

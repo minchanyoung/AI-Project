@@ -5,7 +5,9 @@
 <head>
   <meta charset="UTF-8">
   <title>산업 분석 설문 | CAREER.AI</title>
-  <link rel="stylesheet" href="css/main.css">
+  <link rel="stylesheet" href="css/base.css">
+<link rel="stylesheet" href="css/header.css">
+<link rel="stylesheet" href="css/footer.css">
   <link rel="stylesheet" href="css/IndustryForm.css">
 </head>
 <body>
